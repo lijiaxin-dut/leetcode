@@ -146,6 +146,21 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Solution_11.cpp" />
+    <ClCompile Include="Solution_15.cpp" />
+    <ClCompile Include="Solution_16.cpp" />
+    <ClCompile Include="Solution_18.cpp" />
+    <ClCompile Include="Solution_19.cpp" />
+    <ClCompile Include="Solution_26.cpp" />
+    <ClCompile Include="Solution_27.cpp" />
+    <ClCompile Include="Solution_28.cpp" />
+    <ClCompile Include="Solution_3.cpp" />
+    <ClCompile Include="Solution_61.cpp" />
+    <ClCompile Include="Solution_75.cpp" />
+    <ClCompile Include="Solution_80.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="ListNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
