@@ -160,7 +160,9 @@
     <ClCompile Include="Solution_27.cpp" />
     <ClCompile Include="Solution_28.cpp" />
     <ClCompile Include="Solution_283.cpp" />
+    <ClCompile Include="Solution_287.cpp" />
     <ClCompile Include="Solution_3.cpp" />
+    <ClCompile Include="Solution_344.cpp" />
     <ClCompile Include="Solution_61.cpp" />
     <ClCompile Include="Solution_75.cpp" />
     <ClCompile Include="Solution_80.cpp" />
