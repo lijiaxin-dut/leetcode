@@ -174,10 +174,15 @@
     <ClCompile Include="Solution_61.cpp" />
     <ClCompile Include="Solution_713.cpp" />
     <ClCompile Include="Solution_75.cpp" />
+    <ClCompile Include="Solution_763.cpp" />
     <ClCompile Include="Solution_80.cpp" />
+    <ClCompile Include="Solution_838.cpp" />
+    <ClCompile Include="Solution_844.cpp" />
     <ClCompile Include="Solution_86.cpp" />
     <ClCompile Include="Solution_88.cpp" />
     <ClCompile Include="Solution_234.cpp" />
+    <ClCompile Include="Solution_925.cpp" />
+    <ClCompile Include="Solution_977.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h" />

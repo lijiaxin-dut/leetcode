@@ -41,8 +41,8 @@ public:
 	}
 };
 
-int main() {
-	Solution_713 s;
-	vector<int>nums = { 10, 5, 2, 6 };
-	s.numSubarrayProductLessThanK(nums, 10);
-}
+//int main() {
+//	Solution_713 s;
+//	vector<int>nums = { 10, 5, 2, 6 };
+//	s.numSubarrayProductLessThanK(nums, 10);
+//}
