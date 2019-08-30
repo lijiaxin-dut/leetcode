@@ -72,7 +72,7 @@ public:
 	}
 };
 
-int main() {
-	Solution_838 s;
-	s.pushDominoes(".L.R...LR..L..");
-}
+//int main() {
+//	Solution_838 s;
+//	s.pushDominoes(".L.R...LR..L..");
+//}
