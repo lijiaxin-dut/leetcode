@@ -51,8 +51,8 @@ public:
 };
 
 
-int main() {
-	Solution_930 s;
-	vector<int>A{ 1,0,1,0,1 };
-	s.numSubarraysWithSum(A, 2);
-}
+//int main() {
+//	Solution_930 s;
+//	vector<int>A{ 1,0,1,0,1 };
+//	s.numSubarraysWithSum(A, 2);
+//}

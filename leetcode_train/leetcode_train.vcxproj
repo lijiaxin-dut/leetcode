@@ -146,6 +146,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Solution_1004.cpp" />
     <ClCompile Include="Solution_11.cpp" />
     <ClCompile Include="Solution_125.cpp" />
     <ClCompile Include="Solution_141.cpp" />
@@ -187,6 +188,7 @@
     <ClCompile Include="Solution_925.cpp" />
     <ClCompile Include="Solution_930.cpp" />
     <ClCompile Include="Solution_977.cpp" />
+    <ClCompile Include="Solution_986.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h" />
