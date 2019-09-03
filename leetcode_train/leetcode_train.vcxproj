@@ -147,7 +147,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Solution_1004.cpp" />
+    <ClCompile Include="Solution_1052.cpp" />
+    <ClCompile Include="Solution_1093.cpp" />
     <ClCompile Include="Solution_11.cpp" />
+    <ClCompile Include="Solution_1176.cpp" />
     <ClCompile Include="Solution_125.cpp" />
     <ClCompile Include="Solution_141.cpp" />
     <ClCompile Include="Solution_142.cpp" />
@@ -163,6 +166,8 @@
     <ClCompile Include="Solution_283.cpp" />
     <ClCompile Include="Solution_287.cpp" />
     <ClCompile Include="Solution_3.cpp" />
+    <ClCompile Include="Solution_31.cpp" />
+    <ClCompile Include="Solution_33.cpp" />
     <ClCompile Include="Solution_344.cpp" />
     <ClCompile Include="Solution_345.cpp" />
     <ClCompile Include="Solution_349.cpp" />
@@ -188,7 +193,9 @@
     <ClCompile Include="Solution_925.cpp" />
     <ClCompile Include="Solution_930.cpp" />
     <ClCompile Include="Solution_977.cpp" />
+    <ClCompile Include="Solution_978.cpp" />
     <ClCompile Include="Solution_986.cpp" />
+    <ClCompile Include="Solution_1.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h" />

@@ -22,7 +22,7 @@ public:
 		int first_pointer = 0, second_pointer = 0, max_length_without_repeating = 0;
 		vector<int>mark(128, 0);
 		//滑动窗口，两个指针向右滑动，使用mark标记哪些字符重复出现过
-		while (first_pointer<s_size&&second_pointer<s_size) {
+		while (first_pointer<s_size) {
 			//如果未出现过，更新结果
 			if (mark[s[second_pointer]] == 0) {
 				mark[s[second_pointer]] = 1;
