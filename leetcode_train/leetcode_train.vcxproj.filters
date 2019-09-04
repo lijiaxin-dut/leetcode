@@ -129,18 +129,6 @@
     <ClCompile Include="Solution_344.cpp">
       <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
-    <ClCompile Include="Solution_1093.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_1176.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_1052.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_978.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Solution_930.cpp">
       <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
@@ -160,12 +148,48 @@
       <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
     <ClCompile Include="Solution_1.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
-    <ClCompile Include="Solution_31.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Solution_978.cpp">
+      <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
     <ClCompile Include="Solution_33.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_31.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1052.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1093.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1176.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_34.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_35.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_39.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_40.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_48.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_53.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_54.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_55.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
