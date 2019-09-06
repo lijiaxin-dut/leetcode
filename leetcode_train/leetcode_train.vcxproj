@@ -176,6 +176,7 @@
     <ClCompile Include="Solution_350.cpp" />
     <ClCompile Include="Solution_39.cpp" />
     <ClCompile Include="Solution_40.cpp" />
+    <ClCompile Include="Solution_422.cpp" />
     <ClCompile Include="Solution_424.cpp" />
     <ClCompile Include="Solution_457.cpp" />
     <ClCompile Include="Solution_48.cpp" />
@@ -184,9 +185,17 @@
     <ClCompile Include="Solution_532.cpp" />
     <ClCompile Include="Solution_54.cpp" />
     <ClCompile Include="Solution_55.cpp" />
+    <ClCompile Include="Solution_56.cpp" />
     <ClCompile Include="Solution_567.cpp" />
+    <ClCompile Include="Solution_59.cpp" />
     <ClCompile Include="Solution_61.cpp" />
+    <ClCompile Include="Solution_62.cpp" />
+    <ClCompile Include="Solution_63.cpp" />
+    <ClCompile Include="Solution_64.cpp" />
+    <ClCompile Include="Solution_66.cpp" />
     <ClCompile Include="Solution_713.cpp" />
+    <ClCompile Include="Solution_73.cpp" />
+    <ClCompile Include="Solution_74.cpp" />
     <ClCompile Include="Solution_75.cpp" />
     <ClCompile Include="Solution_763.cpp" />
     <ClCompile Include="Solution_80.cpp" />

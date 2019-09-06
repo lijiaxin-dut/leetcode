@@ -44,8 +44,8 @@ public:
 
 
 };
-int main() {
-	vector<int>matrix{ 2,0 };
-	Solution_55 s;
-	s.canJump(matrix);
-}
+//int main() {
+//	vector<int>matrix{ 2,0 };
+//	Solution_55 s;
+//	s.canJump(matrix);
+//}
