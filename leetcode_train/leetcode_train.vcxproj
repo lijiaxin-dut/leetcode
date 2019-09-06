@@ -198,6 +198,8 @@
     <ClCompile Include="Solution_74.cpp" />
     <ClCompile Include="Solution_75.cpp" />
     <ClCompile Include="Solution_763.cpp" />
+    <ClCompile Include="Solution_78.cpp" />
+    <ClCompile Include="Solution_79.cpp" />
     <ClCompile Include="Solution_80.cpp" />
     <ClCompile Include="Solution_838.cpp" />
     <ClCompile Include="Solution_844.cpp" />

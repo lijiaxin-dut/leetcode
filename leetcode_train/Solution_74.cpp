@@ -73,12 +73,12 @@ public:
 
 	}
 };
-int main(){
-	Solution_74 s;
-	vector<vector<int>> matrix = {
-		{1, 3, 5, 7},
-		{ 10, 11, 16, 20 },
-		{ 23, 30, 34, 50 }
-	};
-	s.searchMatrix(matrix,16);
-}
+//int main(){
+//	Solution_74 s;
+//	vector<vector<int>> matrix = {
+//		{1, 3, 5, 7},
+//		{ 10, 11, 16, 20 },
+//		{ 23, 30, 34, 50 }
+//	};
+//	s.searchMatrix(matrix,16);
+//}
