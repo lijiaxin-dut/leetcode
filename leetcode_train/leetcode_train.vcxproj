@@ -208,6 +208,7 @@
     <ClCompile Include="Solution_88.cpp" />
     <ClCompile Include="Solution_234.cpp" />
     <ClCompile Include="Solution_881.cpp" />
+    <ClCompile Include="Solution_90.cpp" />
     <ClCompile Include="Solution_923.cpp" />
     <ClCompile Include="Solution_925.cpp" />
     <ClCompile Include="Solution_930.cpp" />
