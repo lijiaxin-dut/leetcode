@@ -219,18 +219,39 @@
     <ClCompile Include="Solution_74.cpp">
       <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
-    <ClCompile Include="Solution_78.cpp">
+    <ClCompile Include="Solution_105.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_78.cpp">
+      <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
     <ClCompile Include="Solution_79.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
     <ClCompile Include="Solution_90.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_106.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_118.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_119.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_152.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_153.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="TreeNode.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

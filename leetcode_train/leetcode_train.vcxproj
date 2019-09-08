@@ -147,14 +147,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Solution_1004.cpp" />
+    <ClCompile Include="Solution_105.cpp" />
     <ClCompile Include="Solution_1052.cpp" />
+    <ClCompile Include="Solution_106.cpp" />
     <ClCompile Include="Solution_1093.cpp" />
     <ClCompile Include="Solution_11.cpp" />
     <ClCompile Include="Solution_1176.cpp" />
+    <ClCompile Include="Solution_118.cpp" />
+    <ClCompile Include="Solution_119.cpp" />
     <ClCompile Include="Solution_125.cpp" />
     <ClCompile Include="Solution_141.cpp" />
     <ClCompile Include="Solution_142.cpp" />
     <ClCompile Include="Solution_15.cpp" />
+    <ClCompile Include="Solution_152.cpp" />
+    <ClCompile Include="Solution_153.cpp" />
     <ClCompile Include="Solution_16.cpp" />
     <ClCompile Include="Solution_167.cpp" />
     <ClCompile Include="Solution_18.cpp" />
@@ -219,6 +225,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h" />
+    <ClInclude Include="TreeNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
