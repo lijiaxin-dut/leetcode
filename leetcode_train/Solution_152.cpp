@@ -90,8 +90,8 @@ public:
 	}
 };
 
-int main() {
-	Solution_152 s;
-	vector<int>nums{ 2,3,-2,4 };
-	s.maxProduct(nums);
-}
+//int main() {
+//	Solution_152 s;
+//	vector<int>nums{ 2,3,-2,4 };
+//	s.maxProduct(nums);
+//}

@@ -162,10 +162,16 @@
     <ClCompile Include="Solution_152.cpp" />
     <ClCompile Include="Solution_153.cpp" />
     <ClCompile Include="Solution_16.cpp" />
+    <ClCompile Include="Solution_164.cpp" />
     <ClCompile Include="Solution_167.cpp" />
+    <ClCompile Include="Solution_169.cpp" />
     <ClCompile Include="Solution_18.cpp" />
+    <ClCompile Include="Solution_189.cpp" />
     <ClCompile Include="Solution_19.cpp" />
     <ClCompile Include="Solution_209.cpp" />
+    <ClCompile Include="Solution_216.cpp" />
+    <ClCompile Include="Solution_217.cpp" />
+    <ClCompile Include="Solution_219.cpp" />
     <ClCompile Include="Solution_26.cpp" />
     <ClCompile Include="Solution_27.cpp" />
     <ClCompile Include="Solution_28.cpp" />
