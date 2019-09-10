@@ -37,7 +37,7 @@ public:
 	//将后半段逆序
 	//将整个数组逆序
 	//就得到了结果
-	void rotate_1(vector<int>& nums, int k) {
+	void rotate_2(vector<int>& nums, int k) {
 		int n = nums.size();
 		k = k%n;
 		reverse(nums.begin(), nums.begin() + n - k);
