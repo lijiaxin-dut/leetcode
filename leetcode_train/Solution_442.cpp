@@ -26,7 +26,7 @@ using namespace std;
 //如果下次遇到j，nums[nums[j]-1]的已经为负数，说明之前遇见过这个数，保存即可
 
 
-class Solution_422 {
+class Solution_442 {
 public:
 	vector<int> findDuplicates(vector<int>& nums) {
 		int n = nums.size();

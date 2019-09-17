@@ -18,7 +18,7 @@ using namespace std;
 //找到第一个降序的位置即可，因为num[-1]=-∞
 //若找不到，返回最后一个索引
 
-class Solution_164 {
+class Solution_162 {
 public:
 	int findPeakElement(vector<int>& nums) {
 
