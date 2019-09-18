@@ -210,9 +210,13 @@
     <ClCompile Include="Solution_56.cpp" />
     <ClCompile Include="Solution_560.cpp" />
     <ClCompile Include="Solution_565.cpp" />
+    <ClCompile Include="Solution_566.cpp" />
     <ClCompile Include="Solution_567.cpp" />
+    <ClCompile Include="Solution_581.cpp" />
     <ClCompile Include="Solution_59.cpp" />
+    <ClCompile Include="Solution_605.cpp" />
     <ClCompile Include="Solution_61.cpp" />
+    <ClCompile Include="Solution_611.cpp" />
     <ClCompile Include="Solution_62.cpp" />
     <ClCompile Include="Solution_63.cpp" />
     <ClCompile Include="Solution_64.cpp" />
