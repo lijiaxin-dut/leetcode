@@ -101,12 +101,13 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -136,16 +137,23 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <SDLCheck>true</SDLCheck>
+      <SDLCheck>false</SDLCheck>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>_CRT_SECURE_NO_WARNINGS;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Solution_120.cpp" />
+    <ClCompile Include="Solution_121.cpp" />
+    <ClCompile Include="Solution_139.cpp" />
+    <ClCompile Include="Solution_95.cpp" />
+    <ClCompile Include="Solution_96.cpp" />
+    <ClCompile Include="Solution_5.cpp" />
     <ClCompile Include="Solution_561.cpp" />
     <ClCompile Include="Solution_1004.cpp" />
     <ClCompile Include="Solution_105.cpp" />
@@ -218,9 +226,14 @@
     <ClCompile Include="Solution_61.cpp" />
     <ClCompile Include="Solution_611.cpp" />
     <ClCompile Include="Solution_62.cpp" />
+    <ClCompile Include="Solution_621.cpp" />
+    <ClCompile Include="Solution_628.cpp" />
     <ClCompile Include="Solution_63.cpp" />
     <ClCompile Include="Solution_64.cpp" />
+    <ClCompile Include="Solution_643.cpp" />
     <ClCompile Include="Solution_66.cpp" />
+    <ClCompile Include="Solution_661.cpp" />
+    <ClCompile Include="Solution_70.cpp" />
     <ClCompile Include="Solution_713.cpp" />
     <ClCompile Include="Solution_73.cpp" />
     <ClCompile Include="Solution_74.cpp" />
@@ -237,6 +250,7 @@
     <ClCompile Include="Solution_234.cpp" />
     <ClCompile Include="Solution_881.cpp" />
     <ClCompile Include="Solution_90.cpp" />
+    <ClCompile Include="Solution_91.cpp" />
     <ClCompile Include="Solution_923.cpp" />
     <ClCompile Include="Solution_925.cpp" />
     <ClCompile Include="Solution_930.cpp" />
