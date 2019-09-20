@@ -58,9 +58,9 @@ public:
 		}
 	}
 };
-int main() {
-	Solution_139 s;
-	string ss("leetcode");
-	vector<string>v_string{ "leet","code" };
-	s.wordBreak(ss, v_string);
-}
+//int main() {
+//	Solution_139 s;
+//	string ss("leetcode");
+//	vector<string>v_string{ "leet","code" };
+//	s.wordBreak(ss, v_string);
+//}
