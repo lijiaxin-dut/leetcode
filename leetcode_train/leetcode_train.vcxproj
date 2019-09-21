@@ -144,13 +144,22 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalDependencies>_CRT_SECURE_NO_WARNINGS;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Solution_120.cpp" />
     <ClCompile Include="Solution_121.cpp" />
     <ClCompile Include="Solution_139.cpp" />
+    <ClCompile Include="Solution_198.cpp" />
+    <ClCompile Include="Solution_2.cpp" />
+    <ClCompile Include="Solution_213.cpp" />
+    <ClCompile Include="Solution_221.cpp" />
+    <ClCompile Include="Solution_264.cpp" />
+    <ClCompile Include="Solution_6.cpp" />
+    <ClCompile Include="Solution_7.cpp" />
+    <ClCompile Include="Solution_8.cpp" />
+    <ClCompile Include="Solution_9.cpp" />
     <ClCompile Include="Solution_95.cpp" />
     <ClCompile Include="Solution_96.cpp" />
     <ClCompile Include="Solution_5.cpp" />
