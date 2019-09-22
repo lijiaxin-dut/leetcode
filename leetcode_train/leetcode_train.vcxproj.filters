@@ -378,6 +378,39 @@
     <ClCompile Include="Solution_264.cpp">
       <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
+    <ClCompile Include="Solution_47.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_14.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_17.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_20.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_21.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_22.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_24.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_38.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_36.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_43.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_46.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h">
