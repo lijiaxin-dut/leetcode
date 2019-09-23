@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_120.cpp" />
     <ClCompile Include="Solution_121.cpp" />
     <ClCompile Include="Solution_139.cpp" />
@@ -165,12 +166,24 @@
     <ClCompile Include="Solution_36.cpp" />
     <ClCompile Include="Solution_38.cpp" />
     <ClCompile Include="Solution_43.cpp" />
+    <ClCompile Include="Solution_49.cpp" />
     <ClCompile Include="Solution_46.cpp" />
     <ClCompile Include="Solution_47.cpp" />
+    <ClCompile Include="Solution_50.cpp" />
+    <ClCompile Include="Solution_58.cpp" />
     <ClCompile Include="Solution_6.cpp" />
+    <ClCompile Include="Solution_60.cpp" />
+    <ClCompile Include="Solution_67.cpp" />
+    <ClCompile Include="Solution_69.cpp" />
     <ClCompile Include="Solution_7.cpp" />
+    <ClCompile Include="Solution_71.cpp" />
+    <ClCompile Include="Solution_77.cpp" />
     <ClCompile Include="Solution_8.cpp" />
+    <ClCompile Include="Solution_82.cpp" />
+    <ClCompile Include="Solution_83.cpp" />
     <ClCompile Include="Solution_9.cpp" />
+    <ClCompile Include="Solution_92.cpp" />
+    <ClCompile Include="Solution_94.cpp" />
     <ClCompile Include="Solution_95.cpp" />
     <ClCompile Include="Solution_96.cpp" />
     <ClCompile Include="Solution_5.cpp" />
@@ -276,6 +289,7 @@
     <ClCompile Include="Solution_930.cpp" />
     <ClCompile Include="Solution_977.cpp" />
     <ClCompile Include="Solution_978.cpp" />
+    <ClCompile Include="Solution_98.cpp" />
     <ClCompile Include="Solution_986.cpp" />
     <ClCompile Include="Solution_1.cpp" />
     <ClCompile Include="Solution_665.cpp" />

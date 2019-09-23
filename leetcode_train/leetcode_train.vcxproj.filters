@@ -378,9 +378,6 @@
     <ClCompile Include="Solution_264.cpp">
       <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
-    <ClCompile Include="Solution_47.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Solution_14.cpp">
       <Filter>源文件\NewFilter1</Filter>
     </ClCompile>
@@ -410,6 +407,51 @@
     </ClCompile>
     <ClCompile Include="Solution_46.cpp">
       <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_49.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_47.cpp">
+      <Filter>源文件\NewFilter1</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_50.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_58.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_60.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_67.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_69.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_71.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_77.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_98.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_100.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_83.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_82.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_92.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_94.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

@@ -58,7 +58,7 @@ public:
 	}
 };
 
-int main() {
-	Solution_43 s;
-	cout<<s.multiply("123", "456");
-}
+//int main() {
+//	Solution_43 s;
+//	cout<<s.multiply("123", "456");
+//}
