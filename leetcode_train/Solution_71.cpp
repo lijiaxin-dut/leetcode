@@ -77,7 +77,7 @@ public:
 	}
 };
 
-int main() {
-	Solution_71 s;
-	s.simplifyPath("/a/./b/../../c/");
-}
+//int main() {
+//	Solution_71 s;
+//	s.simplifyPath("/a/./b/../../c/");
+//}
