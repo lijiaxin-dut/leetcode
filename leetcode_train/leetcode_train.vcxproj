@@ -160,6 +160,8 @@
     <ClCompile Include="Solution_111.cpp" />
     <ClCompile Include="Solution_112.cpp" />
     <ClCompile Include="Solution_114.cpp" />
+    <ClCompile Include="Solution_116.cpp" />
+    <ClCompile Include="Solution_117.cpp" />
     <ClCompile Include="Solution_120.cpp" />
     <ClCompile Include="Solution_121.cpp" />
     <ClCompile Include="Solution_139.cpp" />
@@ -308,6 +310,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h" />
+    <ClInclude Include="Node.h" />
     <ClInclude Include="TreeNode.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
