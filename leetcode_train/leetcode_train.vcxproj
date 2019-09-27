@@ -150,6 +150,16 @@
   <ItemGroup>
     <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_101.cpp" />
+    <ClCompile Include="Solution_102.cpp" />
+    <ClCompile Include="Solution_103.cpp" />
+    <ClCompile Include="Solution_104.cpp" />
+    <ClCompile Include="Solution_107.cpp" />
+    <ClCompile Include="Solution_108.cpp" />
+    <ClCompile Include="Solution_109.cpp" />
+    <ClCompile Include="Solution_110.cpp" />
+    <ClCompile Include="Solution_111.cpp" />
+    <ClCompile Include="Solution_112.cpp" />
+    <ClCompile Include="Solution_114.cpp" />
     <ClCompile Include="Solution_120.cpp" />
     <ClCompile Include="Solution_121.cpp" />
     <ClCompile Include="Solution_139.cpp" />
@@ -294,6 +304,7 @@
     <ClCompile Include="Solution_986.cpp" />
     <ClCompile Include="Solution_1.cpp" />
     <ClCompile Include="Solution_665.cpp" />
+    <ClCompile Include="Solution_113.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h" />
