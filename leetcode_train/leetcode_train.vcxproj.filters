@@ -13,486 +13,510 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="源文件\NewFilter1">
+    <Filter Include="源文件\leetcode">
       <UniqueIdentifier>{2cef2709-2fff-4a31-b9ab-fe540ad3bb9e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\algorithm_4_th">
+      <UniqueIdentifier>{209b917e-beb7-49cc-970a-75dccb8e878d}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Solution_3.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_11.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_16.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_28.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_283.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_15.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_18.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_19.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_26.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_61.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_27.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_75.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_86.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_80.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_88.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_125.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_142.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_141.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_167.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_209.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_234.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_287.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_345.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_424.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_532.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_838.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_977.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_925.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_844.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_763.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_713.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_567.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_524.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_457.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_350.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_349.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_344.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_930.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_845.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_881.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_923.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_986.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_1004.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_1.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_978.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_33.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_31.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_1052.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_1093.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_1176.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_34.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_35.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_48.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_53.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_40.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_54.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_39.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_55.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_56.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_62.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_64.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_66.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_73.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_59.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_63.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_74.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_78.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_79.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_90.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_105.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_106.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_118.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_152.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_119.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_153.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_169.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_189.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_216.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_217.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_219.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_228.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_414.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_289.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_448.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_380.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_268.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_485.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_238.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_495.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_162.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_442.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_560.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_665.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_561.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_565.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_581.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_566.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_605.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_611.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_661.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_643.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_628.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_621.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_5.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_70.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_91.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_95.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_96.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_120.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_121.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_139.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_2.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_6.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_9.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_8.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_213.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_221.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_7.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_198.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_264.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_14.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_17.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_20.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_21.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_22.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_24.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_38.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_36.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_43.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_46.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_47.cpp">
-      <Filter>源文件\NewFilter1</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_101.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_49.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_67.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_77.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_82.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_71.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_50.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_58.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_60.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_69.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_83.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_92.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_94.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_98.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_100.cpp">
-      <Filter>源文件\NewFilter1</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
-    <ClCompile Include="Solution_102.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_103.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_104.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_107.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_108.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_109.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_110.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_111.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_112.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_113.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_114.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_116.cpp">
+    <ClCompile Include="Solution_127.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Solution_117.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_101.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_102.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_103.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_107.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_104.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_108.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_109.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_110.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_111.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_112.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_113.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_114.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_116.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="evaluate.cpp">
+      <Filter>源文件\algorithm_4_th</Filter>
+    </ClCompile>
+    <ClCompile Include="union_find.cpp">
+      <Filter>源文件\algorithm_4_th</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_130.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_200.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_129.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_131.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
