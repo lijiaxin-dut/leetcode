@@ -169,6 +169,9 @@
     <ClCompile Include="Solution_129.cpp" />
     <ClCompile Include="Solution_130.cpp" />
     <ClCompile Include="Solution_131.cpp" />
+    <ClCompile Include="Solution_133.cpp" />
+    <ClCompile Include="Solution_134.cpp" />
+    <ClCompile Include="Solution_136.cpp" />
     <ClCompile Include="Solution_139.cpp" />
     <ClCompile Include="Solution_14.cpp" />
     <ClCompile Include="Solution_17.cpp" />
