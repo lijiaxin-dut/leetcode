@@ -149,6 +149,8 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="evaluate.cpp" />
+    <ClCompile Include="MaxPQ.cpp" />
+    <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_101.cpp" />
     <ClCompile Include="Solution_102.cpp" />
@@ -319,6 +321,7 @@
     <ClCompile Include="union_find.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="IndexMinPQ.h" />
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="TreeNode.h" />

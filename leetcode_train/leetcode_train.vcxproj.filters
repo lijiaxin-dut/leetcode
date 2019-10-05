@@ -528,6 +528,12 @@
     <ClCompile Include="Solution_136.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="MaxPQ.cpp">
+      <Filter>源文件\algorithm_4_th</Filter>
+    </ClCompile>
+    <ClCompile Include="Sort.cpp">
+      <Filter>源文件\algorithm_4_th</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h">
@@ -538,6 +544,9 @@
     </ClInclude>
     <ClInclude Include="Node.h">
       <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="IndexMinPQ.h">
+      <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
