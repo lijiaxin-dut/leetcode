@@ -154,12 +154,12 @@ void bubble_sort(vector<int>nums){
 	cout << endl;
 }
 
-int main() {
-	vector<int>nums{ 1,2,6,9,8,4,5,3,3,2,1,4,5,9,5};
-	select_sort(nums);
-	insert_sort(nums);
-	shell_sort(nums);	
-	merge_sort(nums);
-	quick_sort(nums);
-	bubble_sort(nums);
-}
+//int main() {
+//	vector<int>nums{ 1,2,6,9,8,4,5,3,3,2,1,4,5,9,5};
+//	select_sort(nums);
+//	insert_sort(nums);
+//	shell_sort(nums);	
+//	merge_sort(nums);
+//	quick_sort(nums);
+//	bubble_sort(nums);
+//}

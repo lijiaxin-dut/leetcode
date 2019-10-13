@@ -150,6 +150,11 @@
   <ItemGroup>
     <ClCompile Include="evaluate.cpp" />
     <ClCompile Include="MaxPQ.cpp" />
+    <ClCompile Include="Solution_138.cpp" />
+    <ClCompile Include="Solution_143.cpp" />
+    <ClCompile Include="Solution_144.cpp" />
+    <ClCompile Include="Solution_145.cpp" />
+    <ClCompile Include="Solution_146.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_101.cpp" />
