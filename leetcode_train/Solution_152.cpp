@@ -30,7 +30,7 @@ using namespace std;
 //用两个dp数组，其中
 //max_sub[i]表示子数组[0, i]范围内并且一定包含nums[i]数字的最大子数组乘积，
 //min_sub[i]表示子数组[0, i]范围内并且一定包含nums[i]数字的最小子数组乘积，
-//初始化时max_sub[i][0]和min_sub[0]都初始化为nums[0]，其余都初始化为0。
+//初始化时max_sub[0]和min_sub[0]都初始化为nums[0]，其余都初始化为0。
 //那么从数组的第二个数字开始遍历，那么此时的最大值和最小值只会在这三个数字之间产生，
 //即max_sub[i - 1] * nums[i]，min_sub[i - 1] * nums[i]，和nums[i]
 //使用rs保存遇到过的最大值

@@ -504,9 +504,6 @@
     <ClCompile Include="union_find.cpp">
       <Filter>源文件\algorithm_4_th</Filter>
     </ClCompile>
-    <ClCompile Include="Solution_136.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="MaxPQ.cpp">
       <Filter>源文件\algorithm_4_th</Filter>
     </ClCompile>
@@ -534,20 +531,53 @@
     <ClCompile Include="Solution_200.cpp">
       <Filter>源文件\leetcode</Filter>
     </ClCompile>
-    <ClCompile Include="Solution_138.cpp">
+    <ClCompile Include="Solution_171.cpp">
       <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_168.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_122.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_136.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_138.cpp">
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_143.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_144.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_145.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_146.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_147.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_148.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_150.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_151.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_155.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_160.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_165.cpp">
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
