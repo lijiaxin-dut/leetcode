@@ -44,14 +44,14 @@ public:
 	}
 };
 
-int main() {
-	Solution_147 s;
-	ListNode *n1 = new ListNode(-1);
-	ListNode *n2 = new ListNode(5);
-	n1->next = n2;
-	ListNode *n3 = new ListNode(3);
-	n2->next = n3;
-	ListNode *n4 = new ListNode(4);
-	n3->next = n4;
-	s.insertionSortList(n1);
-}
+//int main() {
+//	Solution_147 s;
+//	ListNode *n1 = new ListNode(-1);
+//	ListNode *n2 = new ListNode(5);
+//	n1->next = n2;
+//	ListNode *n3 = new ListNode(3);
+//	n2->next = n3;
+//	ListNode *n4 = new ListNode(4);
+//	n3->next = n4;
+//	s.insertionSortList(n1);
+//}

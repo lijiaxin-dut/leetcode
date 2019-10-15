@@ -148,6 +148,8 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="binarySearchTree.cpp" />
+    <ClCompile Include="directedCycle.cpp" />
     <ClCompile Include="evaluate.cpp" />
     <ClCompile Include="MaxPQ.cpp" />
     <ClCompile Include="Solution_122.cpp" />
@@ -333,9 +335,13 @@
     <ClCompile Include="Solution_1.cpp" />
     <ClCompile Include="Solution_665.cpp" />
     <ClCompile Include="Solution_113.cpp" />
+    <ClCompile Include="SPFA.cpp" />
+    <ClCompile Include="strongConnected.cpp" />
+    <ClCompile Include="topoloGical.cpp" />
     <ClCompile Include="union_find.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Graph.h" />
     <ClInclude Include="IndexMinPQ.h" />
     <ClInclude Include="ListNode.h" />
     <ClInclude Include="Node.h" />
