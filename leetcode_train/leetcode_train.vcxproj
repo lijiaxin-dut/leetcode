@@ -167,6 +167,16 @@
     <ClCompile Include="Solution_165.cpp" />
     <ClCompile Include="Solution_168.cpp" />
     <ClCompile Include="Solution_171.cpp" />
+    <ClCompile Include="Solution_172.cpp" />
+    <ClCompile Include="Solution_173.cpp" />
+    <ClCompile Include="Solution_179.cpp" />
+    <ClCompile Include="Solution_187.cpp" />
+    <ClCompile Include="Solution_190.cpp" />
+    <ClCompile Include="Solution_191.cpp" />
+    <ClCompile Include="Solution_199.cpp" />
+    <ClCompile Include="Solution_201.cpp" />
+    <ClCompile Include="Solution_202.cpp" />
+    <ClCompile Include="Solution_203.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_101.cpp" />
