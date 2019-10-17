@@ -20,7 +20,7 @@ using namespace std;
 //
 //Output : 4
 
-//dp[i][j]表示以(i,j)为左下角的最长矩形的边长
+//dp[i][j]表示以(i,j)为右下角的最长矩形的边长
 //dp[i][j]=min(dp[i-1][j-1],dp[i-1][j],dp[i][j-1])+1
 
 

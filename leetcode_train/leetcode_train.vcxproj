@@ -184,6 +184,7 @@
     <ClCompile Include="Solution_208.cpp" />
     <ClCompile Include="Solution_210.cpp" />
     <ClCompile Include="Solution_211.cpp" />
+    <ClCompile Include="Solution_215.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_101.cpp" />

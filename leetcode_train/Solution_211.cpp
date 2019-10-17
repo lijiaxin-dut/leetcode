@@ -99,7 +99,7 @@ public:
 * bool param_2 = obj->search(word);
 */
 
-int main() {
-	WordDictionary d;
-	cout<<d.search("a");
-}
+//int main() {
+//	WordDictionary d;
+//	cout<<d.search("a");
+//}
