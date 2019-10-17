@@ -35,7 +35,7 @@ using namespace std;
 //乘上当前的位置*26
 
 
-class Solution {
+class Solution_171 {
 public:
 	int titleToNumber(string s) {
 

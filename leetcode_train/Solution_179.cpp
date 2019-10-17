@@ -30,7 +30,7 @@ using namespace std;
 
 
 
-class Solution {
+class Solution_179 {
 public:
 	string largestNumber(vector<int>& nums) {
 		vector<string>nums_s;

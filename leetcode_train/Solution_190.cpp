@@ -25,7 +25,7 @@
 
 //n不断右移，一共32位，移动32次即可
 	
-class Solution {
+class Solution_190 {
 public:
 	uint32_t reverseBits(uint32_t n) {
 		uint32_t rs = 0;

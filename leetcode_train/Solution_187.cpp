@@ -16,7 +16,7 @@ using namespace std;
 //遍历所有的字串放入到hash_map中，找到出现多次的即可
 
 
-class Solution {
+class Solution_187 {
 public:
 	vector<string> findRepeatedDnaSequences(string s) {
 		unordered_map<string, int>hash_map;
