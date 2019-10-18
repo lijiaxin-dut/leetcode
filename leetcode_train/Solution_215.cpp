@@ -19,7 +19,7 @@ using namespace std;
 
 
 
-class Solution {
+class Solution_215 {
 public:
 	int findKthLargest(vector<int>& nums, int k) {
 		int left = 0;

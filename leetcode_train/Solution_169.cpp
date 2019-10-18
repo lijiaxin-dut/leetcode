@@ -15,18 +15,25 @@ using namespace std;
 
 //使用map统计每个元素出现的次数
 
+
+//投票法
+//不断的消去不等的数字
+
 class Solution_169 {
 public:
 	int majorityElement(vector<int>& nums) {
-		unordered_map<int, int>count;
-		int half = nums.size() / 2;
-		for (auto &one_number : nums) {
-			count[one_number]++;
-			if (count[one_number]>half)
-				return one_number;
+		int val = 0;
+		int count = 0;
+		for (auto &i : nums) {
+			if (i == val)
+				count++;
+			else if (count == 0) {
+				count = 1;
+				val = i;
+			}
+			else
+				count--;
 		}
-		return 0;
-
-
+		return val;
 	}
 };
