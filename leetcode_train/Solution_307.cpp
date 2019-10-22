@@ -87,8 +87,8 @@ public:
 * int param_2 = obj->sumRange(i,j);
 */
 
-int main() {
-	vector<int>c{ 1,3,5 };
-	NumArray na(c);
-	na.sumRange(1, 2);
-}
+//int main() {
+//	vector<int>c{ 1,3,5 };
+//	NumArray na(c);
+//	na.sumRange(1, 2);
+//}
