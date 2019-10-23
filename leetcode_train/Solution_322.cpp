@@ -40,7 +40,7 @@ public:
 	}
 };
 
-int main() {
-	Solution_322 s;
-	s.coinChange(vector<int>{ 1,2,5 }, 11);
-}
+//int main() {
+//	Solution_322 s;
+//	s.coinChange(vector<int>{ 1,2,5 }, 11);
+//}

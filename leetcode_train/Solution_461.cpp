@@ -5,7 +5,7 @@
 //两个数进行异或，然后计算该数字二进制数中1的个数
 
 
-class Solution {
+class Solution_461 {
 public:
 	int hammingDistance(int x, int y) {
 		int temp = x^y;
