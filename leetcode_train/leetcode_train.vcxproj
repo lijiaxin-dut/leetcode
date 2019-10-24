@@ -234,6 +234,10 @@
     <ClCompile Include="Solution_355.cpp" />
     <ClCompile Include="Solution_357.cpp" />
     <ClCompile Include="Solution_367.cpp" />
+    <ClCompile Include="Solution_371.cpp" />
+    <ClCompile Include="Solution_373.cpp" />
+    <ClCompile Include="Solution_374.cpp" />
+    <ClCompile Include="Solution_72.cpp" />
     <ClCompile Include="Solution_836.cpp" />
     <ClCompile Include="Solution_257.cpp" />
     <ClCompile Include="Solution_842.cpp" />
