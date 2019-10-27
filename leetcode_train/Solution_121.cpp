@@ -29,6 +29,10 @@ using namespace std;
 //rhs[i]记录从[i,n-1]的最大值
 //最后找一个最大的差值
 
+
+//使用一个变量到当前为止的最小值
+//不断的更新最小值，然后不停的更新差值
+
 class Solution_121 {
 public:
 	int maxProfit(vector<int>& prices) {
@@ -50,6 +54,16 @@ public:
 			rs = max(rs, max_rhs[i] - min_lhs[i]);
 		}
 		return rs;
+	}
+
+	int maxProfit_(vector<int>& prices) {
+		int max_profit = 0;
+		int current_min = INT_MAX;
+		for (int i = 0; i<prices.size(); i++) {
+			current_min = min(current_min, prices[i]);
+			max_profit = max(max_profit, prices[i] - current_min);
+		}
+		return max_profit;
 	}
 };
 
