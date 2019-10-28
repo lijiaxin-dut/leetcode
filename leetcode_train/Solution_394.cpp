@@ -78,7 +78,7 @@ public:
 	}
 };
 
-int main() {
-	Solution_394 s;
-	s.decodeString("3[a]2[bc]");
-}
+//int main() {
+//	Solution_394 s;
+//	s.decodeString("3[a]2[bc]");
+//}
