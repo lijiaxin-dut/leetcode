@@ -35,7 +35,7 @@ using namespace std;
 class Solution_454 {
 public:
 
-	int fourSumCount(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D) {
+	int fourSumCount_hash(vector<int>& A, vector<int>& B, vector<int>& C, vector<int>& D) {
 		unordered_map<int, int>hash_map_A_B;
 		int N = A.size();
 		for (int i = 0; i<N; i++) {

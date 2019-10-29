@@ -825,9 +825,6 @@
     <ClCompile Include="Solution_72.cpp">
       <Filter>源文件\leetcode</Filter>
     </ClCompile>
-    <ClCompile Include="Solution_494.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="Solution_394.cpp">
       <Filter>源文件\leetcode</Filter>
     </ClCompile>
@@ -861,22 +858,46 @@
     <ClCompile Include="Solution_739.cpp">
       <Filter>源文件\leetcode</Filter>
     </ClCompile>
-    <ClCompile Include="Solution_406.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_416.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_438.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
-    <ClCompile Include="Solution_412.cpp">
-      <Filter>源文件</Filter>
+    <ClCompile Include="Solution_494.cpp">
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_387.cpp">
-      <Filter>源文件</Filter>
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_406.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_412.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_416.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_438.cpp">
+      <Filter>源文件\leetcode</Filter>
     </ClCompile>
     <ClCompile Include="Solution_454.cpp">
+      <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_395.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_224.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_227.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_81.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_327.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_386.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_389.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

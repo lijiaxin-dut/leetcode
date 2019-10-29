@@ -20,7 +20,7 @@ using namespace std;
 //	Output : 2
 //	Explanation : It could be decoded as "AB" (1 2) or "L" (12).
 
-//dfs穷绝所有组合
+//dfs穷举所有组合
 
 //dp[i]为0到i的所有组合
 //单独处理dp[0]和dp[1]
