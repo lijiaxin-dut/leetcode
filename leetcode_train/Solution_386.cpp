@@ -47,7 +47,6 @@ public:
 				dfs(rs, n, current_val * 10 + i);
 			}
 		}
-		string t = "dir/subdir2/subsubdir2/file2.ext";
 	}
 	
 
