@@ -90,7 +90,3 @@ public:
 	}
 };
 
-int main() {
-	Solution_401 s;
-	s.readBinaryWatch(1);
-}

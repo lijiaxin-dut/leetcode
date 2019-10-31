@@ -35,6 +35,7 @@ public:
 			}
 			s.push_back(num[i]);
 		}
+		//一直在入栈，没有出栈，将后面的数字删除掉
 		while (k-- != 0)
 			s.pop_back();
 		while (!s.empty() && s[0] == '0')

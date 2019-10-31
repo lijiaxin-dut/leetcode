@@ -152,6 +152,7 @@
     <ClCompile Include="directedCycle.cpp" />
     <ClCompile Include="evaluate.cpp" />
     <ClCompile Include="MaxPQ.cpp" />
+    <ClCompile Include="Solution_413.cpp" />
     <ClCompile Include="Solution_224.cpp" />
     <ClCompile Include="Solution_227.cpp" />
     <ClCompile Include="Solution_327.cpp" />
@@ -165,10 +166,14 @@
     <ClCompile Include="Solution_398.cpp" />
     <ClCompile Include="Solution_399.cpp" />
     <ClCompile Include="Solution_401.cpp" />
+    <ClCompile Include="Solution_404.cpp" />
+    <ClCompile Include="Solution_409.cpp" />
     <ClCompile Include="Solution_412.cpp" />
     <ClCompile Include="Solution_416.cpp" />
+    <ClCompile Include="Solution_417.cpp" />
     <ClCompile Include="Solution_438.cpp" />
     <ClCompile Include="Solution_454.cpp" />
+    <ClCompile Include="Solution_491.cpp" />
     <ClCompile Include="Solution_494.cpp" />
     <ClCompile Include="Solution_647.cpp" />
     <ClCompile Include="Solution_204.cpp" />
@@ -277,6 +282,8 @@
     <ClCompile Include="Solution_389.cpp" />
     <ClCompile Include="Solution_393.cpp" />
     <ClCompile Include="Solution_402.cpp" />
+    <ClCompile Include="Solution_405.cpp" />
+    <ClCompile Include="Solution_415.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_101.cpp" />
