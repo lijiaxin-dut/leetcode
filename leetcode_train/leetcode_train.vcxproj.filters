@@ -966,6 +966,15 @@
     <ClCompile Include="Solution_576.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Solution_638.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_690.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_695.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h">
