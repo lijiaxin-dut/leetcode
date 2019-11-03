@@ -6,7 +6,7 @@
 using namespace std;
 
 
-In LeetCode Store, there are some kinds of items to sell.Each item has a price.
+//In LeetCode Store, there are some kinds of items to sell.Each item has a price.
 
 //However, there are some special offers, and a special offer consists of one or more different kinds of items with a sale price.
 //
