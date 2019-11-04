@@ -51,6 +51,9 @@ public:
 			new_bottom = temp;
 		}
 		for (auto &pre_bottom : new_bottom) {
+			//跳过不可能的解
+			if (pre_bottom.size() + 1 != bottom.size())
+				continue;
 			if (pyramidTransition(pre_bottom, allowed) == true)
 				return true;
 		}

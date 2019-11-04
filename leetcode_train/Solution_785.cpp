@@ -18,6 +18,7 @@ using namespace std;
 //每一层染不同的颜色，如果一点被染色了，下次再次遇见这个点，与当前父节点颜色相同，说明不是二部图
 
 class Solution_785 {
+public:
 	bool isBipartite(vector<vector<int>>& graph) {
 
 		int n = graph.size();
@@ -49,8 +50,3 @@ class Solution_785 {
 	}
 };
 
-int main() {
-	Solution_785 s;
-	vector<vector<int>>t{ {3},{2,4},{1} ,{0,4},{1,3} };
-	s.isBipartite(t);
-}
