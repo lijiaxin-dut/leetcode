@@ -87,10 +87,3 @@ public:
 
 };
 
-int main() {
-	Solution s;
-	vector<vector<int>>sss{
-		{1,1,1,1,1},{1,0,0,0,1},{1,0,1,0,1},{1,0,0,0,1 }, {1, 1, 1, 1, 1}
-	};
-	s.shortestBridge(sss);
-}
