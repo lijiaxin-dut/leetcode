@@ -26,7 +26,7 @@ using namespace std;
 
 
 //使用unordered_set记录已经找到过的结果
-//每一个节点有四个邻域
+//每一个节点有8个邻域
 
 
 class Solution_752 {

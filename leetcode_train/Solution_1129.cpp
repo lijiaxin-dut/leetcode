@@ -1,8 +1,9 @@
 #include<vector>
 #include<queue>
 #include<string>
-#include<unordered_set>
+#include<set>
 #include<iostream>
+
 using namespace std;
 
 
@@ -24,8 +25,8 @@ class Solution {
 	vector<vector<int>>matrix;
 public:
 	vector<int> shortestAlternatingPaths(int n, vector<vector<int>>& red_edges, vector<vector<int>>& blue_edges) {
-		unordered_set<vector<int>>red_edge;
-		unordered_set<vector<int>>blue_edge;
+		set<vector<int>>red_edge;
+		set<vector<int>>blue_edge;
 		vector<vector<vector<int>>>adj(n);
 		for (auto &one_red : red_edges) {
 			red_edge.insert(one_red);
