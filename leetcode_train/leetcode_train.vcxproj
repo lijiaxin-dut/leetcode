@@ -148,6 +148,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Solution_1091.cpp" />
+    <ClCompile Include="Solution_1129.cpp" />
+    <ClCompile Include="Solution_1162.cpp" />
     <ClCompile Include="binarySearchTree.cpp" />
     <ClCompile Include="directedCycle.cpp" />
     <ClCompile Include="evaluate.cpp" />
@@ -173,6 +176,7 @@
     <ClCompile Include="Solution_412.cpp" />
     <ClCompile Include="Solution_416.cpp" />
     <ClCompile Include="Solution_417.cpp" />
+    <ClCompile Include="Solution_429.cpp" />
     <ClCompile Include="Solution_430.cpp" />
     <ClCompile Include="Solution_438.cpp" />
     <ClCompile Include="Solution_454.cpp" />
@@ -286,8 +290,10 @@
     <ClCompile Include="Solution_733.cpp" />
     <ClCompile Include="Solution_739.cpp" />
     <ClCompile Include="Solution_743.cpp" />
+    <ClCompile Include="Solution_752.cpp" />
     <ClCompile Include="Solution_756.cpp" />
     <ClCompile Include="Solution_785.cpp" />
+    <ClCompile Include="Solution_787.cpp" />
     <ClCompile Include="Solution_802.cpp" />
     <ClCompile Include="Solution_81.cpp" />
     <ClCompile Include="Solution_836.cpp" />
