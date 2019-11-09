@@ -160,6 +160,9 @@
     <ClCompile Include="MaxPQ.cpp" />
     <ClCompile Include="Solution_1020.cpp" />
     <ClCompile Include="Solution_1026.cpp" />
+    <ClCompile Include="Solution_128.cpp" />
+    <ClCompile Include="Solution_297.cpp" />
+    <ClCompile Include="Solution_312.cpp" />
     <ClCompile Include="Solution_413.cpp" />
     <ClCompile Include="Solution_224.cpp" />
     <ClCompile Include="Solution_227.cpp" />
