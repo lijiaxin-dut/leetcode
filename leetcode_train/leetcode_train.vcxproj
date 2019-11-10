@@ -148,6 +148,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Solution_84.cpp" />
     <ClCompile Include="Solution_1042.cpp" />
     <ClCompile Include="Solution_1043.cpp" />
     <ClCompile Include="Solution_1091.cpp" />
@@ -161,7 +162,10 @@
     <ClCompile Include="Solution_1020.cpp" />
     <ClCompile Include="Solution_1026.cpp" />
     <ClCompile Include="Solution_128.cpp" />
+    <ClCompile Include="Solution_23.cpp" />
+    <ClCompile Include="Solution_239.cpp" />
     <ClCompile Include="Solution_297.cpp" />
+    <ClCompile Include="Solution_301.cpp" />
     <ClCompile Include="Solution_312.cpp" />
     <ClCompile Include="Solution_413.cpp" />
     <ClCompile Include="Solution_224.cpp" />
