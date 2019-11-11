@@ -60,9 +60,9 @@ public:
 	}
 };
 
-int main() {
-	Solution_42 s;
-	vector<int>m{ 0,1,0,2,1,0,1,3,2,1,2,1 };
-	s.trap(m);
-
-}
+//int main() {
+//	Solution_42 s;
+//	vector<int>m{ 0,1,0,2,1,0,1,3,2,1,2,1 };
+//	s.trap(m);
+//
+//}
