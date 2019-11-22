@@ -44,6 +44,17 @@
 
 ////https://leetcode.com/problems/increasing-order-search-tree/discuss/165885/C%2B%2BJavaPython-Self-Explained-5-line-O(N)
 
+//next 为下一个在中序遍历中的节点
+//increasingBST(TreeNode root, TreeNode tail)
+//如果root为空，返回下一个节点即可
+//call increasingBST(root.left, root),
+//change left subtree into the linked list + current node.
+
+//we recursively call increasingBST(root.right, tail),
+//change right subtree into the linked list + tail.
+
+
+
 
 class Solution_897 {
 public:
