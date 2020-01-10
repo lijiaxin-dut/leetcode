@@ -148,14 +148,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Solution_10.cpp" />
     <ClCompile Include="Solution_1019.cpp" />
     <ClCompile Include="Solution_1171.cpp" />
     <ClCompile Include="Solution_124.cpp" />
     <ClCompile Include="Solution_25.cpp" />
     <ClCompile Include="Solution_32.cpp" />
+    <ClCompile Include="Solution_4.cpp" />
     <ClCompile Include="Solution_41.cpp" />
     <ClCompile Include="Solution_419.cpp" />
     <ClCompile Include="Solution_421.cpp" />
+    <ClCompile Include="Solution_44.cpp" />
     <ClCompile Include="Solution_450.cpp" />
     <ClCompile Include="Solution_501.cpp" />
     <ClCompile Include="Solution_508.cpp" />

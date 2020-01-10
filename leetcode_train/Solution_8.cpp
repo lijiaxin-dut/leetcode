@@ -12,47 +12,47 @@ using namespace std;
 //忽略空格后，第一个字符若是+ - 或者数字，记录，否则不合法
 //已知找到下一个不是数字的位置，停止
 //生成数字的过程中，判断是否溢出
+//正数和负数判断溢出的方式不同，范围不同
 
 class Solution_8 {
 public:
 	int myAtoi(string str) {
 		int n = str.size();
-		int first_sign_or_number = -1;
-		for (int i = 0; i<n; i++) {
-			if (str[i] == ' ')
+		long rs = 0;
+		bool is_negative = false;
+		int cur_index = 0;
+		for (; cur_index<n; cur_index++) {
+			if (str[cur_index] == ' ')
 				continue;
-			if (str[i] == '-' || str[i] == '+' || (str[i] >= '0'&&str[i] <= '9')) {
-				first_sign_or_number = i;
+			else if (str[cur_index] == '+') {
+				cur_index++;
 				break;
 			}
-			else {
-				return 0;
-			}
-		}
-		if (first_sign_or_number == -1)
-			return 0;
-		bool is_negative = false;
-		long rs = 0;
-		if (str[first_sign_or_number] == '-' || str[first_sign_or_number] == '+') {
-			if (str[first_sign_or_number] == '-')
+			else if (str[cur_index] == '-') {
+				cur_index++;
 				is_negative = true;
-			first_sign_or_number++;
+				break;
+			}
+			else if (str[cur_index] >= '0'&&str[cur_index] <= '9') {
+				break;
+			}
+			else
+				return 0;
 		}
-		for (int i = first_sign_or_number; i<n; i++) {
-			if (str[i] >= '0'&&str[i] <= '9') {
-				rs = rs * 10 + (str[i] - '0');
-				if (rs>INT_MAX&&is_negative == false)
+		for (; cur_index<n; cur_index++) {
+			if (str[cur_index] >= '0'&&str[cur_index] <= '9') {
+				rs = 10 * rs + (str[cur_index] - '0');
+				if (is_negative == false && rs>INT_MAX)
 					return INT_MAX;
 				if (is_negative == true && -rs<INT_MIN)
 					return INT_MIN;
 			}
 			else
 				break;
-
 		}
-		if (is_negative)
+		if (is_negative == true)
 			rs = -rs;
-		return int(rs);
+		return rs;
 
 	}
 };
