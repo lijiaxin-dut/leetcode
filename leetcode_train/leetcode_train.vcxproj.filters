@@ -1230,6 +1230,15 @@
     <ClCompile Include="Solution_44.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="KMP.cpp">
+      <Filter>源文件\algorithm_4_th</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_29.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_37.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h">

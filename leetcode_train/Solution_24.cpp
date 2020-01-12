@@ -22,28 +22,23 @@ using namespace std;
 //画图帮助理解
 //建立辅助节点
 
+//利用画图帮助理解指针的指向
 
 class Solution_24 {
 public:
 	ListNode* swapPairs(ListNode* head) {
-		if (head == NULL || head->next == NULL)
-			return head;
-		ListNode *dumy = new ListNode(-1);
+		ListNode *dumy = new ListNode(0);
 		dumy->next = head;
-		ListNode *before = dumy;
-		ListNode *current = head;
-		ListNode *after = head->next;
-		while (true) {
-			current->next = after->next;
-			before->next = after;
-			after->next = current;
-
-			before = current;
-			current = current->next;
-			if (current == NULL || current->next == NULL)
-				break;
-			after = current->next;
+		ListNode *cur = dumy;
+		while (cur->next&&cur->next->next) {
+			auto next_pair = cur->next->next->next;
+			auto cur_next = cur->next;
+			cur->next = cur->next->next;
+			cur->next->next = cur_next;
+			cur_next->next = next_pair;
+			cur = cur_next;
 		}
 		return dumy->next;
+
 	}
 };

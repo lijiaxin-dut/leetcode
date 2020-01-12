@@ -6,39 +6,50 @@ using namespace std;
 //dfs 找出所有的可能
 
 
+//扫描整个字符串
+//如果是（，就保存位置
+//如果是），就弹出一个（，进行配对，若不能弹出，则是非法的，或者弹出（，也是非法的
+//
+//结束后，栈中保存所有的非法下标，用相邻的下标进行相减
 
-//使用stack
-//使用start指针记录第一个左括号的位置
-
-//遇到左括号时，放入栈中
-//遇到右括号时，弹出一个左括号
-//根据栈是否为空，更新rs
 
 
 class Solution_32 {
 public:
-	int longestValidParentheses_stack(string s) {
-		int rs = 0;
-		int start = 0;
-		stack<int>st;
-		for (int i = 0; i<s.size(); i++) {
+	int longestValidParentheses_greedy(string s) {
+		int n = s.length(), longest = 0;
+		stack<int> st;//最后保存所有不合法的位置
+		for (int i = 0; i < n; i++) {
 			if (s[i] == '(')
 				st.push(i);
 			else {
-				if (st.empty())
-					start = i + 1;
-				else {
-					st.pop();
-					if (st.empty()) {
-						rs = max(rs, i - start + 1);
-					}
-					else {
-						rs = max(rs, i - st.top());
-					}
+				if (!st.empty()) {
+					//找出一对合法的配对
+					if (s[st.top()] == '(')
+						st.pop();
+					else
+						st.push(i);
 				}
+				else st.push(i);
 			}
 		}
-		return rs;
+		if (st.empty())
+			longest = n;
+		else {
+			int a = n;//右侧不合法
+			int b = 0;//左侧不合法
+			while (!st.empty()) {
+				b = st.top();
+				st.pop();
+				longest = max(longest, a - b - 1);
+				a = b;
+			}
+			//不合法的位置都在后面，如"())"
+			longest = max(longest, a);
+		}
+		return longest;
+
+
 
 	}
 	int longestValidParentheses(string s) {

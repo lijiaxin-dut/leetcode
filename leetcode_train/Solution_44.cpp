@@ -12,7 +12,7 @@ using namespace std;
 //s could be empty and contains only lowercase letters a - z.
 //p could be empty and contains only lowercase letters a - z, and characters like ? or *.
 
-//1.递归，穷举所有的可能
+//1.递归，穷举所有的可能 TLE
 
 //2.贪心
 //依次判断是否相等，

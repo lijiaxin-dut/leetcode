@@ -25,37 +25,50 @@
 class Solution_25 {
 public:
 	ListNode* reverseKGroup(ListNode* head, int k) {
-		if (head == nullptr || k == 1)
+		if (k == 1 || head == nullptr)
 			return head;
-		ListNode*dumy = new ListNode(-1);
-		ListNode *pre = dumy;
-		pre->next = head;
-		ListNode *cur = head;
-		for (int i = 1; cur != nullptr; i++) {
-			if (i%k == 0) {
-				ListNode *cur_next = cur->next;
-				cur->next = nullptr;
-				auto new_head = reverseLinklist(pre->next, cur_next);
-				auto new_pre = pre->next;
-				pre->next = new_head;
-				pre = new_pre;
-				cur = cur_next;
+		ListNode *cur_head = head;
+		ListNode *cur_next_head = head;
+		ListNode *dumy = new ListNode(0);
+		ListNode *pre_tail = dumy;
+		dumy->next = head;
+		while (cur_head != nullptr) {
+			int n = k;
+			while (n>1 && cur_next_head != nullptr) {
+				cur_next_head = cur_next_head->next;
+				n--;
 			}
-			else {
-				cur = cur->next;
+			if (n == 1 && cur_next_head != nullptr) {
+				auto back_next = cur_next_head->next;
+				cur_next_head->next = nullptr;
+				//下一个区间的头部
+				cur_next_head = back_next;
+				cur_head = reverseLinkList(cur_head);
+				//上一个区间的尾部
+				pre_tail->next = cur_head;
+				while (cur_head->next != nullptr)
+					cur_head = cur_head->next;
+				//当前区间的尾部
+				cur_head->next = cur_next_head;
+				//更新下一次迭代的值
+				pre_tail = cur_head;
+				cur_head = cur_next_head;
 			}
+			else
+				break;
 		}
 		return dumy->next;
 
 	}
-	ListNode *reverseLinklist(ListNode *head, ListNode *h) {
-		if (head == nullptr)
-			return head;
-		ListNode *p1 = head;
-		ListNode *p2 = head->next;
-		head->next = h;
-		while (p2 != nullptr) {
-			ListNode *p3 = p2->next;
+	//链表倒置
+	ListNode *reverseLinkList(ListNode *cur_head) {
+		if (cur_head == nullptr || cur_head->next == nullptr)
+			return nullptr;
+		ListNode *p1 = cur_head;
+		ListNode *p2 = cur_head->next;
+		cur_head->next = nullptr;
+		while (p2) {
+			ListNode*p3 = p2->next;
 			p2->next = p1;
 			p1 = p2;
 			p2 = p3;

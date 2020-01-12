@@ -13,36 +13,48 @@ using namespace std;
 
 //If the target is not found in the array, return[-1, -1].
 
-//二分法找到位置后，向两段搜索，找到第一个出现和最后一个出现的位置
+//利用upper bound和lower bound
 
 class Solution_34 {
 public:
-	vector<int> searchRange(vector<int>& nums, int target) {
-		int left = 0;
-		int right = nums.size() - 1;
-		while (left <= right) {
-			int mid = (right + left) / 2;
-			if (nums[mid] == target) {
-				left = mid;
-				right = mid;
-				int pre_left = left;
-				int pre_right = right;
-				while (left >= 0 && nums[left] == target) {
-					pre_left = left;
-					left--;
-				}
-				while (right<nums.size() && nums[right] == target) {
-					pre_right = right;
-					right++;
-				}
-				return vector<int>{pre_left, pre_right};
+	int lowerbound(vector<int>& nums, int target) {
+		const int N = nums.size();
+		// [l, r)
+		int l = 0, r = N;
+		while (l < r) {
+			int mid = l + (r - l) / 2;
+			if (nums[mid] >= target) {
+				r = mid;
 			}
-			else if (nums[mid]>target) {
-				right = mid - 1;
+			else {
+				l = mid + 1;
 			}
-			else
-				left = mid + 1;
 		}
-		return vector<int>{-1, -1};
+		return l;
+	}
+	int upperbound(vector<int>& nums, int target) {
+		const int N = nums.size();
+		// [l, r)
+		int l = 0, r = N;
+		while (l < r) {
+			int mid = l + (r - l) / 2;
+			if (nums[mid] <= target) {
+				l = mid + 1;
+			}
+			else {
+				r = mid;
+			}
+		}
+		return l;
+	}
+
+	vector<int> searchRange(vector<int>& nums, int target) {
+		int low = lowerbound(nums, target);
+		int high = upperbound(nums, target);
+		if (low == high)
+			return{ -1, -1 };
+		else
+			return{ low, high - 1 };
+
 	}
 };

@@ -16,24 +16,41 @@ using namespace std;
 //2D matrix directly.DO NOT allocate another 2D matrix and do the rotation.
 
 
-//首先沿着对角线进行翻转
-//然后沿着y轴进行翻转
-//沿着对角线翻转时，注意坐标的变换
 
+/*
+* clockwise rotate
+* first reverse up to down, then swap the symmetry
+* 1 2 3     7 8 9     7 4 1
+* 4 5 6  => 4 5 6  => 8 5 2
+* 7 8 9     1 2 3     9 6 3
+*/
 class Solution_48 {
 public:
 
-	void rotate(vector<vector<int>>& matrix) {
-		int  n = matrix.size();
-		for (int i = 0; i<n - 1; i++) {
-			for (int j = 0; j<n - i - 1; j++) {
-				swap(matrix[i][j], matrix[n - j - 1][n - i - 1]);
-			}
-		}
-		for (int i = 0; i<n / 2; i++) {
-			for (int j = 0; j<n; j++) {
-				swap(matrix[i][j], matrix[n - i - 1][j]);
-			}
+	void rotate(vector<vector<int> > &matrix) {
+		reverse(matrix.begin(), matrix.end());
+
+		//镜像旋转
+		for (int i = 0; i < matrix.size(); ++i) {
+			for (int j = i + 1; j < matrix[i].size(); ++j)
+				swap(matrix[i][j], matrix[j][i]);
 		}
 	}
+
+
+	/*
+	* anticlockwise rotate
+	* first reverse left to right, then swap the symmetry
+	* 1 2 3     3 2 1     3 6 9
+	* 4 5 6  => 6 5 4  => 2 5 8
+	* 7 8 9     9 8 7     1 4 7
+	*/
+	void anti_rotate(vector<vector<int> > &matrix) {
+		for (auto vi : matrix) reverse(vi.begin(), vi.end());
+		for (int i = 0; i < matrix.size(); ++i) {
+			for (int j = i + 1; j < matrix[i].size(); ++j)
+				swap(matrix[i][j], matrix[j][i]);
+		}
+	}
+
 };

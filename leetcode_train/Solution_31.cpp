@@ -10,9 +10,9 @@ using namespace std;
 class Solution_31 {
 public:
 	//从最尾端开始找，找第一个降序的位置满足i>i-1
-	//从尾端开始找，找出第一个大于i的元素
-	//交换i j
-	//i+1到end逆序
+	//从尾端开始找，找出第一个大于i-1的元素
+	//交换i-1 j
+	//i到end逆序
 	void nextPermutation(vector<int>& nums) {
 		if (nums.size() == 1)
 			return;
