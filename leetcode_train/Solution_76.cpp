@@ -35,11 +35,13 @@ public:
 		for (int i = 0; i<s.size(); i++) {
 			if (--letter_cnt[s[i]] >= 0)
 				cnt++;
+			//找到最小的满足条件的字串
 			while (cnt == t.size()) {
 				if (min_length>i - left + 1) {
 					min_length = i - left + 1;
 					rs = s.substr(left, i - left + 1);
 				}
+				//s[left]属于t,否则一定是0
 				if (++letter_cnt[s[left]]>0)
 					cnt--;
 				left++;

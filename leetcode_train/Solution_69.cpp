@@ -20,8 +20,23 @@ using namespace std;
 //mid=left+(right-left)/2;
 //不要使用乘法比较，使用除法比较
 
+//2.牛顿法
+//x^2-a=0
+//x_k+1=x_k-(x^2-a)/(2x)
+//x_k+1=(x_k+a/x_k)/2;
+//使用正数存即可
+
+
 class Solution_68 {
 public:
+	int mySqrt_NW(int x) {
+		long t = x;
+		while (t*t>x) {
+			t = (t + x / t) / 2;
+		}
+		return t;
+
+	}
 	int mySqrt(int x) {
 		int left = 1;
 		int right = x;

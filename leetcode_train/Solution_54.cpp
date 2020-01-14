@@ -18,51 +18,43 @@ using namespace std;
 //]
 //Output : [1, 2, 3, 6, 9, 8, 7, 4, 5]
 
-
+//使用索引记录轮次
+//每次开始的地方于轮次相关
 
 
 class Solution_54 {
 public:
 	vector<int> spiralOrder(vector<vector<int>>& matrix) {
-		if (matrix.empty())
-			return vector<int>();
-		int m = matrix.size();
-		int n = matrix[0].size();
-		int mn = m*n;
-		int row_index = 0;
-		int col_index = 0;
+		int n = matrix.size();
 		vector<int>rs;
-		int iterator_index = 0;
-		while (true) {
-			while (col_index<n - iterator_index) {
-				rs.push_back(matrix[row_index][col_index++]);
+		if (n == 0)
+			return rs;
+		int m = matrix[0].size();
+		int iterator_time = 0;
+		int total_number = m*n;
+		while (rs.size()<total_number) {
+			int cur_row = iterator_time;
+			int cur_col = iterator_time;
+
+			while (cur_col<m - iterator_time&&rs.size()<total_number) {
+				rs.push_back(matrix[cur_row][cur_col++]);
 			}
-			if (rs.size() == mn)
-				break;
-			col_index--;
-			row_index++;
-			while (row_index<m - iterator_index) {
-				rs.push_back(matrix[row_index++][col_index]);
+			cur_row++;
+			cur_col--;
+			while (cur_row<n - iterator_time&&rs.size()<total_number) {
+				rs.push_back(matrix[cur_row++][cur_col]);
 			}
-			if (rs.size() == mn)
-				break;
-			row_index--;
-			col_index--;
-			while (col_index >= iterator_index) {
-				rs.push_back(matrix[row_index][col_index--]);
+			cur_col--;
+			cur_row--;
+			while (cur_col >= iterator_time&&rs.size()<total_number) {
+				rs.push_back(matrix[cur_row][cur_col--]);
 			}
-			if (rs.size() == mn)
-				break;
-			col_index++;
-			row_index--;
-			while (row_index > iterator_index) {
-				rs.push_back(matrix[row_index--][col_index]);
+			cur_col++;
+			cur_row--;
+			while (cur_row>iterator_time&&rs.size()<total_number) {
+				rs.push_back(matrix[cur_row--][cur_col]);
 			}
-			if (rs.size() == mn)
-				break;
-			row_index++;
-			col_index++;
-			iterator_index++;
+			iterator_time++;
 		}
 		return rs;
 	}
