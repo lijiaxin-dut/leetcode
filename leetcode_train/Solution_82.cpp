@@ -25,40 +25,52 @@ using namespace std;
 
 //增加一个虚拟头节点，用于删除开始就重复的节点[1,1,1,1,1,2]
 //保存三个指针
-//pre表示上一个不重复的节点
+//tail表示链表的尾部节点
 //cur表示当前判断的节点
-//next表示cur的后一个节点
+//pre表示cur之前的节点
 
 //单独考虑一个节点或者空链表
+//最后处理尾部重复的情况，最后cur为空
 
 class Solution_82 {
 public:
+
 	ListNode* deleteDuplicates(ListNode* head) {
-		if (head == NULL || head->next == NULL)
+		if (head == nullptr || head->next == nullptr)
 			return head;
 		ListNode *dumy = new ListNode(-1);
 		dumy->next = head;
-		ListNode *pre = dumy;
-		ListNode *curr = dumy->next;
-		ListNode *next = curr->next;
-		while (curr != NULL&&curr->next != NULL) {
-			if (curr->val == next->val) {
-				while (next != NULL&&curr->val == next->val)
-					next = next->next;
-				//找到了不相等的下一个节点
-				//[1,2,3,3,3,4,4,5,5,6]
-				//找到了4
-				pre->next = next;
-				curr = next;
-				if (next != NULL)
-					next = next->next;
+		ListNode *cur = head->next;
+		ListNode *pre = head;
+		ListNode *tail = dumy;//当前的尾节点
+		while (cur) {
+			//有相等的值时，就向后移动
+			if (cur->val == pre->val) {
+				pre = pre->next;
+				cur = cur->next;
 			}
-			else {
-				pre = curr;
-				curr = curr->next;
-				next = next->next;
+			//当值不相等时，判断tail->next与pre是否相等，
+			//即判断pre是否在答案中
+			//若tail->next != pre 说明pre不在答案中，将tail->next指向cur
+			else if (tail->next != pre&&cur->val != pre->val) {
+				tail->next = cur;
+				pre = cur;
+				cur = cur->next;
+			}
+			//若tail->next == pre 说明pre在答案中，
+			//即tail,pre,cur是连续的三个指针
+			//将pre插入答案中
+			
+			else if (tail->next == pre&&cur->val != pre->val) {
+				tail = pre;
+				pre = pre->next;
+				cur = cur->next;
 			}
 		}
+		//判断最后是否存在重复的节点，因为pre指向最后一个节点，cur为空，
+		if (tail->next != pre)
+			tail->next = nullptr;
+		//注意将链表尾部置空
 		return dumy->next;
 	}
 };

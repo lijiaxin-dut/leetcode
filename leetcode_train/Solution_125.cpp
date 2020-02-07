@@ -14,28 +14,25 @@ using namespace std;
 //Note: For the purpose of this problem, we define empty string as valid palindrome.
 
 
-//isalpha()  判断一个char是不是数字或者字母
+//isalnum ()  判断一个char是不是数字或者字母
 
 class Solution_125 {
 public:
 	bool isPalindrome(string s) {
-		if (s.size() <= 1)
+		if (s.empty())
 			return true;
-		int lo = 0;
-		int hi = s.size() - 1;
-		while (lo<hi) {
-			while (lo<hi&&isalpha(s[lo]) == false)
-				lo++;
-			while (lo<hi&&isalpha(s[hi]) == false)
-				hi--;
-			if (lo<hi&&toupper(s[lo]) != toupper(s[hi]))
+		int left = 0;
+		int right = s.size() - 1;
+		while (left<right) {
+			while (left<right && !isalnum(s[left]))
+				left++;
+			while (left<right && !isalnum(s[right]))
+				right--;
+			if (toupper(s[left]) != toupper(s[right]))
 				return false;
-			else if (lo >= hi) {
-				return true;
-			}
 			else {
-				lo++;
-				hi--;
+				left++;
+				right--;
 			}
 		}
 		return true;

@@ -35,44 +35,29 @@ using namespace std;
 
 
 //dfs遍历整棵树
-
+//保存部分结果时，注意int与char的转换
 
 
 class Solution {
 public:
 	int sumNumbers(TreeNode* root) {
-		vector<vector<int>>all_path_sum;
-		if (root == NULL)
-			return 0;
-		vector<int>partial_rs{ root->val };
-		help(root, all_path_sum, partial_rs);
+		string cur_sum;
 		int rs = 0;
-		for (int i = 0; i<all_path_sum.size(); i++)
-		{
-			int current_num = 0;
-			for (auto &one_num : all_path_sum[i]) {
-				current_num *= 10;
-				current_num += one_num;
-			}
-			rs += current_num;
-		}
+		help(root, rs, cur_sum);
 		return rs;
 	}
-	void help(TreeNode *root, vector<vector<int>>&all_path_sum, vector<int>&current_sum) {
-		if (root->left == NULL&&root->right == NULL) {
-			all_path_sum.push_back(current_sum);
+	void help(TreeNode*node, int &rs, string &cur_sum) {
+		if (node == nullptr)
+			return;
+		cur_sum.push_back(node->val + '0');
+		if (node->left == nullptr&&node->right == nullptr) {
+			rs += stoi(cur_sum);
+			cur_sum.pop_back();
 			return;
 		}
-		if (root->left) {
-			current_sum.push_back(root->left->val);
-			help(root->left, all_path_sum, current_sum);
-			current_sum.pop_back();
-		}
-		if (root->right) {
-			current_sum.push_back(root->right->val);
-			help(root->right, all_path_sum, current_sum);
-			current_sum.pop_back();
-		}
+		help(node->left, rs, cur_sum);
+		help(node->right, rs, cur_sum);
+		cur_sum.pop_back();
 
 
 	}

@@ -55,4 +55,23 @@ public:
 		}
 		return rs;
 	}
+
+	vector<vector<int>> levelOrder_recur(TreeNode* root) {
+		vector<vector<int>>rs;
+		if (root == nullptr)
+			return rs;
+		help(rs, 0, root);
+		return rs;
+	}
+	void help(vector<vector<int>>&rs, int depth, TreeNode*cur) {
+		if (cur == nullptr)
+			return;
+		if (depth == rs.size()) {
+			rs.push_back({});
+		}
+		rs[depth].push_back(cur->val);
+		help(rs, depth + 1, cur->left);
+		help(rs, depth + 1, cur->right);
+
+	}
 };

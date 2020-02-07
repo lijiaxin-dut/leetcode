@@ -36,38 +36,33 @@ using namespace std;
 
 //将一颗二叉树改为链表
 //类似于前序遍历
-//把右节点存起来
-//然后把右节点指向左节点
-//左子树置空
+//前序遍历的过程中，修改指针指向
+//前序遍历时，保存右节点，注意不要保存空节点
 
 
-//为空时，考虑栈种的节点
+
 
 
 
 class Solution_114 {
 public:
 	void flatten(TreeNode* root) {
-		if (root == NULL)
-			return;
-		TreeNode*pre_node = root;
-		stack<TreeNode*>childs;
-		while (!childs.empty() || root != NULL) {
-			if (root->right != NULL)
-				childs.push(root->right);
-			root->right = root->left;
-			pre_node = root;
-			if (root != NULL) {
-				root->left = NULL;
+		stack<TreeNode*>s;
+		TreeNode *pre = nullptr;
+		while (!s.empty() || root != nullptr) {
+			while (root) {
+				if (root->right)
+					s.push(root->right);
+				pre = root;
+				root = root->left;
+				pre->right = root;
+				pre->left = nullptr;
 			}
-			root = root->right;
-			if (root == NULL) {
-				if (childs.empty())
-					return;
-				root = childs.top();
-				pre_node->right = root;
-				childs.pop();
-			}
+			if (s.empty())
+				break;
+			root = s.top();
+			s.pop();
+			pre->right = root;
 		}
 	}
 };

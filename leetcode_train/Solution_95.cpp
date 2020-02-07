@@ -35,30 +35,41 @@ using namespace std;
 //左右子树所有的组合都生成一个根节点
 //子树可以公用
 
+//nullptr可以防灾容器中
+
 class Solution_95 {
 public:
 	vector<TreeNode*> generateTrees(int n) {
 		if (n == 0)
 			return{};
-		return helper(1, n);
+		vector<int>nums;
+		for (int i = 1; i <= n; i++) {
+			nums.push_back(i);
+		}
+		return help(nums, 0, n - 1);
+
 	}
-	vector<TreeNode*> helper(int start, int end) {
-		if (start > end)
-			return{ nullptr };
-		vector<TreeNode*> res;
-		for (int i = start; i <= end; ++i) {
-			auto left = helper(start, i - 1), right = helper(i + 1, end);
-			//子树公用
-			for (auto a : left) {
-				for (auto b : right) {
-					TreeNode *node = new TreeNode(i);
-					node->left = a;
-					node->right = b;
-					res.push_back(node);
+	vector<TreeNode*>help(vector<int>&nums, int start, int end) {
+		if (start>end)
+			return vector<TreeNode*>{nullptr};
+		if (start == end)
+			return vector<TreeNode*>{new TreeNode(nums[start])};
+		vector<TreeNode*>rs;
+		//i位置的做根节点
+		for (int i = start; i <= end; i++) {
+			auto left = help(nums, start, i - 1);
+			auto right = help(nums, i + 1, end);
+			for (auto one_left : left) {
+				for (auto one_right : right) {
+					TreeNode *new_node = new TreeNode(nums[i]);
+					new_node->left = one_left;
+					new_node->right = one_right;
+					rs.push_back(new_node);
 				}
 			}
 		}
-		return res;
+		return rs;
+
 	}
 };
 

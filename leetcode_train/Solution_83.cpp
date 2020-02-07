@@ -28,16 +28,21 @@ using namespace std;
 class Solution_83 {
 public:
 	ListNode* deleteDuplicates(ListNode* head) {
-		ListNode *back_head = head;
-		while (head != NULL&&head->next != NULL) {
-			ListNode *other = head->next;
-			while (other != NULL&&head->val == other->val)
-			{
-				other = other->next;
+		if (head == nullptr || head->next == nullptr)
+			return head;
+		ListNode *cur = head->next;
+		ListNode *pre = head;
+		while (cur) {
+			if (cur->val == pre->val) {
+				cur = cur->next;
 			}
-			head->next = other;
-			head = head->next;
+			else {
+				pre->next = cur;
+				pre = pre->next;
+				cur = cur->next;
+			}
 		}
-		return back_head;
+		pre->next = nullptr;
+		return head;
 	}
 };
