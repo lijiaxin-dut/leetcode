@@ -20,6 +20,27 @@ using namespace std;
 
 class Solution_162 {
 public:
+	//如果nums[mid]<nums[mid+1]
+	//left=mid+1;
+	//否则
+	//right=mid
+	int findPeakElement_binary_search(vector<int>& nums) {
+		int left = 0;
+		int right = nums.size() - 1;
+		while (left<right) {
+			int mid = left + (right - left) / 2;
+			if (nums[mid]<nums[mid + 1])
+			{
+				left = mid + 1;
+			}
+			//nums[mid]本身可能是峰值，需要考虑
+			else if (nums[mid] >= nums[mid + 1]) {
+				right = mid;
+			}
+		}
+
+		return left;
+	}
 	int findPeakElement(vector<int>& nums) {
 
 		for (int i = 0; i<nums.size() - 1; i++) {

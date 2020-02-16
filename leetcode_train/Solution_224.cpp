@@ -25,6 +25,8 @@ using namespace std;
 //遇到一个数字时，就将连续的数字取出来，表示一个数字
 //记录数字前的符号
 
+//遇到括号时，把目前的结果存起来，把括号前的符号存起来
+
 class Solution_224 {
 public:
 	int calculate(string s) {

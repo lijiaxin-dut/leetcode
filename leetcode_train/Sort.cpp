@@ -5,7 +5,37 @@
 
 using namespace std;
 
+int radix_sort(vector<int>& nums) {
+	if (nums.empty() || nums.size() < 2)
+		return 0;
 
+	int maxVal = *max_element(nums.begin(), nums.end());
+
+	int exp = 1;
+	int radix = 10;
+
+	vector<int> aux(nums.size());
+
+
+	while (maxVal / exp > 0) {
+		vector<int> count(radix, 0);
+
+		for (int i = 0; i < nums.size(); i++)
+			count[(nums[i] / exp) % 10]++;
+
+		for (int i = 1; i < count.size(); i++)
+			count[i] += count[i - 1];
+
+		for (int i = nums.size() - 1; i >= 0; i--)
+			aux[--count[(nums[i] / exp) % 10]] = nums[i];
+
+		for (int i = 0; i < nums.size(); i++)
+			nums[i] = aux[i];
+
+		exp *= 10;
+	}
+
+}
 //选择排序
 //每次选择最小的数，与当前的数进行交换
 void select_sort(vector<int>nums) {
@@ -113,16 +143,15 @@ int partition(vector<int>&nums,int lo,int hi) {
 	int pivot = nums[hi];
 	//nums[lo...i-1]<pivot
 	//nums[i...hi] >=pivot
-	//i是第一个大于等于pivot的元素的索引
-	int i = lo;
+	//lo是第一个大于等于pivot的元素的索引
 	for (int j = lo; j <= hi;j++) {
 		if (nums[j] < pivot) {
-			swap(nums[j], nums[i]);
-			i++;
+			swap(nums[j], nums[lo]);
+			lo++;
 		}
 	}
-	swap(nums[i] , nums[hi]);
-	return i;
+	swap(nums[lo] , nums[hi]);
+	return lo;
 }
 void quick_sort_help(vector<int>&nums, int lo, int hi){
 	if (hi <= lo)

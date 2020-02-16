@@ -30,29 +30,46 @@ using namespace std;
 class Solution {
 public:
 	vector<int> diffWaysToCompute(string input) {
+		if (input.size() == 0)
+			return{};
+		if (input.find_first_of("+-*") == std::string::npos)
+			return{ stoi(input) };
 		vector<int>rs;
 		for (int i = 0; i<input.size(); i++) {
-			if (input[i] == '+' || input[i] == '-' || input[i] == '*') {
-				vector<int>left = diffWaysToCompute(input.substr(0, i));
-				vector<int>right = diffWaysToCompute(input.substr(i + 1));
-				for (auto &one_left : left) {
-					for (auto &one_right : right) {
-						if (input[i] == '+') {
-							rs.push_back(one_left + one_right);
-						}
-						else if (input[i] == '-') {
-							rs.push_back(one_left - one_right);
-						}
-						else if (input[i] == '*') {
-							rs.push_back(one_left*one_right);
-						}
-					}
+			if (input[i] == '*') {
+				auto first = input.substr(0, i);
+				auto second = input.substr(i + 1);
+				auto first_rs = diffWaysToCompute(first);
+				auto second_rs = diffWaysToCompute(second);
+				for (auto i : first_rs) {
+					for (auto j : second_rs)
+						rs.push_back(i*j);
+				}
+
+			}
+			else if (input[i] == '-') {
+				auto first = input.substr(0, i);
+				auto second = input.substr(i + 1);
+				auto first_rs = diffWaysToCompute(first);
+				auto second_rs = diffWaysToCompute(second);
+				for (auto i : first_rs) {
+					for (auto j : second_rs)
+						rs.push_back(i - j);
+				}
+
+			}
+			else if (input[i] == '+') {
+				auto first = input.substr(0, i);
+				auto second = input.substr(i + 1);
+				auto first_rs = diffWaysToCompute(first);
+				auto second_rs = diffWaysToCompute(second);
+				for (auto i : first_rs) {
+					for (auto j : second_rs)
+						rs.push_back(i + j);
 				}
 			}
+
 		}
-		//Ö»°üº¬Êý×Ö
-		if (rs.empty())
-			rs.push_back(atoi(input.c_str()));
 		return rs;
 
 	}

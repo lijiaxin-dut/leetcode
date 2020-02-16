@@ -55,6 +55,14 @@ using namespace std;
 //	Therefore, you can't travel around the circuit once no matter where you start.
 //
 
+//
+//If car starts at A and can not reach B.Any station between A and B
+//can not reach B.(B is the first station that A can not reach.)
+
+//从A出发，证明A点的存储一定大于消耗，差值是个正数
+//若从A到B差值求和未负数，A-B中间的任意一点作为起点都不能到达B点
+
+
 
 //如果所有的gas-cost求和大于0，一定存在一个解
 //类似于max_subarray

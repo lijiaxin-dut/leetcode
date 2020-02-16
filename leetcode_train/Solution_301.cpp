@@ -33,7 +33,7 @@ class Solution_301 {
 					return false;
 			}
 		}
-		return true;
+		return cnt ==0;
 	}
 public:
 	vector<string> removeInvalidParentheses(string s) {

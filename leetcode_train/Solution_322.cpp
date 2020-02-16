@@ -20,23 +20,17 @@ using namespace std;
 class Solution_322 {
 public:
 	int coinChange(vector<int>& coins, int amount) {
-		if (amount == 0)
-			return 0;
+		int n = coins.size();
 		vector<int>dp(amount + 1, INT_MAX / 2);
-		for (auto &one_coins : coins) {
-			if (one_coins>amount)
-				continue;
-			dp[one_coins] = 1;
-		}
-		for (int i = 1; i <= amount; i++) {
-			for (auto &one_coins : coins) {
-				if (i >= one_coins)
-					dp[i] = min(dp[i], dp[i - one_coins] + 1);
+		dp[0] = 0;
+		for (int money = 1; money <= amount; money++) {
+			for (auto &one_coin : coins) {
+				if (one_coin <= money) {
+					dp[money] = min(dp[money], dp[money - one_coin] + 1);
+				}
 			}
 		}
-		if (dp[amount] == INT_MAX / 2)
-			return -1;
-		return dp[amount];
+		return dp[amount] == INT_MAX / 2 ? -1 : dp[amount];
 	}
 };
 

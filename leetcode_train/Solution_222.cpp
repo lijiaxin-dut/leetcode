@@ -3,8 +3,10 @@
 
 
 using namespace std;
+//Given a complete binary tree, count the number of nodes.
 
-
+//慢二叉树的节点个数
+////(2 ^ h) - 1
 
 class Solution_222 {
 public:

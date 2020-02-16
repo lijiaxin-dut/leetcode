@@ -29,31 +29,43 @@ using namespace std;
 //ÖÐÐò±éÀú¼´¿É
 
 
-
 class BSTIterator {
+	stack<TreeNode*>s;
 	TreeNode* root;
-	stack<TreeNode*>nodes;
 public:
-	BSTIterator(TreeNode* root) {
-		this->root = root;
+	BSTIterator(TreeNode* r) {
+		root = r;
+		if (root != nullptr) {
+			while (root) {
+				s.push(root);
+				root = root->left;
+			}
+
+		}
 	}
 
 	/** @return the next smallest number */
 	int next() {
-		while (root != NULL) {
-			nodes.push(root);
-			root = root->left;
-		}
-		root = nodes.top();
-		nodes.pop();
+		if (s.empty())
+			return -1;
+		root = s.top();
+		s.pop();
 		int rs = root->val;
 		root = root->right;
+		if (root != nullptr) {
+			while (root) {
+				s.push(root);
+				root = root->left;
+			}
+		}
 		return rs;
-
 	}
 
 	/** @return whether we have a next smallest number */
 	bool hasNext() {
-		return root != NULL || !nodes.empty();
+		if (root == nullptr&&s.empty())
+			return false;
+		else
+			return true;
 	}
 };

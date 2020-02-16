@@ -56,21 +56,7 @@ public:
 		}
 		return rs;
 	}
-	int maxProduct_dp(vector<int>& nums) {
-		if (nums.empty())
-			return 0;
-		int current_max = nums[0];
-		int current_min = nums[0];
-		int rs = nums[0];
-		for (int i = 1; i<nums.size(); i++) {
-			int p = current_max*nums[i];
-			int q = current_min*nums[i];
-			current_max = max(nums[i], max(p, q));
-			current_min = min(nums[i], min(p, q));
-			rs = max(current_max, rs);
-		}
-		return rs;
-	}
+	
 	int maxProduct_dp_2(vector<int>& nums) {
 		if (nums.empty())
 			return 0;

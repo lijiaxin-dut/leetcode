@@ -1,6 +1,6 @@
 #include<set>
 #include<vector>
-
+#include<map>
 using namespace std;
 
 //Given an array of integers, find out whether there are two distinct indices i and j 
@@ -11,34 +11,41 @@ using namespace std;
 //std::set::upper_bound 是 >
 //std::set::lower_bound 是 >=
 
-
+//对于任何一个nums[i]
+// lb = nums[i] - tt;
+// ub = nums[i] + tt;
+//使用lower_bound找到>=lb
+//使用upper_boud找到>lb
+//这样就找到了一段区间，满足值的要求
+//在判断这些值的下标
 
 
 
 class Solution_220 {
 public:
 	bool containsNearbyAlmostDuplicate(vector<int>& nums, int k, int t) {
-		set<double> hash_set;
-		for (int i = 0; i<nums.size(); i++) {
-			//判断是否存在>=nums[i]的数字
-			auto s = hash_set.lower_bound(nums[i]);
-			if (s != hash_set.end() && (*s - nums[i]) <= t)
-				return true;
-			//判断是否存在<=nums[i]的数字
-			//nums[i]-*ss<=存在
-			//nums[i]>=*ss
-			//需要满足这两个条件
-			auto ss = hash_set.lower_bound(nums[i] - (double)t);
-			if (ss != hash_set.end() && nums[i] - *ss >= 0)
-				return true;
-			hash_set.insert(nums[i]);
-			if (hash_set.size()>k) {
-				hash_set.erase(nums[i - k]);
+		if (t<0 || k<0)
+			return false;
+		int n = nums.size();
+		map<long long, long long>hash_map;
+		long long tt = t;
+		for (int i = 0; i<n; i++) {
+			long long lb = nums[i] - tt;
+			long long ub = nums[i] + tt;
+			auto t1 = hash_map.lower_bound(lb);
+			auto t2 = hash_map.upper_bound(ub);
+			while (t1 != t2) {
+				if (i - t1->second <= k)
+					return true;
+				else
+					t1++;
 			}
+			hash_map[nums[i]] = i;
 		}
 		return false;
-
 	}
+
+	
 };
 
 //int main() {

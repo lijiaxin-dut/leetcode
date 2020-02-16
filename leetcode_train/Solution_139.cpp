@@ -3,33 +3,37 @@
 #include<set>
 #include<algorithm>
 #include<vector>
+#include<unordered_set>
 
 using namespace std;
 
 //dfs穷举所有的可能，dp数组记录是否查询过
 
-//dp[i]记录[0,i)是否可以拆分
-//[0,i)拆分为[0,j)和[j,i),
-//[0,j)就是dp[j]
-//[j,i)就是substr(j,i-j)
+//dp[i]记录[0,i]是否可以拆分
+//[0,i]拆分为[0,j]和[j,i],
+//[0,j]就是dp[j]
+//[j,i]就是substr(j,i-j)
 //注意边界条件即可
 
 class Solution_139 {
 public:
 	bool wordBreak(string s, vector<string>& wordDict) {
 		int n = s.size();
-		vector<bool>dp(n + 1, false);
-		dp[0] = true;
-		for (int i = 1; i <= n; i++) {
-			for (int j = 0; j<n; j++) {
-				auto temp = s.substr(j, i - j);
-				if (dp[j] == true && find(wordDict.begin(), wordDict.end(), temp) != wordDict.end()) {
+		vector<bool>dp(n, false);
+		unordered_set<string>dicts(wordDict.begin(), wordDict.end());
+		for (int i = 0; i<n; i++) {
+			for (int j = 0; j <= i; j++) {
+				string sub_str = s.substr(j, i - j + 1);
+				if ((j == 0 && dicts.find(sub_str) != dicts.end()) || (j>0 && dp[j - 1] == true && dicts.find(sub_str) != dicts.end())) {
 					dp[i] = true;
 					break;
 				}
+				else {
+					dp[i] = false;
+				}
 			}
 		}
-		return dp[n];
+		return dp[n - 1];
 	}
 	bool wordBreak_(string s, vector<string>& wordDict) {
 		bool is_true = false;

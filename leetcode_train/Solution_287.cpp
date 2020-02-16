@@ -16,6 +16,7 @@ public:
 	int findDuplicate_binary_search(vector<int>& nums) {
 		//一共只有n个数字，给定一个数k，计算<=k的元素的个数
 		//当最小k满足count(<=k)>k  ，k就是重复的元素
+		//对个数进行二分
 		int min = 1;
 		int max = nums.size() - 1;//共有n个元素
 		while (min<max) {

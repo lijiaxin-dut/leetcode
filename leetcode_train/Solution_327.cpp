@@ -19,6 +19,7 @@ using namespace std;
 //upper_bound(sum - lower)  返回第一个>sum-lower  的位置
 //两个位置做差值，找到多少个满足条件的old_sum
 
+//插入0为了考虑sum[0,j]满足题意的情况
 
 class Solution {
 public:

@@ -1,5 +1,6 @@
 #include<vector>
-
+#include<algorithm>
+#include<numeric>
 using namespace std;
 
 
@@ -27,49 +28,61 @@ using namespace std;
 
 //发生更改时，只修改对应块的求和即可
 
-//sumrange时，根据起始块和终止块划分
-
+//sumrange时，根据起始块和终止块划分，根据起点和终点是否在同一块中分组讨论
+//
 
 
 class NumArray {
-	vector<int>blocks;
-	vector<int>num;
-	int b_size;
+	vector<vector<int>>c;
+	vector<int>group_sum;
+	int group_size = 0;
+	int each_group_num = 0;
 public:
-	NumArray(vector<int>& nums) :num(nums) {
+	NumArray(vector<int>& nums) {
 		int n = nums.size();
 		if (n == 0)
 			return;
-		b_size = ceil(n / sqrt(n));
-		blocks.resize(b_size, 0);
+		group_size = ceil(sqrt(n));
+		each_group_num = group_size;
+		c.resize(group_size, vector<int>(each_group_num));
+		group_sum.resize(group_size);
 		for (int i = 0; i<n; i++) {
-			blocks[i / b_size] += num[i];
+			int row = i / each_group_num;
+			int col = i%each_group_num;
+			c[row][col] = nums[i];
 		}
+		for (int i = 0; i<group_size; i++) {
+			group_sum[i] = accumulate(c[i].begin(), c[i].end(), 0);
+		}
+
 	}
 
 	void update(int i, int val) {
-		blocks[i / b_size] = blocks[i / b_size] - num[i] + val;
-		num[i] = val;
+		int row = i / each_group_num;
+		int col = i%each_group_num;
+		c[row][col] = val;
+		group_sum[row] = accumulate(c[row].begin(), c[row].end(), 0);
 	}
 
 	int sumRange(int i, int j) {
-		int start_block = i / b_size;
-		int end_block = j / b_size;
 		int sum = 0;
-		if (start_block == end_block) {
-			for (int k = i; k <= j; k++)
-				sum += num[k];
+		int row_i = i / each_group_num;
+		int col_i = i%each_group_num;
+		int row_j = j / each_group_num;
+		int col_j = j%each_group_num;
+		if (row_i != row_j) {
+			for (int cur = col_i; cur < each_group_num; cur++)
+				sum += c[row_i][cur];
+			for (int cur = row_i + 1; cur < row_j; cur++)
+				sum += group_sum[cur];
+			for (int cur = 0; cur <= col_j; cur++)
+				sum += c[row_j][cur];
 		}
 		else {
-			for (int k = i; k<(start_block + 1)*b_size; k++)
-				sum += num[k];
-			for (int k = start_block + 1; k <= end_block - 1; k++)
-				sum += blocks[k];
-			for (int k = end_block*b_size; k <= j; k++)
-				sum += num[k];
+			for (int cur = col_i; cur <= col_j; cur++)
+				sum += c[row_i][cur];
 		}
 		return sum;
-
 	}
 };
 
@@ -87,8 +100,11 @@ public:
 * int param_2 = obj->sumRange(i,j);
 */
 
-//int main() {
-//	vector<int>c{ 1,3,5 };
-//	NumArray na(c);
-//	na.sumRange(1, 2);
-//}
+/**
+* Your NumArray object will be instantiated and called as such:
+* NumArray* obj = new NumArray(nums);
+* obj->update(i,val);
+* int param_2 = obj->sumRange(i,j);
+*/
+
+

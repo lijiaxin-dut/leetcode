@@ -24,6 +24,15 @@
 
 class Solution {
 public:
+	int trailingZeroes_recur(int n) {
+		return help(n, 5);
+
+	}
+	int help(int n, long long cur_number) {
+		if (cur_number>n)
+			return 0;
+		return n / cur_number + help(n, cur_number * 5);
+	}
 	int trailingZeroes(int n) {
 		int rs = 0;
 		for (long int i = 5; n / i>0; i = i * 5)

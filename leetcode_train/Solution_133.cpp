@@ -29,7 +29,7 @@ public:
 	vector<Node_graph*> neighbors;
 
 	Node_graph() {}
-
+	Node_graph(int val) :val(val){}
 	Node_graph(int _val, vector<Node_graph*> _neighbors) {
 		val = _val;
 		neighbors = _neighbors;
@@ -41,39 +41,36 @@ public:
 class Solution_134 {
 public:
 	Node_graph* cloneGraph(Node_graph* node) {
-		queue<Node_graph*>todo_node;
-		todo_node.push(node);
+		if (node == nullptr)
+			return nullptr;
 		unordered_map<Node_graph*, Node_graph*>hash_map;
-		int i = 0;
-		while (!todo_node.empty()) {
-			auto current_node = todo_node.front();
-			todo_node.pop();
-			Node_graph*new_node;
-			//该节点已经生成过了
-			if (hash_map.count(current_node) != 0) {
-				new_node = hash_map[current_node];
+		queue<Node_graph*>todo;
+		todo.push(node);
+		Node_graph *root = node;
+		while (!todo.empty()) {
+			node = todo.front();
+			todo.pop();
+			Node_graph*new_node = nullptr;
+			if (hash_map.find(node) != hash_map.end()) {
+				new_node = hash_map[node];
 			}
 			else {
-				//生成新的节点
-				new_node = new Node_graph();
-				new_node->val = current_node->val;
-				hash_map[current_node] = new_node;
+				new_node = new Node_graph(node->val);
+				hash_map[node] = new_node;
 			}
-			for (auto one_neighbor : current_node->neighbors) {
-				if (hash_map.count(one_neighbor) == 0) {
-					Node_graph *new_neigh = new Node_graph();
-					new_neigh->val = one_neighbor->val;
-					hash_map[one_neighbor] = new_neigh;
-					todo_node.push(one_neighbor);
-					new_node->neighbors.push_back(new_neigh);
-				}
-				else
+			for (auto one_neighbor : node->neighbors) {
+				if (hash_map.find(one_neighbor) != hash_map.end()) {
 					new_node->neighbors.push_back(hash_map[one_neighbor]);
+				}
+				else {
+					Node_graph *new_nei_node = new Node_graph(one_neighbor->val);
+					hash_map[one_neighbor] = new_nei_node;
+					new_node->neighbors.push_back(new_nei_node);
+					todo.push(one_neighbor);
+				}
 			}
-
-
 		}
-		return hash_map[node];
+		return hash_map[root];
 
 	}
 };

@@ -14,7 +14,7 @@ using namespace std;
 
 
 class MyStack {
-	queue<int>rs;
+	queue<int>q;
 
 public:
 	/** Initialize your data structure here. */
@@ -24,29 +24,35 @@ public:
 
 	/** Push element x onto stack. */
 	void push(int x) {
-		rs.push(x);
-		for (int i = 0; i<(int)rs.size() - 1; i++) {
-			rs.push(rs.front());
-			rs.pop();
+		queue<int>t;
+		while (!q.empty()) {
+			t.push(q.front());
+			q.pop();
 		}
+		q.push(x);
+		while (!t.empty()) {
+			q.push(t.front());
+			t.pop();
+		}
+
 	}
 
 	/** Removes the element on top of the stack and returns that element. */
 	int pop() {
-		int return_rs = rs.front();
-		rs.pop();
+		int return_rs = q.front();
+		q.pop();
 		return return_rs;
 	}
 
 	/** Get the top element. */
 	int top() {
 
-		return rs.front();
+		return q.front();
 	}
 
 	/** Returns whether the stack is empty. */
 	bool empty() {
-		return  rs.empty();
+		return  q.empty();
 	}
 };
 

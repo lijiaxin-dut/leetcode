@@ -18,7 +18,7 @@ using namespace std;
 
 //投票法
 //不断的消去不等的数字
-
+//http://www.cs.utexas.edu/~moore/best-ideas/mjrty/example.html  example
 class Solution_169 {
 public:
 	int majorityElement(vector<int>& nums) {

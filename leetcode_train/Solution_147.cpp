@@ -13,45 +13,44 @@ using namespace std;
 
 class Solution_147 {
 public:
-	ListNode* insertionSortList(ListNode* head) {
-		if (head == NULL || head->next == NULL)
-			return head;
-		ListNode *dumy = new ListNode(INT_MIN);
-		dumy->next = head;
-		ListNode*pre = head;
-		head = head->next;
-		while (head != NULL) {
-			pre->next = head->next;
-			//插入到h1后面的位置，需要记录h1的pre节点
-			for (ListNode *h1 = dumy, *inside_pre = dumy; h1 != pre->next; inside_pre = h1, h1 = h1->next) {
-				if (head->val < h1->val) {
-					inside_pre->next = head;
-					head->next = h1;
-					break;
-				}
-			}
-			//这种情况下位置不发生变化
-			if (head->next == pre->next) {
-				pre->next = head;
-				pre = head;
-				head = head->next;
-			}
-			else
-				head = pre->next;
-		}
-		return dumy->next;
+	
+	public:
+		ListNode* insertionSortList(ListNode* head) {
+			if (head == nullptr || head->next == nullptr)
+				return head;
+			ListNode*dumy = new ListNode(INT_MIN);
+			dumy->next = head;
+			ListNode*cur = head->next;
+			ListNode*pre_cur = head;
+			while (cur) {
+				ListNode*inside_pre = dumy;
+				ListNode*inside_head = head;
+				ListNode*cur_next = cur->next;
+				while (inside_head != cur) {
+					if (cur->val <= inside_head->val) {
+						inside_pre->next = cur;
+						cur->next = inside_head;
+						break;
+					}
+					inside_pre = inside_head;
+					inside_head = inside_head->next;
 
-	}
+				}
+				//cur已经在正确的位置上
+				if (inside_head == cur) {
+					pre_cur = cur;
+					cur = cur->next;
+				}
+				//cur的位置发生改边
+				else {
+					cur = cur_next;
+					pre_cur->next = cur;
+				}
+
+			}
+			return dumy->next;
+		}
+
+	
 };
 
-//int main() {
-//	Solution_147 s;
-//	ListNode *n1 = new ListNode(-1);
-//	ListNode *n2 = new ListNode(5);
-//	n1->next = n2;
-//	ListNode *n3 = new ListNode(3);
-//	n2->next = n3;
-//	ListNode *n4 = new ListNode(4);
-//	n3->next = n4;
-//	s.insertionSortList(n1);
-//}
