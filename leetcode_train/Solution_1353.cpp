@@ -37,9 +37,3 @@ public:
 	}
 };
 
-int main() {
-	Solution s;
-	vector<vector<int>>num{ {1,5},{ 1,5 },{ 1,5 },{2,3},{ 2,3 } };
-	s.maxEvents(num);
-
-}

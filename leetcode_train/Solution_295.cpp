@@ -26,6 +26,9 @@ using namespace std;
 //插入时，把当前数字插入到最小堆，保证   最大堆的size>=最小堆的size
 //为了保证有序，先插入最大堆，在弹出一个数字
 
+//priority_queue<int, vector<int>, greater<int>> hi;  最小堆
+//priority_queue 默认最大堆
+
 class MedianFinder {
 	//最大堆
 	priority_queue<int> lo;

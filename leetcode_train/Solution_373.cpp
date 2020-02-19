@@ -1,6 +1,7 @@
 #include<vector>
 #include<algorithm>
 #include<queue>
+#include<set>
 using namespace std;
 
 //You are given two integer arrays nums1 and nums2 sorted in ascending order and an integer k.
@@ -27,14 +28,7 @@ using namespace std;
 //2.从最小的开始找
 //最开始在(0,0),产生两个(0,1)或者(1,0)  ，插入到最小堆中
 
-
-//注意去重
-
-//遇到(3,2),新的坐标为(3,3)和(4,2)
-//遇到(2,3),新的坐标为(3,3)和(2,4)
-//(3,3)出现了两次，
-// i,j you just need to push i+1, j into queue. i, j+1 can be pushed into queue later when you see i - 1, j + 1
-//当i==0时，没有i-1，所以需要单独考虑
+//使用set去重
 
 
 
@@ -46,30 +40,31 @@ class Solution_373 {
 public:
 
 	vector<vector<int>> kSmallestPairs(vector<int>& nums1, vector<int>& nums2, int k) {
-
+		if (nums1.size() == 0 || nums2.size() == 0)
+			return{};
+		auto compare = [](pair<int, vector<int>>a, pair<int, vector<int>>b) {return a.first>b.first; };
+		priority_queue<pair<int, vector<int>>, vector<pair<int, vector<int>>>, decltype(compare)>pq(compare);
 		vector<vector<int>>rs;
-
-		if (nums1.size() == 0 || nums2.size() == 0 || k == 0)
-			return rs;
-		auto compare = [&nums1, &nums2](pair<int, int> a, pair<int, int>b)
-		{return nums1[a.first] + nums2[a.second] > nums1[b.first] + nums2[b.second]; };
-
-		priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(compare)>pq(compare);
-
-		pq.push(make_pair(0, 0));
-
-		while (k-->0 && !pq.empty()) {
-			auto p = pq.top();
+		pq.push(make_pair(nums1[0] + nums2[0], vector<int>{0, 0}));
+		set<pair<int, int>>visited;
+		visited.insert(make_pair(0, 0));
+		while (!pq.empty() && k>0) {
+			k--;
+			auto cur = pq.top();
 			pq.pop();
-			rs.push_back(vector<int>{nums1[p.first], nums2[p.second]});
-			if (p.first + 1<nums1.size()) {
-				pq.push(make_pair(p.first + 1, p.second));
+			rs.push_back({ nums1[cur.second[0]],nums2[cur.second[1]] });
+
+			if (cur.second[0] + 1<nums1.size() && visited.find(make_pair(cur.second[0] + 1, cur.second[1])) == visited.end()) {
+				pq.push(make_pair(nums1[cur.second[0] + 1] + nums2[cur.second[1]], vector<int>{cur.second[0] + 1, cur.second[1]}));
+				visited.insert(make_pair(cur.second[0] + 1, cur.second[1]));
 			}
-			if (p.first == 0 && p.second + 1<nums2.size()) {
-				pq.push(make_pair(p.first, p.second + 1));
+			if (cur.second[1] + 1<nums2.size() && visited.find(make_pair(cur.second[0], cur.second[1] + 1)) == visited.end()) {
+				pq.push(make_pair(nums1[cur.second[0]] + nums2[cur.second[1] + 1], vector<int>{cur.second[0], cur.second[1] + 1}));
+				visited.insert(make_pair(cur.second[0], cur.second[1] + 1));
 			}
 		}
 		return rs;
+
 	}
 
 	vector<vector<int>> kSmallestPairs_1(vector<int>& nums1, vector<int>& nums2, int k) {

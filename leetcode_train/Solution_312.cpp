@@ -30,16 +30,16 @@ public:
 	//[3,1,2,4,5,6],比如4 [3,1,2],[5,6]则左右两个问题相互依赖因为边界发生变化
 	//如果我们认为最后戳破4，
 	//[3,1,2],[5,6]两个子问题不发生依赖
-	int maxCoins_dd(vector<int>& nums) {
+	int maxCoins_dfs(vector<int>& nums) {
 		c.resize(nums.size(), vector<int>(nums.size(), -1));
 		int result = getMaxCoins(nums, 0, nums.size() - 1);
 		return result;
 	}
 	int getMaxCoins(vector<int>&nums, int start, int end) {
-		if (end >= start) {
-			if (c[start][end] != -1)
-				return c[start][end];
-		}
+		if (start>end)
+			return 0;
+		if (c[start][end] != -1)
+			return c[start][end];
 		if (start == end) {
 			int result = (start - 1<0 ? 1 : nums[start - 1]) * nums[start] * (end + 1 >= nums.size() ? 1 : nums[end + 1]);
 			return result;
@@ -49,9 +49,7 @@ public:
 			int temp = (start - 1<0 ? 1 : nums[start - 1])*nums[i] * (end + 1 >= nums.size() ? 1 : nums[end + 1]) + getMaxCoins(nums, start, i - 1) + getMaxCoins(nums, i + 1, end);
 			maxCoins = max(maxCoins, temp);
 		}
-		if (end >= start) {
-			c[start][end] = maxCoins;
-		}
+		c[start][end] = maxCoins;
 		return maxCoins;
 
 	}

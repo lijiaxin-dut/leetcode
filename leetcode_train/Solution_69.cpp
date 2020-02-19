@@ -38,19 +38,20 @@ public:
 
 	}
 	int mySqrt(int x) {
-		int left = 1;
-		int right = x;
-		while (left <= right) {
-			int mid = left + (right - left) / 2;
-			if (mid == x / mid)
-				return mid;
-			if (mid>(x / mid) && (mid - 1) <= (x / (mid - 1)))
-				return mid - 1;
-			if (mid>x / mid)
-				right = mid - 1;
+		int i = 1;
+		int j = x;
+		int ans = 0;
+		while (i <= j) {
+			int mid = i + (j - i) / 2;
+			// upper bound的形式，因为我们要找的ans要是最接近于x的最大的数，利用upper bound
+			if (mid <= x / mid) {
+				i = mid + 1;
+				ans = mid;
+			}
 			else
-				left = mid + 1;
+				j = mid - 1;
 		}
-		return 0;
+
+		return ans;
 	}
 };

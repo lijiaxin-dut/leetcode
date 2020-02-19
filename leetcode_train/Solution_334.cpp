@@ -15,7 +15,11 @@ using namespace std;
 
 
 //1.dp找最长的子序列
-//2.记录目前为止最小的两个数
+//2.记录两个数c1 c2
+//C1 = so far best candidate of end element of a one - cell subsequence to form a triplet subsequence
+
+//C2 = so far best candidate of end element of a two - cell subsequence to form a triplet subsequence
+
 
 
 
@@ -23,7 +27,7 @@ class Solution {
 public:
 	bool increasingTriplet(vector<int>& nums) {
 		int x1 = INT_MAX;
-		int x2 = INT_MAX;//x2>x1
+		int x2 = INT_MAX;
 		for (int i = 0; i<nums.size(); i++) {
 			if (nums[i] <= x1)
 				x1 = nums[i];

@@ -20,59 +20,31 @@ using namespace std;
 //
 
 
-//找到合适的位置进行插入，即intervals[i][1]>newInterval[0]，如果找不到，直接在最后插入
-//然后判断当前位置于newInterval的关系，判断有没有交集
-//分为三种情况
-//然后从下一个位置，开始合并interval
+//剔除没有交集的部分，直接保存
+//对于有交集的部分，所有开始时间的最小值，所有开始时间的最大值，构成一个新的interval
 
 
 class Solution_57 {
 public:
 	vector<vector<int>> insert(vector<vector<int>>& intervals, vector<int>& newInterval) {
-
-		sort(intervals.begin(), intervals.end(), [](vector<int>a, vector<int>b) {return a[0]<b[0]; });
-		int n = intervals.size();
-		vector<vector<int>>rs;
-
-		int next_index = 0;
-		for (; next_index<n; next_index++) {
-			if (intervals[next_index][1]<newInterval[0]) {
-				rs.push_back(intervals[next_index]);
-				continue;
+		vector<vector<int>>left;
+		vector<vector<int>>right;
+		int s = newInterval[0];
+		int e = newInterval[1];
+		for (int i = 0; i<intervals.size(); i++) {
+			if (intervals[i][1]<newInterval[0]) {
+				left.push_back(intervals[i]);
 			}
-			else
-				break;
-		}
-
-		if (next_index == n) {
-			intervals.push_back(newInterval);
-			return intervals;
-		}
-
-		if (intervals[next_index][0]>newInterval[1]) {
-			rs.push_back(newInterval);
-			rs.push_back(intervals[next_index]);
-
-		}
-		else if (intervals[next_index][0]<newInterval[0]) {
-			rs.push_back(intervals[next_index]);
-			rs.back()[1] = max(newInterval[1], intervals[next_index][1]);
-		}
-		else {
-			rs.push_back(newInterval);
-			rs.back()[1] = max(newInterval[1], intervals[next_index][1]);
-		}
-
-		for (int i = next_index + 1; i<intervals.size(); i++) {
-			//没有发生overlap
-			if (rs.back()[1]<intervals[i][0]) {
-				rs.push_back(intervals[i]);
+			else if (intervals[i][0]>newInterval[1]) {
+				right.push_back(intervals[i]);
 			}
-			//发生overlap，更新最后一个区间的右端点
 			else {
-				rs.back()[1] = max(rs.back()[1], intervals[i][1]);
+				s = min(s, intervals[i][0]);
+				e = max(e, intervals[i][1]);
 			}
 		}
-		return rs;
+		left.push_back({ s,e });
+		left.insert(left.end(), right.begin(), right.end());
+		return left;
 	}
 };

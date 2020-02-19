@@ -2,8 +2,17 @@
 #include<sstream>
 #include<vector>
 #include<map>
+#include<set>
 using namespace std;
+//Given a list of airline tickets represented by pairs of departure and arrival airports[from, to], reconstruct the itinerary in order.All of the tickets belong to a man who departs from JFK.Thus, the itinerary must begin with JFK.
+//
+//Note:
+//
+//If there are multiple valid itineraries, you should return the itinerary that has the smallest lexical order when read as a single string.For example, the itinerary["JFK", "LGA"] has a smaller lexical order than["JFK", "LGB"].
+//All airports are represented by three capital letters(IATA code).
+//You may assume all tickets form at least one valid itinerary.
 
+//寻找欧拉回路
 
 //dfs遍历所有的边
 //记录每条边出现的次数即可
@@ -14,6 +23,30 @@ using namespace std;
 class Solution_332
 {
 public:
+	//在递归结束时，将当前节点插入到route中
+	//In Eulerian paths, there must exist a start node(which is JFK in this problem) and a end node.
+	//	End node can be start node or another node.
+	//	end node is start node iff all nodes has even degree.
+	//	end node is another node iff there is another odd degree node and start node has an odd degree.
+	vector<string> findItinerary_dfs(vector<vector<string>>& tickets) {
+		for (auto ticket : tickets)
+			targets[ticket[0]].insert(ticket[1]);
+		visit("JFK");
+		return vector<string>(route.rbegin(), route.rend());
+	}
+	map<string, multiset<string>> targets;
+	vector<string> route;
+
+	void visit(string airport) {
+		while (targets[airport].size()) {
+			string next = *targets[airport].begin();
+			targets[airport].erase(targets[airport].begin());
+			visit(next);
+		}
+		route.push_back(airport);
+	}
+
+
 	//dfs遍历所有的边
 	vector<string> findItinerary(vector<vector<string>>& tickets) {
 		map<string, map<string, int>> m, vis;
