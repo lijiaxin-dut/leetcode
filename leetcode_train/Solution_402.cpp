@@ -25,19 +25,24 @@ using namespace std;
 class Solution_402 {
 public:
 	string removeKdigits(string num, int k) {
-		if (k == num.size())
-			return "0";
+		int n = num.size();
 		string s;
-		for (int i = 0; i<num.size(); i++) {
-			while (k>0 && !s.empty() && num[i]<s.back()) {
-				s.pop_back();
-				k--;
+		for (int i = 0; i<n; i++) {
+			if (s.empty() || num[i]>s.back()) {
+				s.push_back(num[i]);
 			}
-			s.push_back(num[i]);
+			else {
+				while (!s.empty() && num[i]<s.back() && k>0) {
+					s.pop_back();
+					k--;
+				}
+				s.push_back(num[i]);
+			}
 		}
-		//一直在入栈，没有出栈，将后面的数字删除掉
-		while (k-- != 0)
+		while (k>0 && !s.empty()) {
 			s.pop_back();
+			k--;
+		}
 		while (!s.empty() && s[0] == '0')
 			s.erase(s.begin());
 		return s.empty() ? "0" : s;

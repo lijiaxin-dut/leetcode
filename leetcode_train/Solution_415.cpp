@@ -19,36 +19,17 @@ public:
 		int index_2 = n2 - 1;
 		int carry = 0;
 		string rs;
-		rs.resize(max(n1, n2) + 1);
-		int rs_index = max(n1, n2);
-		while (index_1 >= 0 && index_2 >= 0) {
-			int num = (num1[index_1] - '0') + (num2[index_2] - '0');
-			num += carry;
+		while (index_1 >= 0 || index_2 >= 0 || carry>0) {
+			int x = index_1 >= 0 ? num1[index_1] - '0' : 0;
+			int y = index_2 >= 0 ? num2[index_2] - '0' : 0;
+			int num = x + y + carry;
 			carry = num / 10;
 			num = num % 10;
-			rs[rs_index--] = (num + '0');
+			rs.push_back(num + '0');
 			index_1--;
 			index_2--;
 		}
-		while (index_1 >= 0) {
-			int num = (num1[index_1] - '0') + carry;
-			carry = num / 10;
-			num = num % 10;
-			rs[rs_index--] = num + '0';
-			index_1--;
-		}
-		while (index_2 >= 0) {
-			int num = (num2[index_2] - '0') + carry;
-			carry = num / 10;
-			num = num % 10;
-			rs[rs_index--] = num + '0';
-			index_2--;
-		}
-		if (carry>0) {
-			rs[rs_index] = carry + '0';
-		}
-		while (!rs.empty() && rs[0] == '\0')
-			rs.erase(rs.begin());
+		reverse(rs.begin(), rs.end());
 		return rs;
 	}
 };

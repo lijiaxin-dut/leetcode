@@ -14,28 +14,20 @@ using namespace std;
 //
 //There are two left leaves in the binary tree, with values 9 and 15 respectively.Return 24.
 
-//递归遍历
+//自底向上递归
 
 class Solution_404 {
 public:
 	int sumOfLeftLeaves(TreeNode* root) {
-		if (root == NULL)
-			return 0;
-		int rs = 0;
-		dfs(root->left, root, rs);
-		dfs(root->right, root, rs);
-		return rs;
+		return help(root, nullptr);
 	}
-	void dfs(TreeNode *x, TreeNode*pre, int &rs) {
-		if (x == NULL)
-			return;
-		if (x->left == NULL&&x->right == NULL) {
-			if (pre->left == x)
-				rs += x->val;
-			return;
-		}
-		dfs(x->left, x, rs);
-		dfs(x->right, x, rs);
+	int help(TreeNode*node, TreeNode*pre) {
+		if (node == nullptr)
+			return 0;
+		if (node->left == nullptr&&node->right == nullptr&&pre != nullptr&&pre->left == node)
+			return node->val;
+		return help(node->left, node) + help(node->right, node);
+
 	}
 };
 

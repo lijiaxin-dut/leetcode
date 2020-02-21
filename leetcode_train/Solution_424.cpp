@@ -20,6 +20,17 @@ using namespace std;
 
 //两个指针，使用map两个指针中间元素每个元素出现的次数
 //出现次数+k<=frist-second，就得到一个合法的解
+
+
+//滑动窗口不需要减少
+//假设k=2;
+//当前最长重复字母的次数为3，窗口长度为5
+//则当前结果为5
+//如果想得到为6的结构
+//至少重复的字母要为4次，4+2变成6
+
+//所以当滑动窗口向右平移时，不需要重新计  当前最长重复字母的个数
+
 class Solution_424 {
 public:
 	int characterReplacement(string s, int k) {

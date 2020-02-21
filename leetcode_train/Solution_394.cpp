@@ -20,69 +20,56 @@ using namespace std;
 //s = "3[a2[c]]", return "accaccacc".
 //s = "2[abc]3[cd]ef", return "abcabccdcdcdef".
 
-//使用栈保存数据
-//不断的将'['、数字和字母存入栈中 
-//遇到右括号时，就从栈中弹出至左括号，注意拼接的顺序
-//然后弹出左括号，将新的字母组合放入栈中
+//数字后面一定接着'['
+//解析出数字后，找出后面对应的字符串 2[adfaf[adfadf]]addf就是找出adfaf[adfadf]，递归调用
+//s更新为剩下的部分，继续解析
 
 
-
-class Solution_394 {
+class Solution {
 public:
 	string decodeString(string s) {
-
-		stack<string>my_stack;
-		int index = 0;
+		if (s.empty())
+			return "";
+		if (s.find('[') == std::string::npos)
+			return s;
 		string rs;
-		while (index < s.size()) {
-			string temp;
-			if (s[index] >= '0'&&s[index] <= '9') {
-				while (s[index] >= '0'&&s[index] <= '9') {
-					temp += s[index];
-					index++;
+		int cur_index = 0;
+		while (cur_index < s.size()) {
+			if (s[cur_index] >= '0'&&s[cur_index] <= '9') {
+				int num = 0;
+				while (s[cur_index] >= '0'&&s[cur_index] <= '9') {
+					num = num * 10 + (s[cur_index] - '0');
+					cur_index++;
 				}
-				my_stack.push(temp);
-				continue;
-			}
-			if ((s[index] >= 'a'&&s[index] <= 'z') || (s[index] >= 'A'&&s[index] <= 'Z')) {
-				while ((s[index] >= 'a'&&s[index] <= 'z') || (s[index] >= 'A'&&s[index] <= 'Z')) {
-					temp += s[index];
-					index++;
+				int left_size = 0;
+				int right_size = 0;
+				string middel;
+				string left;
+				for (int j = cur_index; j < s.size(); j++) {
+					if (s[j] == '[')
+						left_size++;
+					else if (s[j] == ']')
+						right_size++;
+					if (left_size == right_size) {
+						middel = s.substr(cur_index +1, j - cur_index-1);
+						left = s.substr(j + 1);
+						break;
+					}
 				}
-				my_stack.push(temp);
-				temp.clear();
-				continue;
+				auto t = decodeString(middel);
+				for (int i = 0; i < num; i++)
+					rs += t;
+				cur_index = 0;
+				s = left;
 			}
-			if (s[index] == '[') {
-				my_stack.push("[");
-				index++;
-			}
-			if (s[index] == ']') {
-				temp.clear();
-				while (my_stack.top() != "[") {
-					temp.insert(temp.begin(), my_stack.top().begin(), my_stack.top().end());
-					my_stack.pop();
+			else if (s[cur_index] >= 'a'&&s[cur_index] <= 'z') {
+				while (s[cur_index] >= 'a'&&s[cur_index] <= 'z') {
+					rs.push_back(s[cur_index]);
+					cur_index++;
 				}
-				my_stack.pop();
-				int cur_size = stoi(my_stack.top().c_str());
-				my_stack.pop();
-				string new_de;
-				for (int i = 0; i < cur_size; i++)
-					new_de += temp;
-				my_stack.push(new_de);
-				index++;
 			}
-		}
-		
-		while (!my_stack.empty()) {
-			rs.insert(rs.begin(), my_stack.top().begin(), my_stack.top().end());
-			my_stack.pop();
 		}
 		return rs;
 	}
-};
 
-//int main() {
-//	Solution_394 s;
-//	s.decodeString("3[a]2[bc]");
-//}
+};

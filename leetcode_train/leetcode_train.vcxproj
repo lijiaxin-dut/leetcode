@@ -163,6 +163,8 @@
     <ClCompile Include="Solution_375.cpp" />
     <ClCompile Include="Solution_381.cpp" />
     <ClCompile Include="Solution_388.cpp" />
+    <ClCompile Include="Solution_403.cpp" />
+    <ClCompile Include="Solution_410.cpp" />
     <ClCompile Include="Solution_455.cpp" />
     <ClCompile Include="Solution_492.cpp" />
     <ClCompile Include="KMP.cpp" />

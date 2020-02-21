@@ -1,5 +1,6 @@
 #include<vector>
-
+#include<algorithm>
+#include<numeric>
 using namespace std;
 
 //Given a non - empty array containing only positive integers, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.
@@ -32,9 +33,29 @@ using namespace std;
 //0 -1 背包  将数组求和sum,然后sum=sum/2
 //找到一个子集求和为sum/2
 //背包问题
-
+//dp[i][j]表示前i个数字在容量为j的最大求和，  认为weight与profit相等
+//容量为j时在最大profit也为j
 class Solution_416 {
 public:
+	bool canPartition_dp(vector<int>& nums) {
+		int total_sum = accumulate(nums.begin(), nums.end(), 0);
+		if (total_sum % 2 == 1)
+			return false;
+		int n = nums.size();
+		int half_sum = total_sum / 2;
+		vector<vector<int>>dp(n + 1, vector<int>(half_sum + 1, 0));
+		for (int i = 1; i <= nums.size(); i++) {
+			for (int j = 1; j <= half_sum; j++) {
+				if (j >= nums[i - 1])
+					dp[i][j] = max(dp[i - 1][j], dp[i - 1][j - nums[i - 1]] + nums[i - 1]);
+				else
+					dp[i][j] = dp[i - 1][j];
+			}
+		}
+		return dp[n][half_sum] == half_sum;
+
+	}
+
 	bool canPartition(vector<int>& nums) {
 		bool rs = false;
 		int p1_sum = 0;
