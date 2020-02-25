@@ -18,7 +18,7 @@ class Solution_8 {
 public:
 	int myAtoi(string str) {
 		int n = str.size();
-		long rs = 0;
+		
 		bool is_negative = false;
 		int cur_index = 0;
 		for (; cur_index<n; cur_index++) {
@@ -39,13 +39,17 @@ public:
 			else
 				return 0;
 		}
+		int rs = 0;
 		for (; cur_index<n; cur_index++) {
 			if (str[cur_index] >= '0'&&str[cur_index] <= '9') {
+				if (rs > INT_MAX / 10 || (rs == INT_MAX / 10 && str[cur_index] > '7')) {
+					if (is_negative == false)
+						return INT_MAX;
+					if (is_negative == true)
+						return INT_MIN;
+				}
 				rs = 10 * rs + (str[cur_index] - '0');
-				if (is_negative == false && rs>INT_MAX)
-					return INT_MAX;
-				if (is_negative == true && -rs<INT_MIN)
-					return INT_MIN;
+				
 			}
 			else
 				break;

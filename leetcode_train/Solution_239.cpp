@@ -1,4 +1,4 @@
-
+#include<deque>
 #include<vector>
 #include<set>
 using namespace std;
@@ -44,6 +44,28 @@ public:
 			s.insert(nums[i]);
 			rs.push_back(*s.rbegin());
 		}
+		return rs;
+	}
+	vector<int> maxSlidingWindow_deque(vector<int>& nums, int k) {
+		if (k == 0 || nums.empty())
+			return{};
+		deque<int>q;
+		for (int i = 0; i<k; i++) {
+			while (!q.empty() && nums[i]>nums[q.back()])
+				q.pop_back();
+			q.push_back(i);
+		}
+		vector<int>rs;
+		rs.push_back(nums[q.front()]);
+		for (int i = k; i<nums.size(); i++) {
+			while (!q.empty() && nums[i]>nums[q.back()])
+				q.pop_back();
+			if (!q.empty() && q.front() <= i - k)
+				q.pop_front();
+			q.push_back(i);
+			rs.push_back(nums[q.front()]);
+		}
+
 		return rs;
 	}
 };

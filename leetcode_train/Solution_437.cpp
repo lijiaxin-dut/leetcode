@@ -47,28 +47,33 @@ using namespace std;
 *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
 * };
 */
+
 class Solution_437 {
-public:
-	int pathSum(TreeNode* root, int sum) {
-		if (root == NULL)
-			return 0;
-		int rs = 0;
-		rs += dfs(root, sum);
-		rs += pathSum(root->left, sum);
-		rs += pathSum(root->right, sum);
-		return rs;
-	}
-	int dfs(TreeNode *x, int sum) {
-		int rs = 0;
-		if (x == NULL)
-			return 0;
-		if (x->val == sum)
-			rs++;
-		rs += dfs(x->left, sum - x->val);
-		rs += dfs(x->right, sum - x->val);
-		return rs;
-	}
-};
+	public:
+		int pathSum(TreeNode* root, int sum) {
+			int rs = 0;
+			help(root, sum, rs);
+			return rs;
+
+		}
+		void help(TreeNode*node, int sum, int &rs) {
+			if (node == nullptr)
+				return;
+			dfs(node, sum, 0, rs);
+			help(node->left, sum, rs);
+			help(node->right, sum, rs);
+
+		}
+		void dfs(TreeNode* node, int sum, int cur_sum, int &rs) {
+			if (node == nullptr)
+				return;
+			cur_sum += node->val;
+			if (cur_sum == sum)
+				rs++;
+			dfs(node->left, sum, cur_sum, rs);
+			dfs(node->right, sum, cur_sum, rs);
+		}
+	};
 //
 //int main() {
 //	Solution_437 s;

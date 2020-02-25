@@ -29,33 +29,36 @@ using namespace std;
 //dfs
 
 
-class Solution_606 {
+/**
+* Definition for a binary tree node.
+* struct TreeNode {
+*     int val;
+*     TreeNode *left;
+*     TreeNode *right;
+*     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+* };
+*/
+class Solution {
 public:
 	string tree2str(TreeNode* t) {
 		string rs;
 		dfs(t, rs);
 		return rs;
 	}
-	void dfs(TreeNode *node, string &rs) {
-		if (node == nullptr) {
+	void dfs(TreeNode*node, string &rs) {
+		if (node == nullptr)
 			return;
-		}
 		rs += to_string(node->val);
-		if (node->left == nullptr&&node->right == nullptr) {
-			return;
-		}
-		if (node->left != nullptr) {
+		if (node->left || node->right != nullptr) {
 			rs += "(";
 			dfs(node->left, rs);
 			rs += ")";
 		}
-		if (node->right != nullptr) {
-			if (node->left == nullptr) {
-				rs += "()";
-			}
+		if (node->right) {
 			rs += "(";
 			dfs(node->right, rs);
 			rs += ")";
 		}
+
 	}
 };

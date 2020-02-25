@@ -7,7 +7,7 @@
 using namespace std;
 
 //dp[i][j]±íÊ¾[0,i)  [0,j)µÄ±à¼­¾àÀë
-
+//the minimum number of operations to convert word1[0..i) to word2[0..j).
 //word1[i - 1] == word2[j - 1]->p[i][j] = dp[i - 1][j - 1]
 
 //É¾³ýword1[i - 1]   

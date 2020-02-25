@@ -20,6 +20,8 @@ using namespace std;
 //则该节点就是LCA节点
 //不断的将该节点自底向上返回即可
 
+//非递归
+//找到从root到p  q的路径，最后一个相同的点就是答案
 
 
 class Solution_236 {

@@ -148,6 +148,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="last_number_in_cycle.cpp" />
+    <ClCompile Include="max_queue.cpp" />
+    <ClCompile Include="n_th_number.cpp" />
+    <ClCompile Include="roate_string.cpp" />
     <ClCompile Include="Solution_329.cpp" />
     <ClCompile Include="Solution_1351.cpp" />
     <ClCompile Include="Solution_1352.cpp" />
@@ -163,8 +167,14 @@
     <ClCompile Include="Solution_375.cpp" />
     <ClCompile Include="Solution_381.cpp" />
     <ClCompile Include="Solution_388.cpp" />
+    <ClCompile Include="Solution_400.cpp" />
     <ClCompile Include="Solution_403.cpp" />
     <ClCompile Include="Solution_410.cpp" />
+    <ClCompile Include="Solution_433.cpp" />
+    <ClCompile Include="Solution_434.cpp" />
+    <ClCompile Include="Solution_435.cpp" />
+    <ClCompile Include="Solution_436.cpp" />
+    <ClCompile Include="Solution_452.cpp" />
     <ClCompile Include="Solution_455.cpp" />
     <ClCompile Include="Solution_492.cpp" />
     <ClCompile Include="KMP.cpp" />
@@ -203,6 +213,7 @@
     <ClCompile Include="Solution_51.cpp" />
     <ClCompile Include="Solution_52.cpp" />
     <ClCompile Include="Solution_530.cpp" />
+    <ClCompile Include="Solution_536.cpp" />
     <ClCompile Include="Solution_538.cpp" />
     <ClCompile Include="Solution_563.cpp" />
     <ClCompile Include="Solution_57.cpp" />
@@ -411,6 +422,7 @@
     <ClCompile Include="Solution_919.cpp" />
     <ClCompile Include="Solution_93.cpp" />
     <ClCompile Include="Solution_934.cpp" />
+    <ClCompile Include="Solution_946.cpp" />
     <ClCompile Include="Solution_959.cpp" />
     <ClCompile Include="Solution_97.cpp" />
     <ClCompile Include="Solution_971.cpp" />
@@ -595,8 +607,11 @@
     <ClCompile Include="Solution_113.cpp" />
     <ClCompile Include="SPFA.cpp" />
     <ClCompile Include="strongConnected.cpp" />
+    <ClCompile Include="sum_Probability.cpp" />
+    <ClCompile Include="three_trip_one.cpp" />
     <ClCompile Include="topoloGical.cpp" />
     <ClCompile Include="union_find.cpp" />
+    <ClCompile Include="源.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Graph.h" />

@@ -19,6 +19,9 @@
     <Filter Include="源文件\algorithm_4_th">
       <UniqueIdentifier>{209b917e-beb7-49cc-970a-75dccb8e878d}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\剑指offer">
+      <UniqueIdentifier>{62f3ae29-84b5-4391-83a0-30b60cf47271}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Solution_3.cpp">
@@ -1366,6 +1369,51 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="Solution_410.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_946.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="max_queue.cpp">
+      <Filter>源文件\剑指offer</Filter>
+    </ClCompile>
+    <ClCompile Include="sum_Probability.cpp">
+      <Filter>源文件\剑指offer</Filter>
+    </ClCompile>
+    <ClCompile Include="last_number_in_cycle.cpp">
+      <Filter>源文件\剑指offer</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_400.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="n_th_number.cpp">
+      <Filter>源文件\剑指offer</Filter>
+    </ClCompile>
+    <ClCompile Include="roate_string.cpp">
+      <Filter>源文件\剑指offer</Filter>
+    </ClCompile>
+    <ClCompile Include="three_trip_one.cpp">
+      <Filter>源文件\剑指offer</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_536.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_433.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_434.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_435.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_436.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_452.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
