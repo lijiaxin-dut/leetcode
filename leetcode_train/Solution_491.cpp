@@ -19,6 +19,32 @@ using namespace std;
 
 class Solution_491 {
 public:
+	vector<vector<int>> findSubsequences_set(vector<int>& nums) {
+		vector<vector<int>>rs;
+		vector<int>partial_rs;
+		dfs(rs, partial_rs, 0, nums);
+		return rs;
+	}
+	void dfs(vector<vector<int>>&rs, vector<int>&partial_rs, int cur_index, vector<int>& nums) {
+		if (cur_index >= nums.size())
+			return;
+		//使用set去重，之前出现过就不用继续dfs
+		unordered_set<int>s;
+		for (int i = cur_index; i<nums.size(); i++) {
+			if (s.count(nums[i]))
+				continue;
+			if ((!partial_rs.empty() && nums[i] >= partial_rs.back()) || partial_rs.empty()) {
+				s.insert(nums[i]);
+				partial_rs.push_back(nums[i]);
+				if (partial_rs.size() >= 2)
+					rs.push_back(partial_rs);
+				dfs(rs, partial_rs, i + 1, nums);
+				partial_rs.pop_back();
+			}
+		}
+
+
+	}
 	vector<vector<int>> findSubsequences(vector<int>& nums) {
 
 		set<vector<int>>rs;

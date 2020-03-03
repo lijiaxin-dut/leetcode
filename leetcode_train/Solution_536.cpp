@@ -31,7 +31,8 @@ using namespace std;
 class Solution {
 public:
 	TreeNode* str2tree(string s) {
-		if (s.empty()) return NULL;
+		if (s.empty()) 
+			return NULL;
 		auto found = s.find('(');
 		int val = (found == string::npos) ? stoi(s) : stoi(s.substr(0, found));
 		TreeNode *cur = new TreeNode(val);

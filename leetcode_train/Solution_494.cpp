@@ -25,8 +25,8 @@ using namespace std;
 //1.dfs遍历所有的可能
 //2.dp
 //dp[i][j]表示[0,...,i-1]求和为j的可能性
-//dp[i][j]+=dp[i-1][j-nums[i]]
-//dp[i][j]+=dp[i-1][j+nums[i]]
+//dp[i][j+nums[i]]+=dp[i-1][j]
+//dp[i][j-nums[i]]+=dp[i-1][j]
 
 class Solution_494 {
 public:
@@ -52,14 +52,14 @@ public:
 
 	int findTargetSumWays_dp(vector<int>& nums, int S) {
 		int n = nums.size();
-		vector<unordered_map<int, int>> dp(n + 1);
+		vector<unordered_map<int, int>>dp(n + 1);
 		dp[0][0] = 1;
-		for (int i = 0; i<n; i++) {
-			for (auto &a : dp[i]) {
-				int sum = a.first;
-				int cnt = a.second;
-				dp[i + 1][sum + nums[i]] += cnt;
-				dp[i + 1][sum - nums[i]] += cnt;
+		for (int i = 1; i <= n; i++) {
+			for (auto &one : dp[i - 1]) {
+				int sum = one.first;
+				int cnt = one.second;
+				dp[i][sum + nums[i - 1]] += cnt;
+				dp[i][sum - nums[i - 1]] += cnt;
 			}
 		}
 		return dp[n][S];

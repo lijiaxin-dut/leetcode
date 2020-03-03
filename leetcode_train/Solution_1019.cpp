@@ -13,34 +13,40 @@ using namespace std;
 //Note that in the example inputs(not outputs) below, arrays such as[2, 1, 5] represent the serialization of a linked list with a head node value of 2, second node value of 1, and third node value of 5.
 
 //使用stack保存指针，是一个递减栈
+//当遇到比栈顶元素大的nums[i]时，就找到了第一个大于栈顶元素的位置
 
 
-
-class Solution_1019 {
-	int get_length(ListNode *head) {
-		int l = 0;
-		while (head != nullptr) {
+/**
+* Definition for singly-linked list.
+* struct ListNode {
+*     int val;
+*     ListNode *next;
+*     ListNode(int x) : val(x), next(NULL) {}
+* };
+*/
+class Solution {
+	vector<int>get_nums(ListNode*head) {
+		vector<int>nums;
+		while (head) {
+			nums.push_back(head->val);
 			head = head->next;
-			l++;
 		}
-		return l;
+		return nums;
 	}
 public:
 	vector<int> nextLargerNodes(ListNode* head) {
-		stack<pair<ListNode *, int>>st;
-		int length = get_length(head);
-		vector<int>rs(length, 0);
-		int current_index = 0;
-		while (head) {
-			if (st.empty() || st.top().first->val >= head->val) {
-				st.push(make_pair(head, current_index++));
-				head = head->next;
+		if (head == nullptr)
+			return{};
+		vector<int>nums = get_nums(head);
+		int n = nums.size();
+		vector<int>rs(n, 0);
+		stack<int>s;
+		for (int i = 0; i<n; i++) {
+			while (!s.empty() && nums[i]>nums[s.top()]) {
+				rs[s.top()] = nums[i];
+				s.pop();
 			}
-			else {
-				auto last_node = st.top();
-				st.pop();
-				rs[last_node.second] = head->val;
-			}
+			s.push(i);
 		}
 		return rs;
 	}
