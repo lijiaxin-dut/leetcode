@@ -31,51 +31,59 @@ using namespace std;
 
 
 
-class Solution_638 {
+class Solution {
+	int rs = 0;
 public:
 	int shoppingOffers(vector<int>& price, vector<vector<int>>& special, vector<int>& needs) {
+		rs = INT_MAX;
 		int n = price.size();
 		for (int i = 0; i<n; i++) {
-			vector<int>t(n + 1, 0);
-			t[i] = 1;
-			t[n] = price[i];
-			special.push_back(t);
+			vector<int>singal(n + 1);
+			singal[i] = 1;
+			singal[n] = price[i];
+			special.push_back(singal);
 		}
-
-		int rs = INT_MAX;
-		dfs(rs, n, 0, special, needs, 0);
+		dfs(special, needs, 0, 0);
 		return rs;
 	}
-	bool check(vector<vector<int>>& special, vector<int>&needs, int index, int n) {
-		for (int j = 0; j<n; j++)
-			if (special[index][j]>needs[j])
-				return false;
-		return true;
-
+	void minus(vector<int> &bag, vector<int>& needs) {
+		for (int i = 0; i<needs.size(); i++) {
+			needs[i] -= bag[i];
+		}
 	}
-	bool check_1(vector<int>&needs, int n) {
-		for (int j = 0; j<n; j++)
-			if (needs[j] != 0)
-				return false;
-		return true;
-
+	void add(vector<int> &bag, vector<int>& needs) {
+		for (int i = 0; i<needs.size(); i++) {
+			needs[i] += bag[i];
+		}
 	}
-	void dfs(int &rs, int n, int current_price, vector<vector<int>>& special, vector<int>&needs, int current_index) {
-		if (check_1(needs, n) == true) {
-			rs = min(rs, current_price);
+	bool satisfy(vector<int> &bag, vector<int>& needs) {
+		for (int i = 0; i<needs.size(); i++) {
+			if (bag[i]>needs[i])
+				return false;
+		}
+		return true;
+	}
+	bool find_rs(vector<int>& needs) {
+		int n = needs.size();
+		for (int i = 0; i<n; i++) {
+			if (needs[i] != 0) {
+				return false;
+			}
+		}
+		return true;
+	}
+	void dfs(vector<vector<int>>& special, vector<int>& needs, int cur_total, int cur_index) {
+		if (cur_total>rs || cur_index >= special.size())
+			return;
+		if (find_rs(needs) == true) {
+			rs = min(rs, cur_total);
 			return;
 		}
-		//¼ôÖ¦
-		if (current_price>rs)
-			return;
-		if (check(special, needs, current_index, n) == true) {
-			for (int j = 0; j<n; j++)
-				needs[j] -= special[current_index][j];
-			dfs(rs, n, current_price + special[current_index].back(), special, needs, current_index);
-			for (int j = 0; j<n; j++)
-				needs[j] += special[current_index][j];
+		if (satisfy(special[cur_index], needs)) {
+			minus(special[cur_index], needs);
+			dfs(special, needs, cur_total + special[cur_index].back(), cur_index);
+			add(special[cur_index], needs);
 		}
-		if (current_index + 1<special.size())
-			dfs(rs, n, current_price, special, needs, current_index + 1);
+		dfs(special, needs, cur_total, cur_index + 1);
 	}
 };

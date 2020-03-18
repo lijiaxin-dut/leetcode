@@ -15,6 +15,24 @@ using namespace std;
 
 class Solution_565 {
 public:
+	int arrayNesting_no_extra_space(vector<int>& nums) {
+		int rs = 0;
+		for (int i = 0; i<nums.size(); i++) {
+			if (nums[i]<0)
+				continue;
+			int j = i;
+			int cur_length = 0;
+			while (nums[j] >= 0) {
+				int pre_j = j;
+				j = nums[j];
+				nums[pre_j] = -1;
+				cur_length++;
+			}
+			rs = max(rs, cur_length);
+		}
+		return rs;
+	}
+
 	int arrayNesting(vector<int>& nums) {
 		int rs = 0;
 		int n = nums.size();

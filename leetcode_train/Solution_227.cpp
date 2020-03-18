@@ -37,7 +37,7 @@ public:
 			if (s[i] >= '0'&&s[i] <= '9') {
 				num = num * 10 + (s[i] - '0');
 			}
-			if ((s[i] < '0' && s[i] != ' ') || i == n - 1) {
+			if ((!isdigit(s[i]) && s[i] != ' ') || i == n - 1) {
 				if (op == '+')
 					nums.push(num);
 				else if (op == '-')

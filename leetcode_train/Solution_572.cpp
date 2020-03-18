@@ -18,32 +18,23 @@
 //dfsÒÀ´ÎÅÐ¶Ï
 
 
-class Solution_572 {
+class Solution {
 public:
 	bool isSubtree(TreeNode* s, TreeNode* t) {
-		bool find = false;
-		dfs(s, t, find);
-		return find;
-	}
-
-	void dfs(TreeNode *x, TreeNode *t, bool &find) {
-		if (find == true || x == nullptr)
-			return;
-		if (x->val == t->val) {
-			find = help(x, t);
-		}
-		dfs(x->left, t, find);
-		dfs(x->right, t, find);
-	}
-
-	bool help(TreeNode*x, TreeNode *y) {
-		if (x == nullptr&&y == nullptr)
+		if (s == nullptr&&t == nullptr)
 			return true;
-		if (x == nullptr || y == nullptr)
+		if (s == nullptr || t == nullptr)
 			return false;
-		if (x->val != y->val)
-			return false;
-		return help(x->left, y->left) && help(x->right, y->right);
+		return help(s, t) || isSubtree(s->left, t) || isSubtree(s->right, t);
 
+	}
+	bool help(TreeNode*p, TreeNode*q) {
+		if (p == nullptr&&q == nullptr)
+			return true;
+		if (p == nullptr || q == nullptr)
+			return false;
+		if (p->val != q->val)
+			return false;
+		return help(p->left, q->left) && help(p->right, q->right);
 	}
 };

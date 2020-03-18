@@ -59,4 +59,26 @@ public:
 			return pow(2, left_hi) - 1;
 		return 1 + countNodes(root->left) + countNodes(root->right);
 	}
+
+	int count_level_3(TreeNode*node) {
+		int rs = 0;
+		while (node) {
+			rs++;
+			node = node->left;
+		}
+		return rs;
+	}
+public:
+	//分别计算左右子树的高度。
+	int countNodes_3(TreeNode* root) {
+		if (root == nullptr)
+			return 0;
+		int h_left = count_level_3(root->left);
+		int h_right = count_level_3(root->right);
+		if (h_left == h_right)
+			return pow(2, h_left) + countNodes(root->right);
+		else
+			return pow(2, h_right) + countNodes(root->left);
+
+	}
 };

@@ -21,42 +21,31 @@ using namespace std;
 
 
 
-class Solution_756 {
+class Solution {
 public:
 	bool pyramidTransition(string bottom, vector<string>& allowed) {
-		if (bottom.size() == 2) {
-			for (auto &one_all : allowed) {
-				if (one_all[0] == bottom[0] && one_all[1] == bottom[1]) {
-					return true;
-				}
-			}
-			return false;
-		}
-		vector<string>new_bottom{ "" };
-		//构造上一层所有可能的情况
+		if (bottom.size() == 1)
+			return true;
+		vector<string>next_level{ "" };
 		for (int i = 0; i<bottom.size() - 1; i++) {
-			string t;
-			for (auto &one_all : allowed) {
-				if (one_all[0] == bottom[i] && one_all[1] == bottom[i + 1]) {
-					t.push_back(one_all[2]);
+			string temp;
+			for (auto &one_allowed : allowed) {
+				if (bottom[i] == one_allowed[0] && bottom[i + 1] == one_allowed[1]) {
+					temp += one_allowed[2];
 				}
 			}
-			vector<string>temp;
-			for (auto &one_char : t) {
-				for (auto one_pre : new_bottom) {
-					temp.push_back(one_pre);
-					temp.back().push_back(one_char);
-				}
+			vector<string>partial_level;
+			for (auto &one_n : next_level) {
+				for (auto &one_c : temp)
+					partial_level.push_back(one_n + one_c);
 			}
-			new_bottom = temp;
+			swap(next_level, partial_level);
 		}
-		for (auto &pre_bottom : new_bottom) {
-			//跳过不可能的解
-			if (pre_bottom.size() + 1 != bottom.size())
-				continue;
-			if (pyramidTransition(pre_bottom, allowed) == true)
+		for (auto &one_next : next_level) {
+			if (pyramidTransition(one_next, allowed) == true)
 				return true;
 		}
 		return false;
+
 	}
 };

@@ -10,44 +10,44 @@ using namespace std;
 
 //dfs 穷举所有的可能
 //dp
-//dp[k][i][j]  i j 到边界经过k步的所有可能
+//dp[i][j][k]经过n步到达(i,j)的步数
 
 
 
 class Solution_576 {
-	vector<int>xx{ -1,1,0,0 };
-	vector<int>yy{ 0,0,-1,1 };
+
 	int M = 1000000000 + 7;
 public:
-	int findPaths_dp(int m, int n, int N, int i, int j) {
-		vector<vector<vector<long>>>dp(N + 1, vector<vector<long>>(m, vector<long>(n, 0)));
-		for (int k = 1; k <= N; k++) {
-			for (int x = 0; x<m; x++) {
-				for (int y = 0; y<n; y++) {
-					int v1 = 0, v2 = 0, v3 = 0, v4 = 0;
-					if (x == 0)
-						dp[k][x][y] += 1;
-					else
-						dp[k][x][y] += dp[k - 1][x - 1][y];
-					if (x == m - 1)
-						dp[k][x][y] += 1;
-					else
-						dp[k][x][y] += dp[k - 1][x + 1][y];
-					if (y == 0)
-						dp[k][x][y] += 1;
-					else
-						dp[k][x][y] += dp[k - 1][x][y - 1];
-					if (y == n - 1)
-						dp[k][x][y] += 1;
-					else
-						dp[k][x][y] += dp[k - 1][x][y + 1];
-					dp[k][x][y] %= (1000000000 + 7);
+	vector<int>xx{ 0,0,1,-1 };
+	vector<int>yy{ 1,-1,0,0 };
+public:
+	int findPaths(int m, int n, int N, int i, int j) {
+		int rs = 0;
+		int mode = 1e9 + 7;
+		vector<vector<vector<int>>>dp(m, vector<vector<int>>(n, vector<int>(N + 1, 0)));
+		dp[i][j][0] = 1;
+		for (int cur_step = 1; cur_step <= N; cur_step++) {
+			for (int curx = 0; curx<m; curx++) {
+				for (int cury = 0; cury<n; cury++) {
+					if (dp[curx][cury][cur_step - 1] == 0)
+						continue;
+					for (int k = 0; k<4; k++) {
+						int new_x = curx + xx[k];
+						int new_y = cury + yy[k];
+						if (new_x<0 || new_x >= m || new_y<0 || new_y >= n) {
+							rs += dp[curx][cury][cur_step - 1];
+							rs = rs % (mode);
+							continue;
+						}
+						dp[new_x][new_y][cur_step] += dp[curx][cury][cur_step - 1];
+						dp[new_x][new_y][cur_step] = dp[new_x][new_y][cur_step] % mode;
+					}
 				}
 			}
 		}
-		return dp[N][i][j];
+		return rs;
 	}
-	int findPaths(int m, int n, int N, int i, int j) {
+	int findPaths_(int m, int n, int N, int i, int j) {
 		int rs = 0;
 		dfs(m, n, N, 0, rs, i, j);
 		return rs;

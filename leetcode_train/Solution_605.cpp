@@ -23,31 +23,24 @@ using namespace std;
 
 //扫描一遍数组即可 扫描的过程中直接将可以修改的位置置为1
 //贪心
-
+//在头部和尾部插入0，简化判断的情况
 
 class Solution_605 {
 public:
 	bool canPlaceFlowers(vector<int>& flowerbed, int n) {
-		int n_size = flowerbed.size();
 		int rs = 0;
-		for (int i = 0; i<n_size; i++) {
-			if (flowerbed[i] == 0) {
-				if (i == 0 && (i == n_size - 1 || flowerbed[i + 1] == 0)) {
-					rs++;
-					flowerbed[i] = 1;
-				}
-				else if (i == n_size - 1 && (i == 0 || flowerbed[i - 1] == 0)) {
-					rs++;
-					flowerbed[i] = 1;
-				}
-				else if (i!=0&&i!=n_size-1&&flowerbed[i - 1] == 0 && flowerbed[i + 1] == 0) {
-					rs++;
-					flowerbed[i] = 1;
-				}
+		int f_size = flowerbed.size();
+		flowerbed.insert(flowerbed.begin(), 0);
+		flowerbed.push_back(0);
+		for (int i = 1; i <= f_size&&n>0; i++) {
+			if (flowerbed[i] == 1)
+				continue;
+			if (flowerbed[i - 1] == 0 && flowerbed[i + 1] == 0) {
+				flowerbed[i] = 1;
+				n--;
 			}
 		}
-		return rs >= n;
-
+		return n == 0;
 	}
 };
 

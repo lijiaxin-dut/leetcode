@@ -1,7 +1,7 @@
 #include<iostream>
 #include<vector>
 #include<algorithm>
-
+#include<unordered_map>
 using namespace std;
 
 
@@ -27,6 +27,32 @@ using namespace std;
 
 class Solution_1043 {
 public:
+	vector<int>c;
+public:
+	int maxSumAfterPartitioning_top_down_dp(vector<int>& A, int K) {
+		c.resize(A.size(), -1);
+		return help(A, K, 0);
+	}
+	int help(vector<int>&A, int k, int cur_index) {
+		if (cur_index == A.size())
+			return 0;
+		if (c[cur_index] != -1)
+			return c[cur_index];
+		int length = 0;
+		int cur_max = 0;
+		int max_val = 0;
+		for (int i = cur_index; i<A.size() && length<k; i++) {
+			if (A[i]>max_val)
+				max_val = A[i];
+			cur_max = max(cur_max, max_val*(i - cur_index + 1) + help(A, k, i + 1));
+			length++;
+		}
+		c[cur_index] = cur_max;
+		return cur_max;
+	}
+
+
+
 	int maxSumAfterPartitioning(vector<int>& A, int K) {
 
 		int n = A.size();

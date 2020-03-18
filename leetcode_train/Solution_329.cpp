@@ -22,7 +22,7 @@ using namespace std;
 
 //topo找最长路径
 //  首先找到topo排序
-//	按照拓扑排序的顺序松弛  dp[i]=max(dp[i],do[j]+i->j)
+//	按照拓扑排序的顺序松弛  dp[i]=max(dp[i],do[j]+i)  j->i
 //或者
 //dfs+memory
 

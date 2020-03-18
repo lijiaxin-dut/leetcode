@@ -35,8 +35,8 @@ public:
 				j++;
 			}
 			else if (i_start >= 0) {
-				i = i_start;
 				i_start++;
+				i = i_start;
 				j = j_start + 1;
 			}
 			else

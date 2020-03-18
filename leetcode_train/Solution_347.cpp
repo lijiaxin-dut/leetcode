@@ -14,6 +14,7 @@ using namespace std;
 //优先队列里面保存pair
 
 //自定义比较函数
+//使用最小堆，始终保存k个数
 
 class Solution_347 {
 public:
@@ -21,16 +22,19 @@ public:
 		unordered_map<int, int>hash_map;
 		for (int i = 0; i<nums.size(); i++)
 			hash_map[nums[i]]++;
-		auto compare = [](pair<int, int> a, pair<int, int> b) {return a.first<b.first; };
+		auto compare = [](pair<int, int> a, pair<int, int> b) {return a.first>b.first; };
 		priority_queue<pair<int, int>, vector<pair<int, int>>, decltype(compare)>pq(compare);
-		for (auto &one_part : hash_map) {
-			pq.push(make_pair(one_part.second, one_part.first));
+		for (auto &one_pair : hash_map) {
+			pq.push(make_pair(one_pair.second, one_pair.first));
+			if (pq.size()>k)
+				pq.pop();
 		}
 		vector<int>rs;
 		for (int i = 0; i<k; i++) {
 			rs.push_back(pq.top().second);
 			pq.pop();
 		}
+		reverse(rs.begin(), rs.end());
 		return rs;
 	}
 };

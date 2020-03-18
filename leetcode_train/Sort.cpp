@@ -5,9 +5,9 @@
 
 using namespace std;
 
-int radix_sort(vector<int>& nums) {
+void radix_sort(vector<int>& nums) {
 	if (nums.empty() || nums.size() < 2)
-		return 0;
+		return ;
 
 	int maxVal = *max_element(nums.begin(), nums.end());
 
@@ -34,6 +34,9 @@ int radix_sort(vector<int>& nums) {
 
 		exp *= 10;
 	}
+	for (auto &one_num : nums)
+		cout << one_num << "\t";
+	cout << endl;
 
 }
 //Ñ¡ÔñÅÅÐò
@@ -44,8 +47,8 @@ void select_sort(vector<int>nums) {
 		for (int j = i + 1; j < nums.size(); j++) {
 			if (nums[j] < nums[min_index])
 				min_index = j;
-			swap(nums[i], nums[min_index]);
 		}
+		swap(nums[i], nums[min_index]);
 	}
 	for (auto &one_num : nums)
 		cout << one_num << "\t";
@@ -191,4 +194,5 @@ void bubble_sort(vector<int>nums){
 //	merge_sort(nums);
 //	quick_sort(nums);
 //	bubble_sort(nums);
+//	radix_sort(nums);
 //}

@@ -23,61 +23,6 @@ using namespace std;
 
 class Solution_978 {
 public:
-	int maxTurbulenceSize_(vector<int>& A) {
-		if (A.size() <= 1)
-			return A.size();
-		int left = 0;
-		int right = 0;
-		int rs = 1;
-		while (right<A.size() - 1) {
-			if (A[right]<A[right + 1]) {
-				right++;
-				int index = 0;
-				while (right<A.size() - 1) {
-					if (index % 2 == 0 && A[right]>A[right + 1]) {
-						index++;
-						right++;
-					}
-					else if (index % 2 == 1 && A[right]<A[right + 1]) {
-						index++;
-						right++;
-					}
-					else {
-						rs = max(rs, right - left + 1);
-						left = right;
-						break;
-					}
-					rs = max(rs, right - left + 1);
-				}
-			}
-			else if (A[right]>A[right + 1]) {
-				right++;
-				int index = 1;
-				while (right<A.size() - 1) {
-					if (index % 2 == 0 && A[right]>A[right + 1]) {
-						index++;
-						right++;
-					}
-					else if (index % 2 == 1 && A[right]<A[right + 1]) {
-						index++;
-						right++;
-					}
-					else {
-						rs = max(rs, right - left + 1);
-						left = right;
-						break;
-					}
-					rs = max(rs, right - left + 1);
-				}
-			}
-			else {
-				right++;
-				left = right;
-			}
-		}
-		return rs;
-	}
-
 	int compare(int a, int b) {
 		if (a<b)
 			return 1;
@@ -89,13 +34,17 @@ public:
 	int maxTurbulenceSize(vector<int>& A) {
 		int left = 0;
 		int rs = 1;
-		for (int i = 1; i<A.size(); i++) {
+		int n = A.size();
+		for (int i = 1; i<n; i++) {
 			int c = compare(A[i - 1], A[i]);
 			if (c == 0)
 				left = i;
-			else if (i == A.size() - 1 || (c*compare(A[i], A[i + 1]) != -1)) {
-				rs = max(rs, i - left + 1);
-				left = i;
+			else {
+				int d = (i == n - 1 ? 0 : compare(A[i], A[i + 1]));
+				if (c*d != -1) {
+					rs = max(rs, i - left + 1);
+					left = i;
+				}
 			}
 
 		}

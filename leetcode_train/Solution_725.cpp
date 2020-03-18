@@ -21,12 +21,12 @@ using namespace std;
 
 //然后按顺序划分到每一组，上一组的尾部与下一组的头部要断开
 
-class Solution_725 {
-	int get_length(ListNode *head) {
+class Solution {
+	int get_length(ListNode*node) {
 		int l = 0;
-		while (head != nullptr) {
-			head = head->next;
+		while (node) {
 			l++;
+			node = node->next;
 		}
 		return l;
 	}
@@ -34,35 +34,17 @@ public:
 	vector<ListNode*> splitListToParts(ListNode* root, int k) {
 		int length = get_length(root);
 		vector<ListNode*>rs(k, nullptr);
-		if (k >= length) {
-			int cur_index = 0;
-			while (root != nullptr) {
-				rs[cur_index++] = root;
-				auto back = root->next;
-				root->next = nullptr;
-				root = back;
-			}
-		}
-		else {
-			int each_group_equal_size = length / k;
-			int over_size = length%k;
-			vector<int>each_size(k, each_group_equal_size);
-			for (int i = 0; i<k&&over_size>0; i++) {
-				each_size[i]++;
-				over_size--;
-			}
-			for (int i = 0; i<k; i++) {
-				rs[i] = root;
-				int cur_size = 1;
-				while (cur_size++<each_size[i]) {
-					root = root->next;
-				}
-				auto pre = root;
+		int n = length / k;//每一组相等的长度
+		int r = length%k;//前r组每组多一个节点
+		for (int i = 0; i<k&&root != nullptr; i++, r--) {
+			rs[i] = root;
+			ListNode*pre = nullptr;
+			for (int j = 0; j<n + (r>0); j++) {
+				pre = root;
 				root = root->next;
-				pre->next = nullptr;
 			}
+			pre->next = nullptr;
 		}
 		return rs;
-
 	}
 };

@@ -76,22 +76,23 @@ class Solution_524 {
 	}
 public:
 	//判断d中的字符串是否是s的子序列，在所有子序列中返回一个最长的
+	bool is_subsequence(string &s1, string &s2) {
+		int j = 0;
+		for (int i = 0; i<s1.size() && j<s2.size(); i++)
+			if (s1[i] == s2[j])
+				j++;
+		return j == s2.size();
+	}
+public:
 	string findLongestWord(string s, vector<string>& d) {
-		string rs;
-		for (auto &one_world : d) {
-			int i = 0;
-			for (auto &one_char : s) {
-				if (i<one_world.size() && one_char == one_world[i])
-					i++;
-			}
-			if (i == one_world.size()) {
-				if ((rs.size()<one_world.size()) || (rs.size() == one_world.size() && rs>one_world)) {
-					rs = one_world;
-				}
-			}
+		sort(d.begin(), d.end(), [](string a, string b) {
+			return a.size()>b.size() || (a.size() == b.size() && a<b);
+		});
+		for (int i = 0; i<d.size(); i++) {
+			if (is_subsequence(s, d[i]))
+				return d[i];
 		}
-		return rs;
-
+		return "";
 	}
 };
 //

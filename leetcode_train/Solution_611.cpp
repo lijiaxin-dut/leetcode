@@ -6,31 +6,44 @@
 
 using namespace std;
 
-class Solution_611 {
+//Given an array consists of non - negative integers, your task is to count the number of triplets chosen from the array that can make triangles if we take them as side lengths of a triangle.
+//Example 1:
+//Input: [2, 2, 3, 4]
+//	Output : 3
+//	Explanation :
+//	Valid combinations are :
+//	   2, 3, 4 (using the first 2)
+//		   2, 3, 4 (using the second 2)
+//		   2, 2, 3
+
+//首先排序
+//然后调用自己实现的lower_bound函数
+
+class Solution {
+	int lower_bound(vector<int>&nums, int i, int j, int target) {
+		int left = i;
+		int right = j;
+		while (left<right) {
+			int mid = left + (right - left) / 2;
+			if (nums[mid] >= target)
+				right = mid;
+			else
+				left = mid + 1;
+		}
+		return left;
+
+	}
 public:
 	int triangleNumber(vector<int>& nums) {
-		int rs = 0;
 		sort(nums.begin(), nums.end());
-		int n = nums.size();
-		for (int i = 0; i<n; i++) {
-			for (int j = i + 1; j<n; j++) {
-				int left = j + 1;
-				int right = n - 1;
-				int sum = nums[i] + nums[j];
-				//找到恰好小于sum的位置
-				while (left <= right) {
-					int mid = (left + right) / 2;
-					if (sum>nums[mid]) {
-						left = mid + 1;
-					}
-					else {
-						right = mid - 1;
-					}
-				}
-				rs += right - j;
+		int rs = 0;
+		for (int i = 0; i<nums.size(); i++) {
+			for (int j = i + 1; j<nums.size(); j++) {
+				int two_sum = nums[i] + nums[j];
+				auto it = lower_bound(nums, j + 1, nums.size(), two_sum);
+				rs += it - (j + 1);
 			}
 		}
 		return rs;
-
 	}
 };

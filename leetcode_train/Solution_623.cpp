@@ -32,55 +32,52 @@ using namespace std;
 
 //找到d-1层的节点
 
-class Solution_623 {
-	vector<TreeNode*>d_level(TreeNode*root, int d) {
-		int cur_level = 0;
-		queue<TreeNode*>q;
-		vector<TreeNode*>rs;
-		q.push(root);
-		while (!q.empty()) {
-			int cur_level_size = q.size();
-			cur_level++;
-			for (int i = 0; i<cur_level_size; i++) {
-				auto cur_node = q.front();
-				q.pop();
-				if (cur_level == d - 1)
-					rs.push_back(cur_node);
-				if (cur_node->left)
-					q.push(cur_node->left);
-				if (cur_node->right)
-					q.push(cur_node->right);
-			}
-			if (cur_level == d-1)
-				break;
-		}
-		return rs;
-	}
+/**
+* Definition for a binary tree node.
+* struct TreeNode {
+*     int val;
+*     TreeNode *left;
+*     TreeNode *right;
+*     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+* };
+*/
+class Solution {
 public:
 	TreeNode* addOneRow(TreeNode* root, int v, int d) {
 		if (d == 1) {
 			TreeNode*new_root = new TreeNode(v);
+			if (root == nullptr)
+				return new_root;
 			new_root->left = root;
 			return new_root;
 		}
-		auto level_d_node = d_level(root, d);
-		for (auto &one_node : level_d_node) {
-
-			TreeNode*new_root_left = new TreeNode(v);
-			if (one_node->left)
-				new_root_left->left = one_node->left;
-			one_node->left = new_root_left;
-			TreeNode*new_root_right = new TreeNode(v);
-			if (one_node->right)
-				new_root_right->right = one_node->right;
-			one_node->right = new_root_right;
-
+		queue<TreeNode*>q;
+		q.push(root);
+		while (!q.empty()) {
+			d--;
+			if (d == 1)
+				break;
+			int cur_size = q.size();
+			for (int i = 0; i<cur_size; i++) {
+				auto node = q.front();
+				q.pop();
+				if (node->left)
+					q.push(node->left);
+				if (node->right)
+					q.push(node->right);
+			}
 		}
-
+		while (!q.empty()) {
+			TreeNode*new_node_left = new TreeNode(v);
+			TreeNode*new_node_right = new TreeNode(v);
+			auto cur = q.front();
+			q.pop();
+			new_node_left->left = cur->left;
+			new_node_right->right = cur->right;
+			cur->left = new_node_left;
+			cur->right = new_node_right;
+		}
 		return root;
-
-
-
 
 	}
 };

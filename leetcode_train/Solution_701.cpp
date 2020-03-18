@@ -7,6 +7,15 @@
 
 class Solution_701 {
 public:
+	TreeNode* insertIntoBST_dfs(TreeNode* root, int val) {
+		if (root == nullptr)
+			return new TreeNode(val);
+		if (root->val<val)
+			root->right = insertIntoBST(root->right, val);
+		else
+			root->left = insertIntoBST(root->left, val);
+		return root;
+	}
 	TreeNode* insertIntoBST(TreeNode* root, int val) {
 		if (root == nullptr)
 			return new TreeNode(val);

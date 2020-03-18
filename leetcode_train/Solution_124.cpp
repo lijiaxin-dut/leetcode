@@ -6,37 +6,32 @@ using namespace std;
 
 //自底向上递归，当sum求和小于0时，返回0
 
+//在递归的过程中，更新结果
 
-//共分为两种情况
-//包含根节点
-//不包含根节点
-//使用map保存已经找到过的结果
-
-class Solution_124 {
-	unordered_map<TreeNode *, int>hash_map;
+/**
+* Definition for a binary tree node.
+* struct TreeNode {
+*     int val;
+*     TreeNode *left;
+*     TreeNode *right;
+*     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
+* };
+*/
+class Solution {
+	int rs;
 public:
 	int maxPathSum(TreeNode* root) {
-		if (root == nullptr)
-			return 0;
-		int rs = root->val + dfs(root->left) + dfs(root->right);
-		int left = root->left == nullptr ? INT_MIN : maxPathSum(root->left);
-		int right = root->right == nullptr ? INT_MIN : maxPathSum(root->right);
-		return max(rs, max(left, right));
+		rs = INT_MIN;
+		help(root);
+		return rs;
 	}
-	//以node为路径端点的path的最大和
-	int dfs(TreeNode* node) {
-		if (hash_map.count(node) != 0)
-			return hash_map[node];
+	int help(TreeNode*node) {
 		if (node == nullptr)
 			return 0;
-		int sum = node->val + max(dfs(node->left), dfs(node->right));
-		if (sum<0) {
-			hash_map[node] = 0;
-			return 0;
-		}
-		else {
-			hash_map[node] = sum;
-			return sum;
-		}
+		int left = max(help(node->left), 0);
+		int right = max(help(node->right), 0);
+		rs = max(rs, left + right + node->val);
+		return max(left, right) + node->val;
+
 	}
 };

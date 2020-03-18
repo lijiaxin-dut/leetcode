@@ -31,25 +31,23 @@ public:
 	vector<int> preorder(Node* root) {
 		stack<Node*>s;
 		vector<int>rs;
-		while (!s.empty() || root != nullptr) {
-			rs.push_back(root->val);
-			for (int i = (int)root->children.size() - 1; i >= 1; i--) {
-				s.push(root->children[i]);
-			}
-			if (root->children.empty()) {
-				if (!s.empty()) {
-					root = s.top();
-					s.pop();
+		while (!s.empty() || root) {
+			while (root) {
+				rs.push_back(root->val);
+				for (int i = int(root->children.size()) - 1; i >= 1; i--) {
+					s.push(root->children[i]);
 				}
-				else {
+				if (root->children.empty())
 					root = nullptr;
-				}
+				else
+					root = root->children[0];
 			}
-			else {
-				root = root->children[0];
-			}
-
+			if (s.empty())
+				break;
+			root = s.top();
+			s.pop();
 		}
 		return rs;
+
 	}
 };

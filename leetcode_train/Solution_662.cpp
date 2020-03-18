@@ -28,31 +28,32 @@ using namespace std;
 
 //判断每一层第一个几点的位置和第二个节点的位置差，返回最大值
 
-
+//为了防止溢出，每一层都重新计数
 
 class Solution_662 {
 public:
 	int widthOfBinaryTree(TreeNode* root) {
+		deque<pair<TreeNode*, int >>q;
+		int rs = 0;
 		if (root == nullptr)
 			return 0;
-		queue<pair<TreeNode*, long>>q;
-		q.push(make_pair(root, 1));
-		unsigned long rs = 0;
+		q.push_back(make_pair(root, 1));
 		while (!q.empty()) {
-			int level_size = q.size();
-			unsigned long left = q.front().second;
-			unsigned long right = q.front().second;
-			for (int i = 0; i<level_size; i++) {
-				auto t = q.front();
-				q.pop();
-				right = t.second;
-				if (t.first->left != nullptr)
-					q.push(make_pair(t.first->left, right * 2));
-				if (t.first->right != nullptr)
-					q.push(make_pair(t.first->right, right * 2 + 1));
+			int cur_size = q.size();
+			int off_size = q.back().second;
+			rs = max(rs, q.back().second - q.front().second + 1);
+			for (int i = 0; i<cur_size; i++) {
+				auto cur_node = q.front();
+				q.pop_front();
+				if (cur_node.first->left) {
+					q.push_back(make_pair(cur_node.first->left, 2 * cur_node.second - off_size));
+				}
+				if (cur_node.first->right) {
+					q.push_back(make_pair(cur_node.first->right, 2 * cur_node.second + 1 - off_size));
+				}
 			}
-			rs = max(rs, right - left + 1);
 		}
 		return rs;
+
 	}
 };

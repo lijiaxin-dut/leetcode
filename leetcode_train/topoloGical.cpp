@@ -12,7 +12,8 @@ using namespace std;
 //不断的遍历S中的点，并且将对应的入度减一
 //
 
-
+//最长路径
+//按照拓扑排序的顺序松弛
 
 class topolo_gical {
 public:

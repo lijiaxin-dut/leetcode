@@ -26,33 +26,24 @@ using namespace std;
 class Solution_5 {
 public:
 	string longestPalindrome(string s) {
-		if (s.empty())
-			return s;
 		int n = s.size();
-		vector<vector<bool>>dp(n, vector<bool>(n, false));
-		for (int i = 0; i<n; i++) {
+		if (n == 0)
+			return "";
+		bool dp[1000][1000] = { false };
+		for (int i = 0; i < n; i++)
 			dp[i][i] = true;
-		}
-		int rs = 1;
-		int rs_start = 0;
-		for (int i = 0, j = i + 1; j<n; i++, j++) {
-			if (s[i] == s[j]) {
-				rs = 2;
-				rs_start = i;
-				dp[i][j] = true;
-			}
-		}
-
-		for (int length = 3; length <= n; length++) {
-			for (int start = 0; start<n + 1 - length; start++) {
-				int end = start + length - 1;
-				if (s[start] == s[end] && dp[start + 1][end - 1] == true) {
-					dp[start][end] = true;
-					rs_start = start;
-					rs = max(rs, length);
+		int rs_left = 0;
+		int rs_length = 1;
+		for (int length = 2; length <= n; length++) {
+			for (int left = 0; left < n - length + 1; left++) {
+				int right = left + length - 1;
+				if (s[left] == s[right] && (length == 2 || dp[left + 1][right - 1])) {
+					dp[left][right] = true;
+					rs_left = left;
+					rs_length = length;
 				}
 			}
 		}
-		return s.substr(rs_start, rs);
+		return s.substr(rs_left, rs_length);
 	}
 };

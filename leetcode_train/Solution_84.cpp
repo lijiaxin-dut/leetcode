@@ -32,11 +32,9 @@ public:
 			if (st.empty() || heights[st.top()] <= heights[i])
 				st.push(i);
 			else {
-				//cur 为到i-1为止，最小的值
-
+				//cur 为到i-1为止，栈中最大的值
 				int cur = st.top();
 				st.pop();
-				//如果栈为空，cur就是从开始为止的最小值，length=i即可
 				int length = i;
 				if (!st.empty())
 					length = i - st.top() - 1;

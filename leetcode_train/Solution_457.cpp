@@ -20,6 +20,47 @@ using namespace std;
 
 class Solution {
 public:
+	int get_next_index(int i, vector<int>& nums) {
+		int new_index = i + nums[i];
+		int n = nums.size();
+		if (new_index >= n)
+			return new_index%n;
+		while (new_index<0)
+			new_index = new_index + n;
+		return new_index;
+	}
+public:
+	//两个指针，一个每次向前走一步，一个每次向前走两步
+	//如果每次都是正方向走，并且最后相遇
+	//就找到了环，但是要考虑自环的可能性
+
+	//如果不能构成环，在结束时，将数组修改为0
+	bool circularArrayLoop_o_1(vector<int>& nums) {
+		int n = nums.size();
+		for (int i = 0; i<n; i++) {
+			if (nums[i] == 0)
+				continue;
+			int slow = i, fast = get_next_index(i, nums);
+			while (nums[i] * nums[fast]>0 && nums[i] * nums[get_next_index(fast, nums)]>0) {
+				if (slow == fast) {
+					if (fast == get_next_index(fast, nums))
+						break;
+					return true;
+				}
+				slow = get_next_index(slow, nums);
+				fast = get_next_index(get_next_index(fast, nums), nums);
+			}
+			slow = i;
+			int cur_i = nums[i];
+			while (cur_i*nums[slow]>0) {
+				int next = get_next_index(slow, nums);
+				nums[slow] = 0;
+				slow = next;
+			}
+		}
+		return false;
+	}
+
 	bool circularArrayLoop(vector<int>& nums) {
 		int n = nums.size();
 		vector<bool>mark(n, false);
