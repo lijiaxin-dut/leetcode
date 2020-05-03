@@ -4,9 +4,9 @@ using namespace std;
 
 
 //1.dfs加剪枝
-//2.  dp[i][j]表示最多经过i步到达j的代价
+//2.  dp[i][j]表示最多经过i条边到达j的代价
 //    对于所有可能的边数，松弛所有的边
-
+//k个点，最多k+1条边
 class Solution_787 {
 public:
 	int findCheapestPrice(int n, vector<vector<int>>& flights, int src, int dst, int K) {

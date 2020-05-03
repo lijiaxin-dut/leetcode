@@ -26,78 +26,88 @@ using namespace std;
 //并查集
 //有交集认为在同一组
 
-class Solution_721 {
-	class UF {
-	public:
-		int count;
-		vector<int>id;
-		UF(int n) {
-			count = n;
-			id.resize(n, 0);
-			for (int i = 0; i<n; i++)
-				id[i] = i;
-		}
-		int find(int p) {
-			int root = p;
-			while (root != id[root])
-				root = id[root];
-			while (p != id[p]) {
-				int t = id[p];
-				id[p] = root;
-				p = t;
-			}
-			return root;
-		}
-		void unions(int p, int q) {
-			int p_root = find(p);
-			int q_root = find(q);
-			if (p_root == q_root)
-				return;
-			id[p_root] = q_root;
-			count--;
-		}
-
-	};
-	bool intersect(vector<vector<string>>& accounts, int i, int j) {
-		for (int index = 1; index<accounts[i].size(); index++) {
-			//cout<<accounts[i][index]<<endl;
-			if (find(accounts[j].begin(), accounts[j].end(), accounts[i][index]) != accounts[j].end())
-				return true;
-		}
-		return false;
+class UF {
+public:
+	vector<int>root;
+	int count;
+	UF(int n) {
+		count = n;
+		root.resize(n);
+		for (int i = 0; i<n; i++)
+			root[i] = i;
 	}
+	int find(int p) {
+		int p_root = p;
+		while (p_root != root[p_root])
+			p_root = root[p_root];
+		while (p != root[p]) {
+			int back = root[p];
+			root[p] = p_root;
+			p = back;
+		}
+		return p_root;
+	}
+	void unions(int p, int q) {
+		int p_root = find(p);
+		int q_root = find(q);
+		if (p_root == q_root)
+			return;
+		root[p_root] = q_root;
+		count--;
+	}
+};
 
+
+class Solution {
 public:
 	vector<vector<string>> accountsMerge(vector<vector<string>>& accounts) {
-		int n = accounts.size();
-		UF uf(n);
-		for (int i = 0; i<n; i++) {
-			for (int j = i + 1; j<n; j++) {
-				if (intersect(accounts, i, j) == true) {
-					uf.unions(i, j);
+		unordered_map<string, int>email_to_index;
+		unordered_map<int, string>index_to_email;
+		unordered_map<int, string>index_to_name;
+		for (auto &one_account : accounts) {
+			for (int i = 1; i<one_account.size(); i++) {
+				if (email_to_index.count(one_account[i]) == 0) {
+					int cur_size= email_to_index.size();
+					email_to_index[one_account[i]] = cur_size;
+					index_to_email[cur_size] = one_account[i];
+					index_to_name[cur_size] = one_account[0];
 				}
 			}
 		}
-		unordered_map<int, vector<string>>rs;
-		for (int i = 0; i<n; i++) {
-			int g_id = uf.find(i);
-			if (rs[g_id].empty()) {
-				rs[g_id] = accounts[i];
-			}
-			else {
-				rs[g_id].insert(rs[g_id].end(), accounts[i].begin() + 1, accounts[i].end());
+		UF uf(email_to_index.size());
+		for (auto &one_account : accounts) {
+			for (int i = 1; i<one_account.size() - 1; i++) {
+				uf.unions(email_to_index[one_account[i]], email_to_index[one_account[i + 1]]);
 			}
 		}
-		vector<vector<string>>rs_v;
-		for (auto &one : rs) {
-			sort(one.second.begin() + 1, one.second.end());
-			one.second.erase(unique(one.second.begin() + 1, one.second.end()), one.second.end());
-			rs_v.push_back(one.second);
+		vector<vector<string>>rs;
+		unordered_map<int, vector<int>>group;
+		for (int i = 0; i<uf.root.size(); i++) {
+			group[uf.find(i)].push_back(i);
 		}
-
-
-		return rs_v;
+		for (auto &one_pair : group) {
+			vector<string>one_group;
+			one_group.push_back(index_to_name[one_pair.second[0]]);
+			for (auto &one_group_id : one_pair.second) {
+				one_group.push_back(index_to_email[one_group_id]);
+			}
+			sort(one_group.begin(), one_group.end());
+			rs.push_back(one_group);
+		}
+		return rs;
 
 
 	}
 };
+
+int main() {
+
+	vector<vector<string>>m{ {
+			"John", "johnsmith@mail.com", "john_newyork@mail.com"},
+			{"John", "johnsmith@mail.com", "john00@mail.com"},
+			{"Mary", "mary@mail.com"},{"John", "johnnybravo@mail.com"} };
+	Solution s;
+	s.accountsMerge(m);
+
+
+}

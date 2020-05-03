@@ -507,7 +507,7 @@
     <ClCompile Include="Solution_572.cpp" />
     <ClCompile Include="Solution_652.cpp" />
     <ClCompile Include="Solution_507.cpp" />
-    <ClCompile Include="Solutio_716.cpp" />
+    <ClCompile Include="Solution_716.cpp" />
     <ClCompile Include="Sort.cpp" />
     <ClCompile Include="Solution_100.cpp" />
     <ClCompile Include="Solution_101.cpp" />

@@ -22,30 +22,20 @@
 
 
 
-class Solution_814 {
+class Solution {
 public:
 	TreeNode* pruneTree(TreeNode* root) {
-		int root_val = dfs(root);
-		return root_val == 0 ? nullptr : root;
+		int root_count = dfs(root);
+		return root_count == 0 ? nullptr : root;
 	}
-	int dfs(TreeNode*node) {
-		if (node == nullptr)
-			return 0;
-		if (node->left == nullptr&&node->right == nullptr) {
-			if (node->val == 1)
-				return 1;
-			else
-				return 0;
-		}
+	int dfs(TreeNode* node) {
+		if (node == nullptr) return 0;
+		int rs = 0;
+		if (node->val == 1) rs++;
 		int left = dfs(node->left);
+		if (left == 0) node->left = nullptr;
 		int right = dfs(node->right);
-		if (left == 0)
-			node->left = nullptr;
-		if (right == 0)
-			node->right = nullptr;
-		int cur = 0;
-		if (node->val == 1)
-			cur = 1;
-		return cur + left + right;
+		if (right == 0)  node->right = nullptr;
+		return rs + left + right;
 	}
 };

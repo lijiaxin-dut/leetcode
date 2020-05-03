@@ -1,7 +1,7 @@
 #include<vector>
 #include<set>
 #include<queue>
-
+#include<unordered_set>
 
 using namespace std;
 
@@ -26,40 +26,35 @@ using namespace std;
 
 
 
-class Solution_802 {
+class Solution {
 public:
 	vector<int> eventualSafeNodes(vector<vector<int>>& graph) {
-		vector<int> rs;
 		int n = graph.size();
-		vector<bool>mark(n, false);
-		vector<set<int>> g(n, set<int>());
-		vector<set<int>> revg(n, set<int>());
-		queue<int> q;
-
+		vector<unordered_set<int>>rg(n);//指向这个点的邻居
+		vector<int>out_degree(n, 0);
+		queue<int>q;
 		for (int i = 0; i<n; i++) {
-			if (graph[i].empty())
+			out_degree[i] = graph[i].size();
+			if (out_degree[i] == 0)
 				q.push(i);
-			for (auto j : graph[i]) {
-				g[i].insert(j);
-				revg[j].insert(i);
+			for (auto &one_neighbor : graph[i]) {
+				rg[one_neighbor].insert(i);
 			}
 		}
+		vector<int>rs;
 		while (!q.empty()) {
-			int t = q.front();
+			int cur_node = q.front();
 			q.pop();
-			mark[t] = true;
-			for (auto &in : revg[t]) {
-				g[in].erase(t);
-				if (g[in].empty())
-					q.push(in);
+			for (auto &to_cur_node : rg[cur_node]) {
+				out_degree[to_cur_node]--;
+				if (out_degree[to_cur_node] == 0)
+					q.push(to_cur_node);
 			}
 		}
-		for (int i = 0; i<n; i++) {
-			if (mark[i])
+		for (int i = 0; i<n; i++)
+			if (out_degree[i] == 0)
 				rs.push_back(i);
-		}
 		return rs;
-
 
 	}
 };
