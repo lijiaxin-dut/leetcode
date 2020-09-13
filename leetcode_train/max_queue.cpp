@@ -12,7 +12,7 @@ using namespace std;
 //maxnumber是一个降序的队列，front表示当前最大值
 
 //记录加入的数字属于第几个，用index标识
-//当前pop的元素如果与maxnumber.front相同，就弹出
+//当前pop的元素如果与maxnumber.front相同，就弹出	
 
 class MaxQueue {
 	struct val {

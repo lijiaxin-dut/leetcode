@@ -14,62 +14,38 @@ using namespace std;
 
 
 
-class Solution_32 {
+class Solution {
 public:
-	int longestValidParentheses_greedy(string s) {
-		int n = s.length(), longest = 0;
-		stack<int> st;//最后保存所有不合法的位置
-		for (int i = 0; i < n; i++) {
-			if (s[i] == '(')
-				st.push(i);
-			else {
-				if (!st.empty()) {
-					//找出一对合法的配对
-					if (s[st.top()] == '(')
-						st.pop();
-					else
-						st.push(i);
-				}
-				else st.push(i);
-			}
-		}
-		if (st.empty())
-			longest = n;
-		else {
-			int a = n;//右侧不合法
-			int b = 0;//左侧不合法
-			while (!st.empty()) {
-				b = st.top();
-				st.pop();
-				longest = max(longest, a - b - 1);
-				a = b;
-			}
-			//不合法的位置都在后面，如"())"
-			longest = max(longest, a);
-		}
-		return longest;
-
-
-
-	}
 	int longestValidParentheses(string s) {
+		int n = s.size();
+		stack<int>un_legal;
+		for (int i = 0; i<n; i++) {
+			if (s[i] == '(')
+				un_legal.push(i);
+			else {
+				if (!un_legal.empty()) {
+					if (s[un_legal.top()] == '(')
+						un_legal.pop();
+					else
+						un_legal.push(i);
+				}
+				else {
+					un_legal.push(i);
+				}
+			}
+		}
+		if (un_legal.empty())
+			return n;
+		int right = n;
+		int left = 0;
 		int rs = 0;
-		for (int i = 0; i<s.size(); i++)
-			dfs(rs, 0, 0, i, s);
+		while (!un_legal.empty()) {
+			left = un_legal.top();
+			un_legal.pop();
+			rs = max(rs, right - left - 1);
+			right = left;
+		}
+		rs = max(rs, left);
 		return rs;
-	}
-	void dfs(int &rs, int l_size, int r_size, int index, string &s) {
-		if (r_size>l_size)
-			return;
-		if (l_size == r_size)
-			rs = max(rs, l_size + r_size);
-		if (index >= s.size())
-			return;
-		if (s[index] == '(') {
-			dfs(rs, l_size + 1, r_size, index + 1, s);
-		}
-		else if (s[index] == ')'&&l_size >= r_size + 1) {
-			dfs(rs, l_size, r_size + 1, index + 1, s);
-		}
 	}
 };

@@ -17,15 +17,15 @@ using namespace std;
 class Solution {
 public:
 	int numTimesAllBlue(vector<int>& light) {
-		int n = light.size();
-		int left_max = 0;
-		int left_min = INT_MAX / 2;
 		int rs = 0;
-		for (int i = 0; i<n; i++) {
-			left_max = max(left_max, light[i]);
-			left_min = min(left_min, light[i]);
-			if (left_min == 1 && left_max == i + 1)
+		int max_val = 0;
+		int min_val = INT_MAX;
+		for (int i = 0; i<light.size(); i++) {
+			max_val = max(max_val, light[i]);
+			min_val = min(min_val, light[i]);
+			if (min_val == 1 && max_val == i + 1) {
 				rs++;
+			}
 		}
 		return rs;
 	}

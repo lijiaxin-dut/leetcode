@@ -151,6 +151,7 @@
     <ClCompile Include="last_number_in_cycle.cpp" />
     <ClCompile Include="max_queue.cpp" />
     <ClCompile Include="n_th_number.cpp" />
+    <ClCompile Include="n个骰子的点数.cpp" />
     <ClCompile Include="roate_string.cpp" />
     <ClCompile Include="Solution_1081.cpp" />
     <ClCompile Include="Solution_1092.cpp" />
@@ -163,8 +164,12 @@
     <ClCompile Include="Solution_1367.cpp" />
     <ClCompile Include="Solution_1370.cpp" />
     <ClCompile Include="Solution_1372.cpp" />
+    <ClCompile Include="Solution_1374.cpp" />
     <ClCompile Include="Solution_1375.cpp" />
     <ClCompile Include="Solution_1376.cpp" />
+    <ClCompile Include="Solution_1377.cpp" />
+    <ClCompile Include="Solution_1432.cpp" />
+    <ClCompile Include="Solution_1504.cpp" />
     <ClCompile Include="Solution_188.cpp" />
     <ClCompile Include="Solution_321.cpp" />
     <ClCompile Include="Solution_329.cpp" />
@@ -274,12 +279,14 @@
     <ClCompile Include="Solution_536.cpp" />
     <ClCompile Include="Solution_538.cpp" />
     <ClCompile Include="Solution_522.cpp" />
+    <ClCompile Include="Solution_554.cpp" />
     <ClCompile Include="Solution_556.cpp" />
     <ClCompile Include="Solution_557.cpp" />
     <ClCompile Include="Solution_563.cpp" />
     <ClCompile Include="Solution_57.cpp" />
     <ClCompile Include="Solution_589.cpp" />
     <ClCompile Include="Solution_606.cpp" />
+    <ClCompile Include="Solution_622.cpp" />
     <ClCompile Include="Solution_623.cpp" />
     <ClCompile Include="Solution_637.cpp" />
     <ClCompile Include="Solution_653.cpp" />
@@ -290,6 +297,7 @@
     <ClCompile Include="Solution_671.cpp" />
     <ClCompile Include="Solution_674.cpp" />
     <ClCompile Include="Solution_678.cpp" />
+    <ClCompile Include="Solution_679.cpp" />
     <ClCompile Include="Solution_687.cpp" />
     <ClCompile Include="Solution_692.cpp" />
     <ClCompile Include="Solution_700.cpp" />
@@ -487,6 +495,7 @@
     <ClCompile Include="Solution_89.cpp" />
     <ClCompile Include="Solution_894.cpp" />
     <ClCompile Include="Solution_897.cpp" />
+    <ClCompile Include="Solution_918.cpp" />
     <ClCompile Include="Solution_919.cpp" />
     <ClCompile Include="Solution_93.cpp" />
     <ClCompile Include="Solution_934.cpp" />
@@ -678,15 +687,22 @@
     <ClCompile Include="Solution_113.cpp" />
     <ClCompile Include="SPFA.cpp" />
     <ClCompile Include="strongConnected.cpp" />
+    <ClCompile Include="Solution_827.cpp" />
     <ClCompile Include="sum_Probability.cpp" />
     <ClCompile Include="three_trip_one.cpp" />
     <ClCompile Include="topoloGical.cpp" />
     <ClCompile Include="union_find.cpp" />
+    <ClCompile Include="二叉树的下一个节点.cpp" />
     <ClCompile Include="出栈的所有可能性.cpp" />
+    <ClCompile Include="单例模式.cpp" />
     <ClCompile Include="和为s的连续正整数序列.cpp" />
     <ClCompile Include="扑克牌.cpp" />
+    <ClCompile Include="数组的最大二树.cpp" />
+    <ClCompile Include="最大值减去最小值小于或等于num的子数组数量.cpp" />
     <ClCompile Include="洗牌算法.cpp" />
+    <ClCompile Include="只用递归函数逆序一个栈.cpp" />
     <ClCompile Include="源.cpp" />
+    <ClCompile Include="用一个栈实现另一个栈的排序.cpp" />
     <ClCompile Include="轮盘赌.cpp" />
   </ItemGroup>
   <ItemGroup>

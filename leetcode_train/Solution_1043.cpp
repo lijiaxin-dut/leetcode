@@ -20,7 +20,7 @@ using namespace std;
 
 
 //dp[i]表示A[0]...A[i-1]的最大结果
-//计算dp[i]时，考虑将A[i]于前面的最多k个数划分未一组
+//计算dp[i]时，考虑将A[i]与前面的最多k个数划分未一组
 
 //dp[i]=max(dp[i],dp[i-j]+max(A[i-1],...A[i-j])*j)  j=1 to k
 

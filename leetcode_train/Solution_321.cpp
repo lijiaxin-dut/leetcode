@@ -42,44 +42,50 @@ using namespace std;
 
 
 class Solution {
-	vector<int> max_number(const vector<int>&nums, int k) {
-		vector<int>s;
+
+	vector<int>max_number_in_one_vector(const vector<int>&nums, int k) {
+		vector<int>rs;
 		int n = nums.size();
 		int delete_number = 0;
 		for (int i = 0; i<n; i++) {
-			while (!s.empty() && nums[i]>s.back() && delete_number<n - k) {
-				s.pop_back();
+			while (!rs.empty() && rs.back()<nums[i] && delete_number<n - k) {
+				rs.pop_back();
 				delete_number++;
 			}
-			s.push_back(nums[i]);
+			rs.push_back(nums[i]);
 		}
-		s.resize(k);
-		return s;
+		rs.resize(k);
+		return rs;
 	}
-	vector<int> max_number(const vector<int>& nums1, const vector<int>& nums2) {
-		vector<int>rs(nums1.size() + nums2.size());
-		auto s1 = nums1.begin();
-		auto e1 = nums1.end();
-		auto s2 = nums2.begin();
-		auto e2 = nums2.end();
+
+	vector<int>max_number_in_two_vector(const vector<int>&num1, const vector<int>&num2) {
+		vector<int>rs(num1.size() + num2.size(), 0);
+		auto s1 = num1.begin();
+		auto s2 = num2.begin();
+		auto e1 = num1.end();
+		auto e2 = num2.end();
 		int cur_index = 0;
 		while (s1 != e1 || s2 != e2) {
 			rs[cur_index++] = lexicographical_compare(s1, e1, s2, e2) ? *s2++ : *s1++;
 		}
 		return rs;
 	}
+
+
+
 public:
 	vector<int> maxNumber(vector<int>& nums1, vector<int>& nums2, int k) {
-		vector<int> ans;
+		vector<int>rs;
 		int n1 = nums1.size();
 		int n2 = nums2.size();
 		for (int k1 = 0; k1 <= k; k1++) {
 			int k2 = k - k1;
 			if (k1>n1 || k2>n2)
 				continue;
-			ans = max(ans, max_number(max_number(nums1, k1), max_number(nums2, k2)));
+			rs = max(rs, max_number_in_two_vector(max_number_in_one_vector(nums1, k1), max_number_in_one_vector(nums2, k2)));
 		}
-		return ans;
+		return rs;
+
 
 	}
 };

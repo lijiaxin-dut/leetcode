@@ -28,13 +28,51 @@ using namespace std;
 //对于都相等的位置，只需要加一个就好
 
 class Solution {
+	string longestCommonSubsequence(string text1, string text2) {
+		int n1 = text1.size();
+		int n2 = text2.size();
+		vector<vector<int>>dp(n1 + 1, vector<int>(n2 + 1, 0));
+		vector<vector<int>>mark(n1 + 1, vector<int>(n2 + 1, 0));
+		for (int i = 1; i <= n1; i++) {
+			for (int j = 1; j <= n2; j++) {
+				if (text1[i - 1] == text2[j - 1]) {
+					dp[i][j] = dp[i - 1][j - 1] + 1;
+					mark[i][j] = 0;
+				}
+				else if (dp[i - 1][j] >= dp[i][j - 1]) {
+					dp[i][j] = dp[i - 1][j];
+					mark[i][j] = 1;
+				}
+				else if (dp[i - 1][j]< dp[i][j - 1]) {
+					dp[i][j] = dp[i][j - 1];
+					mark[i][j] = -1;
+				}
+			}
+		}
+		string rs;
+		while (n1 >= 1 && n2 >= 1) {
+			if (mark[n1][n2] == 0) {
+				rs += text1[n1 - 1];
+				n1--;
+				n2--;
+			}
+			else if (mark[n1][n2] == 1) {
+				n1--;
+			}
+			else if (mark[n1][n2] == -1) {
+				n2--;
+			}
+		}
+		reverse(rs.begin(), rs.end());
+		return rs;
+	}
 public:
 	string shortestCommonSupersequence(string str1, string str2) {
-		string l = lcs(str1, str2);
-		string rs;
+		string  common_sequence = longestCommonSubsequence(str1, str2);
 		int str1_index = 0;
 		int str2_index = 0;
-		for (auto &c : l) {
+		string rs;
+		for (auto c : common_sequence) {
 			while (str1[str1_index] != c)
 				rs.push_back(str1[str1_index++]);
 			while (str2[str2_index] != c)
@@ -44,25 +82,6 @@ public:
 			rs.push_back(c);
 		}
 		return rs + str1.substr(str1_index) + str2.substr(str2_index);
-
-
-
-	}
-	string lcs(string &text1, string &text2) {
-		int m = text1.size();
-		int n = text2.size();
-		vector<vector<string>>dp(m + 1, vector<string>(n + 1));
-		for (int i = 1; i <= m; i++) {
-			for (int j = 1; j <= n; j++) {
-				if (text1[i - 1] == text2[j - 1]) {
-					dp[i][j] = dp[i - 1][j - 1];
-					dp[i][j].push_back(text1[i - 1]);
-				}
-				else
-					dp[i][j] = dp[i - 1][j].size()>dp[i][j - 1].size() ? dp[i - 1][j] : dp[i][j - 1];
-			}
-		}
-		return dp[m][n];
 
 	}
 };

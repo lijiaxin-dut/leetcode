@@ -38,7 +38,7 @@ public:
 				cur_next_head = cur_next_head->next;
 				n--;
 			}
-			if (n == 1 && cur_next_head != nullptr) {
+			if (cur_next_head != nullptr) {
 				auto back_next = cur_next_head->next;
 				cur_next_head->next = nullptr;
 				//下一个区间的头部

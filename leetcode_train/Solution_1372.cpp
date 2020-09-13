@@ -21,35 +21,37 @@ using namespace std;
 // result is the maximum length in the whole sub tree.
 class Solution {
 public:
-	int longestZigZag_2(TreeNode* root) {
-		return dfs_2(root)[2];
+	int longestZigZag(TreeNode* root) {
+		int rs = 0;
+		dfs(root, rs);
+		return rs;
 	}
-	vector<int>dfs_2(TreeNode*node) {
+	vector<int>dfs(TreeNode*node, int &rs) {
 		if (node == nullptr)
-			return{ -1,-1,-1 };
-		auto left = dfs_2(node->left);
-		auto right = dfs_2(node->right);
-		int res = max(max(left[1], right[0]) + 1, max(left[2], right[2]));
+			return{ -1,-1 };
+		auto left = dfs(node->left, rs);
+		auto right = dfs(node->right, rs);
+		rs = max(rs, max(left[1], right[0]) + 1);
 		//左子树的右子树结果+1，右子树的左子树结果+1
-		return{ left[1] + 1, right[0] + 1, res };
+		return{ left[1] + 1, right[0] + 1 };
 	}
 	/////////////////////////////TLE
-	int longestZigZag(TreeNode* root) {
-		if (root == nullptr)
-			return 0;
-		return max(dfs(root, nullptr), max(longestZigZag(root->left), longestZigZag(root->right)));
-	}
-	//dfs返回包含节点node的最长路径
-	int dfs(TreeNode*node, TreeNode*pre) {
-		if (node == nullptr)
-			return 0;
-		if (pre == nullptr) 
-			return max(dfs(node->left, node), dfs(node->right, node));
-		else {
-			if (pre->left == node)
-				return dfs(node->right, node) + 1;
-			else
-				return dfs(node->left, node) + 1;
-		}
-	}
+	//int longestZigZag(TreeNode* root) {
+	//	if (root == nullptr)
+	//		return 0;
+	//	return max(dfs(root, nullptr), max(longestZigZag(root->left), longestZigZag(root->right)));
+	//}
+	////dfs返回包含节点node的最长路径
+	//int dfs(TreeNode*node, TreeNode*pre) {
+	//	if (node == nullptr)
+	//		return 0;
+	//	if (pre == nullptr) 
+	//		return max(dfs(node->left, node), dfs(node->right, node));
+	//	else {
+	//		if (pre->left == node)
+	//			return dfs(node->right, node) + 1;
+	//		else
+	//			return dfs(node->left, node) + 1;
+	//	}
+	//}
 };

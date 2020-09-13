@@ -22,6 +22,9 @@
     <Filter Include="源文件\剑指offer">
       <UniqueIdentifier>{62f3ae29-84b5-4391-83a0-30b60cf47271}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\代码面试指南">
+      <UniqueIdentifier>{f0300110-0439-416d-890a-59e852237929}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Solution_3.cpp">
@@ -1227,9 +1230,6 @@
     <ClCompile Include="KMP.cpp">
       <Filter>源文件\algorithm_4_th</Filter>
     </ClCompile>
-    <ClCompile Include="源.cpp">
-      <Filter>源文件</Filter>
-    </ClCompile>
     <ClCompile Include="max_queue.cpp">
       <Filter>源文件\剑指offer</Filter>
     </ClCompile>
@@ -1643,6 +1643,57 @@
     </ClCompile>
     <ClCompile Include="Solution_433.cpp">
       <Filter>源文件\leetcode</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_554.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="只用递归函数逆序一个栈.cpp">
+      <Filter>源文件\代码面试指南</Filter>
+    </ClCompile>
+    <ClCompile Include="用一个栈实现另一个栈的排序.cpp">
+      <Filter>源文件\代码面试指南</Filter>
+    </ClCompile>
+    <ClCompile Include="源.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="数组的最大二树.cpp">
+      <Filter>源文件\代码面试指南</Filter>
+    </ClCompile>
+    <ClCompile Include="最大值减去最小值小于或等于num的子数组数量.cpp">
+      <Filter>源文件\代码面试指南</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1432.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1377.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1374.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="n个骰子的点数.cpp">
+      <Filter>源文件\剑指offer</Filter>
+    </ClCompile>
+    <ClCompile Include="二叉树的下一个节点.cpp">
+      <Filter>源文件\剑指offer</Filter>
+    </ClCompile>
+    <ClCompile Include="单例模式.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_827.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_918.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_622.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_679.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1504.cpp">
+      <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

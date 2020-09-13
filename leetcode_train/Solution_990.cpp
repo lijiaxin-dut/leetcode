@@ -64,3 +64,65 @@ public:
 		}
 	}
 };
+
+class UF {
+public:
+	vector<int>id;
+	UF() {
+		id.resize(26);
+		for (int i = 0; i<26; i++) {
+			id[i] = i;
+		}
+	}
+
+	int find(int p) {
+		int root = p;
+		while (root != id[root]) {
+			root = id[root];
+		}
+		while (id[p] != root) {
+			int temp = id[p];
+			id[p] = root;
+			p = temp;
+		}
+		return root;
+	}
+
+	void connect(int p, int q) {
+		int p_root = find(p);
+		int q_root = find(q);
+		if (p_root == q_root)
+			return;
+		id[p_root] = q_root;
+	}
+
+	bool connected(int p, int q) {
+		int p_root = find(p);
+		int q_root = find(q);
+		return p_root == q_root;
+	}
+
+};
+
+class Solution_uf {
+public:
+	bool equationsPossible(vector<string>& equations) {
+		UF uf;
+		for (auto &one_equ : equations) {
+			int a = one_equ[0] - 'a';
+			int b = one_equ[3] - 'a';
+			if (one_equ[1] == '=')
+				uf.connect(a, b);
+		}
+		for (auto &one_equ : equations) {
+			int a = one_equ[0] - 'a';
+			int b = one_equ[3] - 'a';
+			if (one_equ[1] == '!') {
+				if (uf.connected(a, b) == true)
+					return false;
+			}
+		}
+		return true;
+
+	}
+};

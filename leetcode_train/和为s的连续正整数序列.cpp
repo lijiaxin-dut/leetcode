@@ -9,29 +9,30 @@ using namespace std;
 class Solution {
 public:
 	vector<vector<int>> findContinuousSequence(int target) {
-		vector<vector<int>>rs;
+		int max_val = (target + 1) / 2;
 		int left = 1;
-		int right = 2;
-		int mid = (target + 1) / 2;
-		int sum = left + right;
-		while (left<mid) {
+		int right = 1;
+		int sum = 0;
+		vector<vector<int>> rs;
+		while (left<max_val) {
 			if (sum<target) {
-				right++;
 				sum += right;
+				right++;
 			}
 			else if (sum>target) {
 				sum -= left;
 				left++;
 			}
 			else {
-				vector<int>t;
-				for (int i = left; i <= right; i++) {
-					t.push_back(i);
+				vector<int>r;
+				for (int i = left; i<right; i++) {
+					r.push_back(i);
 				}
-				rs.push_back(t);
+				rs.push_back(std::move(r));
 				sum -= left;
 				left++;
 			}
+
 		}
 		return rs;
 	}

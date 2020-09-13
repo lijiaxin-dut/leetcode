@@ -11,21 +11,22 @@ using namespace std;
 
 
 
-class Solution_817 {
+class Solution {
 public:
 	int numComponents(ListNode* head, vector<int>& G) {
-		unordered_set<int>s(G.begin(), G.end());
+		unordered_set<int>nums(G.begin(), G.end());
 		int rs = 0;
 		while (head) {
-			bool find = false;
-			while (head&&s.count(head->val)) {
-				head = head->next;
-				find = true;
-			}
-			if (find)
+			if (nums.find(head->val) != nums.end()) {
+				while (head&&nums.find(head->val) != nums.end()) {
+					nums.erase(head->val);
+					head = head->next;
+				}
 				rs++;
-			else
+			}
+			else {
 				head = head->next;
+			}
 		}
 		return rs;
 	}
