@@ -43,9 +43,3 @@ public:
 };
 
 
-
-int main() {
-	vector <int>nums{5,-3,5};
-	Solution s;
-	s.maxSubarraySumCircular(nums);
-}

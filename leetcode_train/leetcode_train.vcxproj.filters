@@ -1695,6 +1695,9 @@
     <ClCompile Include="Solution_1504.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="单调栈_高楼个数.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h">

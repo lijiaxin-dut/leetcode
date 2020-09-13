@@ -695,6 +695,7 @@
     <ClCompile Include="二叉树的下一个节点.cpp" />
     <ClCompile Include="出栈的所有可能性.cpp" />
     <ClCompile Include="单例模式.cpp" />
+    <ClCompile Include="单调栈_高楼个数.cpp" />
     <ClCompile Include="和为s的连续正整数序列.cpp" />
     <ClCompile Include="扑克牌.cpp" />
     <ClCompile Include="数组的最大二树.cpp" />
