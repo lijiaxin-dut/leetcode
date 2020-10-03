@@ -148,7 +148,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="0-n-1中缺失的数字.cpp" />
     <ClCompile Include="last_number_in_cycle.cpp" />
+    <ClCompile Include="LCP_19.cpp" />
+    <ClCompile Include="Solution_1011.cpp" />
+    <ClCompile Include="Solution_1482.cpp" />
+    <ClCompile Include="Solution_1552.cpp" />
+    <ClCompile Include="Solution_1590.cpp" />
+    <ClCompile Include="Solution_668.cpp" />
+    <ClCompile Include="Solution_778.cpp" />
     <ClCompile Include="max_queue.cpp" />
     <ClCompile Include="n_th_number.cpp" />
     <ClCompile Include="n个骰子的点数.cpp" />
@@ -501,7 +509,9 @@
     <ClCompile Include="Solution_865.cpp" />
     <ClCompile Include="Solution_87.cpp" />
     <ClCompile Include="Solution_872.cpp" />
+    <ClCompile Include="Solution_875.cpp" />
     <ClCompile Include="Solution_876.cpp" />
+    <ClCompile Include="Solution_878.cpp" />
     <ClCompile Include="Solution_886.cpp" />
     <ClCompile Include="Solution_889.cpp" />
     <ClCompile Include="Solution_89.cpp" />
@@ -519,6 +529,7 @@
     <ClCompile Include="Solution_965.cpp" />
     <ClCompile Include="Solution_97.cpp" />
     <ClCompile Include="Solution_971.cpp" />
+    <ClCompile Include="Solution_974.cpp" />
     <ClCompile Include="Solution_979.cpp" />
     <ClCompile Include="Solution_988.cpp" />
     <ClCompile Include="Solution_99.cpp" />

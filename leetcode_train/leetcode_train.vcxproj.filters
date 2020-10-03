@@ -1743,6 +1743,39 @@
     <ClCompile Include="Solution_385.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="0-n-1中缺失的数字.cpp">
+      <Filter>源文件\剑指offer</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_778.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_668.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="LCP_19.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_878.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1590.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_974.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1011.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_875.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1552.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="Solution_1482.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ListNode.h">

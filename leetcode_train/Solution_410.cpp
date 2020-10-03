@@ -19,8 +19,46 @@ using namespace std;
 //1 ≤ m ≤ min(50, n)
 
 
-//dfs+memory
+//1.dfs+memory
 //从头开始拆分数组
+//2.二分搜索
+//设置mid为阈值，假定所有分组求和都<=mid
+
+class Solution_binary_search {
+	bool can_split(vector<int>&nums, int m, int target) {
+		int sum = 0;
+		int size = 0;
+		for (int i = 0; i< nums.size(); i++) {
+			sum += nums[i];
+			if (sum>target) {
+				size++;
+				sum = nums[i];
+			}
+		}
+		return size<m;
+	}
+public:
+	int splitArray(vector<int>& nums, int m) {
+		int left = 0;
+		int right = 0;
+		for (auto c : nums) {
+			left = max(left, c);
+			right += c;
+		}
+		while (left<right) {
+			int mid = left + (right - left) / 2;
+			bool is_split = can_split(nums, m, mid);
+			if (is_split == true) {
+				right = mid;
+			}
+			else {
+				left = mid + 1;
+			}
+		}
+		return left;
+	}
+};
+
 
 class Solution {
 public:

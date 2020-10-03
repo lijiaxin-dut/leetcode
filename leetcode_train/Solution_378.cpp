@@ -73,7 +73,6 @@ public:
 			if (count == k) {
 				return smallLargePair.first;
 			}
-
 			if (count < k) {
 				start = smallLargePair.second;
 			}
@@ -81,26 +80,23 @@ public:
 				end = smallLargePair.first;
 			}
 		}
-
-
 		return start;
 	}
-
 	int countLessEqual(vector<vector<int>> &matrix, int mid, pair<int, int> &smallLargePair) {
 		int count = 0;
 		int n = matrix.size();
-		for (int row = 0; row<n; row++) {
-			for (int col = 0; col<n; col++) {
-				if (matrix[row][col] > mid) {
-					smallLargePair.second = min(smallLargePair.second, matrix[row][col]);
-				}
-				else {
-					smallLargePair.first = max(smallLargePair.first, matrix[row][col]);
-					count++;
-				}
-
+		int row = 0;
+		int col = n - 1;
+		while (col >= 0 && row<n) {
+			if (matrix[row][col] <= mid) {
+				count += col + 1;
+				smallLargePair.first = max(smallLargePair.first, matrix[row][col]);
+				row++;
 			}
-
+			else {
+				smallLargePair.second = min(smallLargePair.second, matrix[row][col]);
+				col--;
+			}
 		}
 		return count;
 	}
