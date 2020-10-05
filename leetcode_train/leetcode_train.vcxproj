@@ -151,10 +151,17 @@
     <ClCompile Include="0-n-1中缺失的数字.cpp" />
     <ClCompile Include="last_number_in_cycle.cpp" />
     <ClCompile Include="LCP_19.cpp" />
+    <ClCompile Include="Solution_1201.cpp" />
+    <ClCompile Include="Solution_1237.cpp" />
+    <ClCompile Include="Solution_1283.cpp" />
+    <ClCompile Include="Solution_1292.cpp" />
     <ClCompile Include="Solution_1011.cpp" />
+    <ClCompile Include="Solution_1300.cpp" />
+    <ClCompile Include="Solution_1337.cpp" />
     <ClCompile Include="Solution_1482.cpp" />
     <ClCompile Include="Solution_1552.cpp" />
     <ClCompile Include="Solution_1590.cpp" />
+    <ClCompile Include="Solution_658.cpp" />
     <ClCompile Include="Solution_668.cpp" />
     <ClCompile Include="Solution_778.cpp" />
     <ClCompile Include="max_queue.cpp" />
