@@ -153,6 +153,8 @@
     <ClCompile Include="LCP_19.cpp" />
     <ClCompile Include="Solution_1022.cpp" />
     <ClCompile Include="Solution_1110.cpp" />
+    <ClCompile Include="Solution_1123.cpp" />
+    <ClCompile Include="Solution_1145.cpp" />
     <ClCompile Include="Solution_1201.cpp" />
     <ClCompile Include="Solution_1237.cpp" />
     <ClCompile Include="Solution_1283.cpp" />
@@ -160,6 +162,7 @@
     <ClCompile Include="Solution_1011.cpp" />
     <ClCompile Include="Solution_1300.cpp" />
     <ClCompile Include="Solution_1337.cpp" />
+    <ClCompile Include="Solution_1359.cpp" />
     <ClCompile Include="Solution_1482.cpp" />
     <ClCompile Include="Solution_1530.cpp" />
     <ClCompile Include="Solution_1552.cpp" />
